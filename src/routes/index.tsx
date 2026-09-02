@@ -415,6 +415,77 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Featured Work / Portfolio */}
+      <section className="bg-muted/30 px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              FEATURED WORK
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Our Latest Projects
+            </h2>
+          </div>
+
+          {/* Filter tabs */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            {portfolioFilters.map((filter) => {
+              const isActive = activeFilter === filter;
+              return (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  className={
+                    isActive
+                      ? "rounded-full bg-brand px-5 py-2 text-sm font-bold text-brand-foreground"
+                      : "text-sm font-semibold text-foreground transition-colors hover:text-brand"
+                  }
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Gallery grid */}
+          <div className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:flex lg:flex-nowrap lg:gap-1">
+            {visibleProjects.map(({ image, alt, category }) => (
+              <div
+                key={alt}
+                className="group relative aspect-square overflow-hidden rounded-sm lg:aspect-auto lg:h-72 lg:w-full"
+              >
+                <img
+                  src={image}
+                  alt={alt}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width={800}
+                  height={800}
+                />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="p-4 text-xs font-bold uppercase tracking-wide text-card">
+                    {category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-foreground transition-colors hover:bg-brand/90"
+            >
+              View All Projects
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
