@@ -231,6 +231,65 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Our Solutions */}
+      <section className="bg-muted/30 px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              OUR SOLUTIONS
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Complete Branding & Growth Solutions
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map(({ icon: Icon, title, description, image, alt }) => (
+              <div
+                key={title}
+                className="overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-shadow hover:shadow-lg"
+              >
+                {/* Top half: image with floating icon */}
+                <div className="relative h-52">
+                  <img
+                    src={image}
+                    alt={alt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                  {/* Floating icon */}
+                  <div className="absolute -bottom-7 left-6">
+                    <div className="grid size-14 place-items-center rounded-full border-2 border-brand bg-card shadow-md">
+                      <Icon className="size-6 text-brand" strokeWidth={1.75} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom half: content */}
+                <div className="flex flex-col px-6 pb-6 pt-10">
+                  <h3 className="mb-2 text-lg font-bold text-foreground">
+                    {title}
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                  <Link
+                    to="/solutions"
+                    className="self-end text-sm font-bold uppercase tracking-wide text-brand transition-opacity hover:opacity-80"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
