@@ -1,6 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
-import { ArrowRight, Award, Building2, CheckCircle2, MapPin, Play } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Building2,
+  CheckCircle2,
+  Expand,
+  Lightbulb,
+  MapPin,
+  Megaphone,
+  Play,
+  TrendingUp,
+  Trophy,
+  ChevronRight,
+} from "lucide-react";
 import heroReception from "@/assets/hero-reception.jpg";
 
 export const Route = createFileRoute("/")({
