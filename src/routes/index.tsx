@@ -136,7 +136,59 @@ const coreServices = [
   { icon: Heart, title: "Office Branding", subtitle: "Transform Your Workspaces" },
 ];
 
+const portfolioFilters = [
+  "All",
+  "Branding",
+  "Signage",
+  "Vehicle Branding",
+  "Websites",
+  "Printing",
+  "Office Branding",
+] as const;
+
+type PortfolioFilter = (typeof portfolioFilters)[number];
+
+const portfolioProjects = [
+  {
+    image: portfolioSmiles,
+    alt: "Office interior lobby with a clean wall sign reading Smiles DENTAL CLINIC",
+    category: "Office Branding" as PortfolioFilter,
+  },
+  {
+    image: portfolioKings,
+    alt: "A massive outdoor commercial billboard featuring a logo and text reading KINGS",
+    category: "Signage" as PortfolioFilter,
+  },
+  {
+    image: portfolioSuv,
+    alt: "An SUV car wrapped in custom orange and black commercial branding graphics",
+    category: "Vehicle Branding" as PortfolioFilter,
+  },
+  {
+    image: portfolioWebsite,
+    alt: "A modern laptop open on a table displaying a client portfolio website design",
+    category: "Websites" as PortfolioFilter,
+  },
+  {
+    image: portfolioOrchid,
+    alt: "An elegant clinic reception waiting area with a wall sign reading Orchid MEDICAL CENTRE",
+    category: "Branding" as PortfolioFilter,
+  },
+  {
+    image: portfolioBrochures,
+    alt: "Professional bi-fold marketing brochures and corporate flyers spread open on a table",
+    category: "Printing" as PortfolioFilter,
+  },
+];
+
 function Index() {
+  const [activeFilter, setActiveFilter] = useState<PortfolioFilter>("All");
+
+  const visibleProjects =
+    activeFilter === "All"
+      ? portfolioProjects
+      : portfolioProjects.filter((p) => p.category === activeFilter);
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
