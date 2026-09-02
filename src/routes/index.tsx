@@ -312,6 +312,50 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Core Services */}
+      <section className="bg-background px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              OUR CORE SERVICES
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Everything Your Business Needs To Succeed
+            </h2>
+          </div>
+
+          {/* Cards — horizontal row on desktop, grid on mobile/tablet */}
+          <div className="mt-14 flex snap-x flex-wrap justify-start gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-5 lg:flex-nowrap lg:overflow-x-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
+            {coreServices.map(({ icon: Icon, title, subtitle }) => (
+              <div
+                key={title}
+                className="flex aspect-square w-[calc(50%-0.5rem)] snap-start flex-col items-center justify-center rounded-xl border border-border/60 bg-card p-4 text-center shadow-sm transition-shadow hover:shadow-md sm:w-auto lg:w-full"
+              >
+                <div className="mb-3 grid size-12 place-items-center rounded-full bg-brand/10">
+                  <Icon className="size-6 text-brand" strokeWidth={1.75} />
+                </div>
+                <h3 className="text-sm font-bold text-foreground">{title}</h3>
+                <p className="mt-1 text-xs leading-snug text-muted-foreground">
+                  {subtitle}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm font-bold uppercase tracking-wide text-brand transition-colors hover:border-brand hover:bg-brand/5"
+            >
+              View All Services
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
