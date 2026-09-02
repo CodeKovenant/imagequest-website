@@ -524,6 +524,39 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Image Quest */}
+      <section className="bg-background px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              WHY CHOOSE IMAGE QUEST?
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              We Deliver More Than Just Print
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
+            {whyChoose.map(({ icon: Icon, title, description }) => (
+              <div
+                key={title}
+                className="flex flex-col items-center rounded-2xl border border-border/60 bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+              >
+                <Icon className="size-10 text-brand" strokeWidth={1.75} />
+                <h3 className="mt-4 text-base font-bold text-foreground">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
