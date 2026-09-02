@@ -116,6 +116,19 @@ const solutions = [
   },
 ];
 
+const coreServices = [
+  { icon: Target, title: "Branding", subtitle: "Logo, Identity & Guidelines" },
+  { icon: Signpost, title: "Signage", subtitle: "Indoor, Outdoor & Wayfinding" },
+  { icon: Printer, title: "Printing", subtitle: "All Your Print Needs" },
+  { icon: Monitor, title: "Websites", subtitle: "Custom, Responsive & Fast" },
+  { icon: TrendingUp, title: "Digital Marketing", subtitle: "SEO, Social Media & Ads" },
+  { icon: Car, title: "Vehicle Branding", subtitle: "Design & Full Branding" },
+  { icon: Gift, title: "Corporate Gifts", subtitle: "Branded Gifts & Merchandise" },
+  { icon: Briefcase, title: "Company Profiles", subtitle: "Profiles, Reports & Presentations" },
+  { icon: ImageIcon, title: "Large Format Printing", subtitle: "Banners, Posters & More" },
+  { icon: Heart, title: "Office Branding", subtitle: "Transform Your Workspaces" },
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
