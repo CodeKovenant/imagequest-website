@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Image Quest Graphics Ltd" },
+      { name: "description", content: "Large format printing, signage and branding solutions in Nairobi, Kenya." },
+      { name: "author", content: "Image Quest Graphics Ltd" },
+      { property: "og:title", content: "Image Quest Graphics Ltd" },
+      { property: "og:description", content: "Large format printing, signage and branding solutions in Nairobi, Kenya." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

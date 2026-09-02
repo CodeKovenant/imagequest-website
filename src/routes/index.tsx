@@ -1,24 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site-header";
+import heroImage from "@/assets/hero-print.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Image Quest Graphics Ltd — Large Format Printing & Signage, Nairobi" },
+      {
+        name: "description",
+        content:
+          "Image Quest Graphics Ltd delivers large format printing, signage, branding and display solutions in Nairobi, Kenya. Request a quote today.",
+      },
+      { property: "og:title", content: "Image Quest Graphics Ltd — Large Format Printing & Signage" },
+      {
+        property: "og:description",
+        content:
+          "Large format printing, signage and branding solutions in Nairobi, Kenya.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="relative">
+        <img
+          src={heroImage}
+          alt="Large format printing machines inside the Image Quest Graphics production workshop"
+          className="h-[420px] w-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-end bg-foreground/40">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-10">
+            <h1 className="max-w-2xl text-4xl font-extrabold leading-tight text-card">
+              Large Format Printing & Signage Solutions
+            </h1>
+            <p className="mt-3 max-w-xl text-base text-card/80">
+              Bringing your brand to life with quality prints, signage and displays across Kenya.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
