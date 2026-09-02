@@ -45,6 +45,39 @@ const stats = [
   { icon: MapPin, label: "Nationwide Service & Installation" },
 ];
 
+const steps = [
+  {
+    icon: Lightbulb,
+    number: "01",
+    title: "Launch",
+    description: "Build a strong foundation with professional branding and essential assets.",
+  },
+  {
+    icon: Megaphone,
+    number: "02",
+    title: "Visibility",
+    description: "Increase awareness and get noticed by the right audience.",
+  },
+  {
+    icon: TrendingUp,
+    number: "03",
+    title: "Growth",
+    description: "Attract more customers and grow your business consistently.",
+  },
+  {
+    icon: Expand,
+    number: "04",
+    title: "Expansion",
+    description: "Scale your operations and reach new markets with confidence.",
+  },
+  {
+    icon: Trophy,
+    number: "05",
+    title: "Market Leader",
+    description: "Become the trusted leader in your industry and dominate your market.",
+  },
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
