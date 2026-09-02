@@ -83,6 +83,30 @@ const steps = [
   },
 ];
 
+const solutions = [
+  {
+    icon: Rocket,
+    title: "Business Launch Package",
+    description: "Everything you need to launch your business professionally.",
+    image: serviceLaunch,
+    alt: "A laptop open on a clean desk showing design files alongside office desk items",
+  },
+  {
+    icon: TrendingUp,
+    title: "Business Growth Package",
+    description: "Marketing and branding solutions that help you attract more customers.",
+    image: serviceGrowth,
+    alt: "Printed marketing materials, brochures, and flyers laid out neatly on a table",
+  },
+  {
+    icon: Users,
+    title: "Corporate Brand Partnership",
+    description: "Your outsourced branding department for consistent, scalable growth.",
+    image: servicePartnership,
+    alt: "Corporate professionals sitting around a meeting room table collaborating",
+  },
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
