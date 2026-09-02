@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -29,6 +30,12 @@ import heroReception from "@/assets/hero-reception.jpg";
 import serviceLaunch from "@/assets/service-launch.jpg";
 import serviceGrowth from "@/assets/service-growth.jpg";
 import servicePartnership from "@/assets/service-partnership.jpg";
+import portfolioSmiles from "@/assets/portfolio-smiles.jpg";
+import portfolioKings from "@/assets/portfolio-kings.jpg";
+import portfolioSuv from "@/assets/portfolio-suv.jpg";
+import portfolioWebsite from "@/assets/portfolio-website.jpg";
+import portfolioOrchid from "@/assets/portfolio-orchid.jpg";
+import portfolioBrochures from "@/assets/portfolio-brochures.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -129,7 +136,59 @@ const coreServices = [
   { icon: Heart, title: "Office Branding", subtitle: "Transform Your Workspaces" },
 ];
 
+const portfolioFilters = [
+  "All",
+  "Branding",
+  "Signage",
+  "Vehicle Branding",
+  "Websites",
+  "Printing",
+  "Office Branding",
+] as const;
+
+type PortfolioFilter = (typeof portfolioFilters)[number];
+
+const portfolioProjects = [
+  {
+    image: portfolioSmiles,
+    alt: "Office interior lobby with a clean wall sign reading Smiles DENTAL CLINIC",
+    category: "Office Branding" as PortfolioFilter,
+  },
+  {
+    image: portfolioKings,
+    alt: "A massive outdoor commercial billboard featuring a logo and text reading KINGS",
+    category: "Signage" as PortfolioFilter,
+  },
+  {
+    image: portfolioSuv,
+    alt: "An SUV car wrapped in custom orange and black commercial branding graphics",
+    category: "Vehicle Branding" as PortfolioFilter,
+  },
+  {
+    image: portfolioWebsite,
+    alt: "A modern laptop open on a table displaying a client portfolio website design",
+    category: "Websites" as PortfolioFilter,
+  },
+  {
+    image: portfolioOrchid,
+    alt: "An elegant clinic reception waiting area with a wall sign reading Orchid MEDICAL CENTRE",
+    category: "Branding" as PortfolioFilter,
+  },
+  {
+    image: portfolioBrochures,
+    alt: "Professional bi-fold marketing brochures and corporate flyers spread open on a table",
+    category: "Printing" as PortfolioFilter,
+  },
+];
+
 function Index() {
+  const [activeFilter, setActiveFilter] = useState<PortfolioFilter>("All");
+
+  const visibleProjects =
+    activeFilter === "All"
+      ? portfolioProjects
+      : portfolioProjects.filter((p) => p.category === activeFilter);
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -351,6 +410,77 @@ function Index() {
               className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm font-bold uppercase tracking-wide text-brand transition-colors hover:border-brand hover:bg-brand/5"
             >
               View All Services
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work / Portfolio */}
+      <section className="bg-muted/30 px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              FEATURED WORK
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Our Latest Projects
+            </h2>
+          </div>
+
+          {/* Filter tabs */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            {portfolioFilters.map((filter) => {
+              const isActive = activeFilter === filter;
+              return (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  className={
+                    isActive
+                      ? "rounded-full bg-brand px-5 py-2 text-sm font-bold text-brand-foreground"
+                      : "text-sm font-semibold text-foreground transition-colors hover:text-brand"
+                  }
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Gallery grid */}
+          <div className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:flex lg:flex-nowrap lg:gap-1">
+            {visibleProjects.map(({ image, alt, category }) => (
+              <div
+                key={alt}
+                className="group relative aspect-square overflow-hidden rounded-sm lg:aspect-auto lg:h-72 lg:w-full"
+              >
+                <img
+                  src={image}
+                  alt={alt}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width={800}
+                  height={800}
+                />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="p-4 text-xs font-bold uppercase tracking-wide text-card">
+                    {category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-foreground transition-colors hover:bg-brand/90"
+            >
+              View All Projects
               <ArrowRight className="size-4" />
             </Link>
           </div>
