@@ -10,11 +10,16 @@ import {
   MapPin,
   Megaphone,
   Play,
+  Rocket,
   TrendingUp,
   Trophy,
+  Users,
   ChevronRight,
 } from "lucide-react";
 import heroReception from "@/assets/hero-reception.jpg";
+import serviceLaunch from "@/assets/service-launch.jpg";
+import serviceGrowth from "@/assets/service-growth.jpg";
+import servicePartnership from "@/assets/service-partnership.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
