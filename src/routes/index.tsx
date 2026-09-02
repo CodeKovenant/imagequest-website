@@ -186,6 +186,39 @@ const portfolioProjects = [
   },
 ];
 
+const whyChoose = [
+  {
+    icon: Layers,
+    title: "One-Stop Solution",
+    description: "All branding, print, signage & digital services under one roof.",
+  },
+  {
+    icon: Brain,
+    title: "Creative Experts",
+    description: "Talented designers with strategic thinking.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality Assurance",
+    description: "Premium quality materials and attention to detail.",
+  },
+  {
+    icon: Clock,
+    title: "Fast Turnaround",
+    description: "We respect your time and deliver on schedule.",
+  },
+  {
+    icon: MapPin,
+    title: "Nationwide Service",
+    description: "Serving businesses across Kenya with installation support.",
+  },
+  {
+    icon: Sparkles,
+    title: "Ongoing Support",
+    description: "Long-term partnership for continuous growth.",
+  },
+];
+
 function Index() {
   const [activeFilter, setActiveFilter] = useState<PortfolioFilter>("All");
 
