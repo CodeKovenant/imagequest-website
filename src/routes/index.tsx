@@ -4,14 +4,17 @@ import { SiteHeader } from "@/components/site-header";
 import {
   ArrowRight,
   Award,
+  Brain,
   Briefcase,
   Building2,
   Car,
   CheckCircle2,
+  Clock,
   Expand,
   Gift,
   Heart,
   Image as ImageIcon,
+  Layers,
   Lightbulb,
   MapPin,
   Megaphone,
@@ -19,7 +22,9 @@ import {
   Play,
   Printer,
   Rocket,
+  ShieldCheck,
   Signpost,
+  Sparkles,
   Target,
   TrendingUp,
   Trophy,
@@ -178,6 +183,39 @@ const portfolioProjects = [
     image: portfolioBrochures,
     alt: "Professional bi-fold marketing brochures and corporate flyers spread open on a table",
     category: "Printing" as PortfolioFilter,
+  },
+];
+
+const whyChoose = [
+  {
+    icon: Layers,
+    title: "One-Stop Solution",
+    description: "All branding, print, signage & digital services under one roof.",
+  },
+  {
+    icon: Brain,
+    title: "Creative Experts",
+    description: "Talented designers with strategic thinking.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality Assurance",
+    description: "Premium quality materials and attention to detail.",
+  },
+  {
+    icon: Clock,
+    title: "Fast Turnaround",
+    description: "We respect your time and deliver on schedule.",
+  },
+  {
+    icon: MapPin,
+    title: "Nationwide Service",
+    description: "Serving businesses across Kenya with installation support.",
+  },
+  {
+    icon: Sparkles,
+    title: "Ongoing Support",
+    description: "Long-term partnership for continuous growth.",
   },
 ];
 
@@ -483,6 +521,39 @@ function Index() {
               View All Projects
               <ArrowRight className="size-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Image Quest */}
+      <section className="bg-background px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              WHY CHOOSE IMAGE QUEST?
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              We Deliver More Than Just Print
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
+            {whyChoose.map(({ icon: Icon, title, description }) => (
+              <div
+                key={title}
+                className="flex flex-col items-center rounded-2xl border border-border/60 bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+              >
+                <Icon className="size-10 text-brand" strokeWidth={1.75} />
+                <h3 className="mt-4 text-base font-bold text-foreground">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
