@@ -153,6 +153,55 @@ function Index() {
           <span className="size-2 rounded-full bg-card/50" />
         </div>
       </section>
+
+      {/* Business Growth Framework */}
+      <section className="bg-background px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              OUR BUSINESS GROWTH FRAMEWORK™
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              From Business Idea To Market Leadership
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              We partner with you at every stage of your business journey.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-16 flex flex-wrap items-stretch justify-center gap-4 lg:flex-nowrap lg:gap-0">
+            {steps.map(({ icon: Icon, number, title, description }, index) => (
+              <div key={number} className="flex items-center lg:flex-1">
+                <div className="group relative w-full rounded-2xl border border-border/60 bg-card p-8 shadow-sm transition-shadow hover:shadow-md">
+                  {/* Step badge */}
+                  <span className="absolute right-4 top-4 grid size-9 place-items-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
+                    {number}
+                  </span>
+                  {/* Icon */}
+                  <div className="mb-6 flex justify-center">
+                    <div className="grid size-16 place-items-center rounded-full bg-brand/10">
+                      <Icon className="size-8 text-brand" strokeWidth={1.75} />
+                    </div>
+                  </div>
+                  {/* Title */}
+                  <h3 className="mb-2 text-center text-lg font-bold text-foreground">
+                    {title}
+                  </h3>
+                  {/* Description */}
+                  <p className="text-center text-sm leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                </div>
+                {index < steps.length - 1 && (
+                  <ChevronRight className="mx-1 hidden size-6 shrink-0 text-brand lg:block" strokeWidth={2.5} />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
