@@ -30,6 +30,12 @@ import heroReception from "@/assets/hero-reception.jpg";
 import serviceLaunch from "@/assets/service-launch.jpg";
 import serviceGrowth from "@/assets/service-growth.jpg";
 import servicePartnership from "@/assets/service-partnership.jpg";
+import portfolioSmiles from "@/assets/portfolio-smiles.jpg";
+import portfolioKings from "@/assets/portfolio-kings.jpg";
+import portfolioSuv from "@/assets/portfolio-suv.jpg";
+import portfolioWebsite from "@/assets/portfolio-website.jpg";
+import portfolioOrchid from "@/assets/portfolio-orchid.jpg";
+import portfolioBrochures from "@/assets/portfolio-brochures.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
