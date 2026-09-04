@@ -9,6 +9,8 @@ import {
   Building2,
   Car,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   Expand,
   Gift,
@@ -21,15 +23,16 @@ import {
   Monitor,
   Play,
   Printer,
+  Quote,
   Rocket,
   ShieldCheck,
   Signpost,
   Sparkles,
+  Star,
   Target,
   TrendingUp,
   Trophy,
   Users,
-  ChevronRight,
 } from "lucide-react";
 import heroReception from "@/assets/hero-reception.jpg";
 import serviceLaunch from "@/assets/service-launch.jpg";
