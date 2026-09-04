@@ -585,6 +585,104 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial + Impact Stats */}
+      <section className="bg-muted/30 px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left: Testimonial slider */}
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              WHAT OUR CLIENTS SAY
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
+              Trusted By 500+ Businesses
+            </h2>
+
+            {/* Quote + nav row */}
+            <div className="mt-8 flex items-start justify-between gap-6">
+              <Quote className="size-10 shrink-0 text-brand" strokeWidth={1.5} />
+              <div className="flex shrink-0 gap-3">
+                <button
+                  type="button"
+                  onClick={prevTestimonial}
+                  aria-label="Previous testimonial"
+                  className="grid size-11 place-items-center rounded-full border border-border text-foreground transition-colors hover:border-brand hover:text-brand"
+                >
+                  <ChevronLeft className="size-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextTestimonial}
+                  aria-label="Next testimonial"
+                  className="grid size-11 place-items-center rounded-full border border-border text-foreground transition-colors hover:border-brand hover:text-brand"
+                >
+                  <ChevronRight className="size-5" />
+                </button>
+              </div>
+            </div>
+
+            <p className="mt-6 text-lg leading-relaxed text-foreground">
+              {testimonials[activeTestimonial].quote}
+            </p>
+
+            {/* Reviewer info */}
+            <div className="mt-8 flex items-center gap-4">
+              <img
+                src={testimonials[activeTestimonial].avatar}
+                alt={testimonials[activeTestimonial].avatarAlt}
+                className="size-14 rounded-full object-cover"
+                loading="lazy"
+                width={512}
+                height={512}
+              />
+              <div className="flex flex-col gap-1">
+                <div className="flex flex-col">
+                  <span className="text-base font-bold text-foreground">
+                    {testimonials[activeTestimonial].name}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    {testimonials[activeTestimonial].role}
+                  </span>
+                </div>
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-4 fill-brand text-brand" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Impact stats */}
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              OUR IMPACT IN NUMBERS
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
+              Helping Businesses Grow Since 2009
+            </h2>
+
+            {/* Stats grid */}
+            <div className="mt-10 grid grid-cols-2 gap-y-10 lg:grid-cols-4 lg:gap-0">
+              {impactStats.map((stat, index) => (
+                <div
+                  key={stat.label}
+                  className={`flex flex-col items-center text-center lg:px-4 ${
+                    index !== 0 ? "lg:border-l lg:border-border" : ""
+                  }`}
+                >
+                  <span className="text-4xl font-extrabold text-brand">
+                    {stat.figure}
+                  </span>
+                  <span className="mt-2 text-sm leading-snug text-foreground">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
