@@ -631,8 +631,8 @@ function Index() {
             {/* Reviewer info */}
             <div className="mt-8 flex items-center gap-4">
               <img
-                src={testimonials[activeTestimonial].avatar}
-                alt={testimonials[activeTestimonial].avatarAlt}
+                src={testimonial.avatar}
+                alt={testimonial.avatarAlt}
                 className="size-14 rounded-full object-cover"
                 loading="lazy"
                 width={512}
@@ -641,10 +641,10 @@ function Index() {
               <div className="flex flex-col gap-1">
                 <div className="flex flex-col">
                   <span className="text-base font-bold text-foreground">
-                    {testimonials[activeTestimonial].name}
+                    {testimonial.name}
                   </span>
                   <span className="text-sm text-muted-foreground">
-                    {testimonials[activeTestimonial].role}
+                    {testimonial.role}
                   </span>
                 </div>
                 <div className="flex gap-0.5">
