@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import {
   ArrowRight,
   Award,
@@ -231,6 +232,22 @@ const testimonials = [
     role: "Smiles Dental Care",
     avatar: testimonialAvatar,
     avatarAlt: "Professional headshot portrait of Dr. Brian Mwangi in a suit",
+  },
+  {
+    quote:
+      "We needed our entire fleet branded in under three weeks. Image Quest handled design, production and installation nationwide without a single missed deadline.",
+    name: "Achieng Odhiambo",
+    role: "Operations Lead, Rift Logistics",
+    avatar: testimonialAvatar,
+    avatarAlt: "Portrait of a smiling professional client",
+  },
+  {
+    quote:
+      "From our reception signage to the company profile and website, everything speaks one language now. Clients notice the difference the moment they walk in.",
+    name: "Peter Kariuki",
+    role: "Managing Director, Orchid Medical Centre",
+    avatar: testimonialAvatar,
+    avatarAlt: "Portrait of a professional client in an office",
   },
 ];
 
@@ -654,6 +671,23 @@ function Index() {
                 </div>
               </div>
             </div>
+
+            {/* Slide indicators */}
+            <div className="mt-8 flex gap-2">
+              {testimonials.map((t, i) => (
+                <button
+                  key={t.name}
+                  type="button"
+                  aria-label={`Show testimonial from ${t.name}`}
+                  onClick={() => setActiveTestimonial(i)}
+                  className={
+                    i === activeTestimonial
+                      ? "h-2 w-8 rounded-full bg-brand transition-all"
+                      : "h-2 w-2 rounded-full bg-border transition-all hover:bg-brand/50"
+                  }
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right: Impact stats */}
@@ -686,6 +720,40 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Closing CTA */}
+      <section className="relative overflow-hidden bg-topbar px-6 py-20 sm:px-12 lg:px-16">
+        <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-brand/15 blur-3xl" />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            Let&apos;s Build Something Memorable
+          </p>
+          <h2 className="text-3xl font-extrabold leading-tight text-card sm:text-4xl lg:text-5xl">
+            Ready To Give Your Brand The Presence It Deserves?
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-topbar-foreground/70 sm:text-lg">
+            Talk to our team for a free consultation and a clear, no-obligation
+            quote — usually within 24 hours.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-md bg-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-foreground transition-colors hover:bg-brand/90"
+            >
+              Get Free Consultation
+              <ArrowRight className="size-4" />
+            </Link>
+            <a
+              href="tel:+254720791677"
+              className="inline-flex items-center gap-2 rounded-md border border-card/40 px-8 py-4 text-sm font-bold uppercase tracking-wide text-card transition-colors hover:border-card hover:bg-card/10"
+            >
+              Call +254 720 791 677
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
     </div>
   );
 }
