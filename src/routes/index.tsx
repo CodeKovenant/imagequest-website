@@ -223,13 +223,37 @@ const whyChoose = [
   },
 ];
 
+const testimonials = [
+  {
+    quote:
+      "Image Quest transformed our brand completely. From the logo to our signage and website, everything was top-notch. Highly professional and reliable team!",
+    name: "Dr. Brian Mwangi",
+    role: "Smiles Dental Care",
+    avatar: testimonialAvatar,
+    avatarAlt: "Professional headshot portrait of Dr. Brian Mwangi in a suit",
+  },
+];
+
+const impactStats = [
+  { figure: "15+", label: "Years of Experience" },
+  { figure: "500+", label: "Businesses Served" },
+  { figure: "2,500+", label: "Projects Completed" },
+  { figure: "98%", label: "Client Satisfaction Rate" },
+];
+
 function Index() {
   const [activeFilter, setActiveFilter] = useState<PortfolioFilter>("All");
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const visibleProjects =
     activeFilter === "All"
       ? portfolioProjects
       : portfolioProjects.filter((p) => p.category === activeFilter);
+
+  const nextTestimonial = () =>
+    setActiveTestimonial((i) => (i + 1) % testimonials.length);
+  const prevTestimonial = () =>
+    setActiveTestimonial((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   return (
     <div className="min-h-screen bg-background">
