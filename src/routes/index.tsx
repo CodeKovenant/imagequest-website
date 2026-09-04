@@ -44,6 +44,7 @@ import portfolioSuv from "@/assets/portfolio-suv.jpg";
 import portfolioWebsite from "@/assets/portfolio-website.jpg";
 import portfolioOrchid from "@/assets/portfolio-orchid.jpg";
 import portfolioBrochures from "@/assets/portfolio-brochures.jpg";
+import testimonialAvatar from "@/assets/testimonial-avatar.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
