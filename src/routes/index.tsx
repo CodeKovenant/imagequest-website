@@ -255,6 +255,9 @@ function Index() {
   const prevTestimonial = () =>
     setActiveTestimonial((i) => (i - 1 + testimonials.length) % testimonials.length);
 
+  const testimonial = testimonials[activeTestimonial]!;
+
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
