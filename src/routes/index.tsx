@@ -622,7 +622,7 @@ function Index() {
             </div>
 
             <p className="mt-6 text-lg leading-relaxed text-foreground">
-              {testimonials[activeTestimonial].quote}
+              {testimonial.quote}
             </p>
 
             {/* Reviewer info */}
