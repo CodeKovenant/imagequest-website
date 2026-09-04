@@ -594,16 +594,12 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Testimonial slider */}
           <div>
-            {(() => {
-              const testimonial = testimonials[activeTestimonial]!;
-              return (
-                <>
-                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-                    WHAT OUR CLIENTS SAY
-                  </p>
-                  <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
-                    Trusted By 500+ Businesses
-                  </h2>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              WHAT OUR CLIENTS SAY
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
+              Trusted By 500+ Businesses
+            </h2>
 
             {/* Quote + nav row */}
             <div className="mt-8 flex items-start justify-between gap-6">
