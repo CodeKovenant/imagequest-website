@@ -29,6 +29,7 @@ import {
   ShieldCheck,
   Signpost,
   Sparkles,
+  Send,
   Star,
   Target,
   TrendingUp,
@@ -46,6 +47,9 @@ import portfolioWebsite from "@/assets/portfolio-website.jpg";
 import portfolioOrchid from "@/assets/portfolio-orchid.jpg";
 import portfolioBrochures from "@/assets/portfolio-brochures.jpg";
 import testimonialAvatar from "@/assets/testimonial-avatar.jpg";
+import blogBrandIdentity from "@/assets/blog-brand-identity.jpg";
+import blogDigitalMarketing from "@/assets/blog-digital-marketing.jpg";
+import blogWebsiteTrust from "@/assets/blog-website-trust.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -248,6 +252,30 @@ const testimonials = [
     role: "Managing Director, Orchid Medical Centre",
     avatar: testimonialAvatar,
     avatarAlt: "Portrait of a professional client in an office",
+  },
+];
+
+const posts = [
+  {
+    image: blogBrandIdentity,
+    alt: "Brand identity design sheets with logo sketches and colour swatches on a desk",
+    category: "Branding",
+    date: "May 12, 2024",
+    title: "Why Your Brand Identity Matters More Than You Think",
+  },
+  {
+    image: blogDigitalMarketing,
+    alt: "Marketing team reviewing digital analytics on a laptop in a bright office",
+    category: "Marketing",
+    date: "April 28, 2024",
+    title: "5 Digital Marketing Strategies To Grow Your Business",
+  },
+  {
+    image: blogWebsiteTrust,
+    alt: "A professional company website displayed on a laptop on a clean desk",
+    category: "Websites",
+    date: "April 9, 2024",
+    title: "How A Professional Website Builds Trust And Generates Leads",
   },
 ];
 
@@ -716,6 +744,91 @@ function Index() {
                   </span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights */}
+      <section className="bg-background px-6 py-20 sm:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              LATEST INSIGHTS
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Branding &amp; Marketing Tips
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {posts.map(({ image, alt, category, date, title }) => (
+              <article
+                key={title}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-shadow hover:shadow-lg"
+              >
+                <div className="h-44 overflow-hidden">
+                  <img
+                    src={image}
+                    alt={alt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="text-xs font-bold uppercase tracking-wide text-brand">
+                    {category}
+                    <span className="text-muted-foreground"> • {date}</span>
+                  </p>
+                  <h3 className="mt-3 text-lg font-bold leading-snug text-foreground">
+                    {title}
+                  </h3>
+                  <Link
+                    to="/resources"
+                    className="mt-auto pt-5 text-sm font-bold uppercase tracking-wide text-brand transition-opacity hover:opacity-80"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </article>
+            ))}
+
+            {/* Newsletter card */}
+            <div className="flex flex-col justify-center rounded-2xl bg-muted p-7">
+              <h3 className="text-2xl font-extrabold leading-tight text-foreground">
+                Stay Updated
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Subscribe to our newsletter for the latest tips, trends and
+                offers.
+              </p>
+              <form
+                className="mt-6 flex items-center gap-2"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <label htmlFor="newsletter-email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="newsletter-email"
+                  type="email"
+                  required
+                  placeholder="Enter your email address"
+                  className="min-w-0 flex-1 rounded-full border border-border bg-card px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand"
+                />
+                <button
+                  type="submit"
+                  aria-label="Subscribe to newsletter"
+                  className="grid size-11 shrink-0 place-items-center rounded-full bg-brand text-brand-foreground transition-colors hover:bg-brand/90"
+                >
+                  <Send className="size-4" />
+                </button>
+              </form>
+              <p className="mt-3 text-xs text-muted-foreground">
+                We respect your privacy. Unsubscribe anytime.
+              </p>
             </div>
           </div>
         </div>
