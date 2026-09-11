@@ -317,70 +317,93 @@ function Index() {
           width={1280}
           height={1024}
         />
-        {/* Soft readability gradient over the whole image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent" />
+        {/* Readability gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
 
-        <div className="relative grid lg:min-h-[600px] lg:grid-cols-2">
-          {/* Left: blurred glass content panel */}
+        <div className="relative grid lg:min-h-[640px] lg:grid-cols-2">
+          {/* Left: executive glass panel */}
           <div className="flex items-center px-4 py-16 sm:px-12 lg:px-16 lg:py-24">
-            <div className="w-full max-w-xl rounded-3xl border border-white/15 bg-black/35 p-8 backdrop-blur-xl sm:p-10">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-brand">
-                Image Quest Graphics Ltd
-              </p>
-              <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Building Brands That Command Trust
+            <div className="w-full max-w-xl rounded-[2rem] border border-white/20 bg-white/[0.08] p-8 shadow-2xl backdrop-blur-2xl sm:p-10">
+              <div className="mb-4 flex items-center gap-2">
+                <span className="h-px w-6 bg-brand" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/70">
+                  Image Quest Graphics Ltd
+                </span>
+              </div>
+              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Building Brands That{" "}
+                <span className="text-brand italic">Command</span> Trust
               </h1>
-              <p className="mt-6 text-base leading-relaxed text-white/80 sm:text-lg">
+              <p className="mt-6 max-w-md text-base leading-relaxed text-white/80 sm:text-lg">
                 Strategic branding, signage, print and digital solutions that
                 help businesses launch, grow and lead.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 rounded-md bg-brand px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-brand-foreground transition-colors hover:bg-brand/90"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-4 text-sm font-bold uppercase tracking-wide text-brand-foreground shadow-[0_8px_20px_-4px_rgba(234,88,12,0.4)] transition-all hover:bg-brand/90 active:scale-[0.98]"
                 >
                   Get Free Consultation
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   to="/portfolio"
-                  className="inline-flex items-center gap-2 rounded-md border border-white/40 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-md transition-all hover:bg-white/10 active:scale-[0.98]"
                 >
-                  <Play className="size-4 fill-current" />
+                  <span className="grid size-6 place-items-center rounded-full bg-white/10">
+                    <Play className="size-3 translate-x-px fill-current" />
+                  </span>
                   View Our Work
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Right: stats panel — image stays fully visible */}
-          <div className="relative hidden sm:block">
-            <div className="absolute inset-y-8 right-8 my-auto flex w-60 flex-col justify-center gap-7 self-center rounded-2xl border border-white/15 bg-black/35 px-6 py-8 backdrop-blur-md">
-              {stats.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-start gap-3">
-                  <Icon className="mt-0.5 size-6 shrink-0 text-brand" strokeWidth={1.5} />
-                  <span className="text-sm font-semibold leading-snug text-white">{label}</span>
+          {/* Right: floating stats cards */}
+          <div className="relative hidden lg:block">
+            <div className="absolute inset-y-0 right-12 my-auto flex w-64 flex-col justify-center gap-3">
+              {stats.map(({ value, label }) => (
+                <div
+                  key={label}
+                  className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 backdrop-blur-xl"
+                >
+                  <div className="text-2xl font-extrabold text-brand">{value}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-white/70">
+                    {label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Mobile stats */}
-        <div className="relative grid grid-cols-2 gap-4 bg-black/50 px-6 py-6 backdrop-blur-md sm:hidden">
-          {stats.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-start gap-2">
-              <Icon className="mt-0.5 size-5 shrink-0 text-brand" strokeWidth={1.5} />
-              <span className="text-xs font-semibold leading-snug text-white">{label}</span>
+        {/* Mobile/tablet stats grid */}
+        <div className="relative grid grid-cols-2 gap-2 bg-black/40 px-5 py-6 backdrop-blur-xl sm:px-8 lg:hidden">
+          {stats.map(({ value, label }) => (
+            <div
+              key={label}
+              className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 backdrop-blur-xl"
+            >
+              <div className="text-xl font-extrabold text-brand">{value}</div>
+              <div className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-white/70">
+                {label}
+              </div>
             </div>
           ))}
+          {/* Carousel indicators (mobile) */}
+          <div className="col-span-full mt-1 flex items-center justify-center gap-2.5">
+            <span className="h-1 w-6 rounded-full bg-brand" />
+            <span className="size-1 rounded-full bg-white/30" />
+            <span className="size-1 rounded-full bg-white/30" />
+          </div>
         </div>
 
-        {/* Carousel indicators */}
-        <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
-          <span className="size-2 rounded-full bg-white/50" />
-          <span className="size-2.5 rounded-full bg-brand" />
-          <span className="size-2 rounded-full bg-white/50" />
+        {/* Carousel indicators (desktop) */}
+        <div className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2.5 lg:flex">
+          <span className="h-1 w-6 rounded-full bg-brand" />
+          <span className="size-1 rounded-full bg-white/30" />
+          <span className="size-1 rounded-full bg-white/30" />
         </div>
       </section>
 
