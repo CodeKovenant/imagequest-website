@@ -155,3 +155,16 @@
     color: var(--color-foreground);
   }
 }
+
+/* Hide the "Made with Lovable" badge injected on published deployments.
+   The badge is a fixed-position floating element, so removing it does
+   not affect page layout. */
+.lovable-badge,
+[data-lovable-badge],
+iframe[src*="lovable"][src*="badge"],
+iframe[title*="Lovable" i],
+div:has(> iframe[src*="lovable"][src*="badge"]) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
