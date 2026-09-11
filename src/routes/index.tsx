@@ -74,10 +74,10 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { icon: Award, label: "15+ Years Experience" },
-  { icon: Building2, label: "500+ Businesses Served" },
-  { icon: CheckCircle2, label: "2,500+ Projects Completed" },
-  { icon: MapPin, label: "Nationwide Service & Installation" },
+  { value: "15+", label: "Years Experience" },
+  { value: "500+", label: "Businesses Served" },
+  { value: "2,500+", label: "Projects Completed" },
+  { value: "Nationwide", label: "Service & Installation" },
 ];
 
 const steps = [
