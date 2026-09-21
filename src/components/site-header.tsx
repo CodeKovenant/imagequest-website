@@ -13,6 +13,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
@@ -27,25 +28,12 @@ const NAV_ITEMS = [
 
 function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2 shrink-0">
-      <div className="flex h-11 w-11 items-center justify-center rounded-full border-[3px] border-brand">
-        <span className="text-2xl font-black italic leading-none text-nav-foreground">
-          iQ
-        </span>
-      </div>
-      <div className="leading-none">
-        <div className="flex items-baseline gap-1">
-          <span className="text-xl font-extrabold tracking-tight text-nav-foreground">
-            IMAGE
-          </span>
-          <span className="text-xl font-extrabold tracking-tight text-brand">
-            QUEST
-          </span>
-        </div>
-        <div className="mt-1 text-[10px] font-semibold tracking-[0.35em] text-muted-foreground">
-          GRAPHICS LTD
-        </div>
-      </div>
+    <Link to="/" className="flex items-center shrink-0" aria-label="Image Quest Graphics Ltd — home">
+      <img
+        src={logo}
+        alt="Image Quest Graphics Ltd"
+        className="h-10 w-auto shrink-0 sm:h-11"
+      />
     </Link>
   );
 }
