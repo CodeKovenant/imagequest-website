@@ -10,6 +10,7 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
+import logoLight from "@/assets/logo-light.png";
 
 const solutions = [
   "Business Launch Package",
@@ -60,17 +61,11 @@ export function SiteFooter() {
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
             {/* Company */}
             <div>
-              <div className="flex items-center gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand text-lg font-extrabold text-brand-foreground">
-                  iQ
-                </span>
-                <span className="text-sm font-bold uppercase leading-tight tracking-wide text-card">
-                  Image Quest
-                  <span className="block text-xs font-medium tracking-[0.18em] text-topbar-foreground/60">
-                    Graphics Ltd
-                  </span>
-                </span>
-              </div>
+              <img
+                src={logoLight}
+                alt="Image Quest Graphics Ltd"
+                className="h-12 w-auto"
+              />
               <p className="mt-5 max-w-xs text-sm leading-relaxed text-topbar-foreground/70">
                 We help businesses launch, grow and lead through strategic
                 branding, signage, print and digital solutions.
