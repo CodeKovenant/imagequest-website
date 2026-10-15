@@ -13,6 +13,8 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { serviceLinks, solutionLinks } from "@/lib/site-navigation";
 import logo from "@/assets/logo.png";
 
 const NAV_ITEMS = [
@@ -96,6 +98,7 @@ export function SiteHeader() {
 
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
             {NAV_ITEMS.map((item) => (
+              <div key={item.label} className="group relative">
               <Link
                 key={item.label}
                 to={item.href}
@@ -108,6 +111,14 @@ export function SiteHeader() {
                   <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
                 )}
               </Link>
+              {(item.label === "SERVICES" || item.label === "SOLUTIONS") && (
+                <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  {(item.label === "SERVICES" ? serviceLinks : solutionLinks).map((link) => (
+                    <Link key={link.to} to={link.to} className="block rounded-sm px-3 py-2.5 text-sm text-nav-foreground hover:bg-muted hover:text-brand">{link.label}</Link>
+                  ))}
+                </div>
+              )}
+              </div>
             ))}
           </nav>
 
@@ -118,21 +129,22 @@ export function SiteHeader() {
             >
               REQUEST A QUOTE
             </Link>
-            <button
+            <Button variant="unstyled"
               className="rounded-md p-2 text-nav-foreground lg:hidden"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
               aria-expanded={open}
             >
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            </Button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {open && (
-          <nav className="border-t border-border px-4 pb-4 lg:hidden" aria-label="Mobile">
+          <nav className="max-h-[calc(100dvh-120px)] overflow-y-auto border-t border-border px-4 pb-4 lg:hidden" aria-label="Mobile">
             {NAV_ITEMS.map((item) => (
+              <div key={item.label}>
               <Link
                 key={item.label}
                 to={item.href}
@@ -144,6 +156,8 @@ export function SiteHeader() {
                 {item.label}
                 {item.dropdown && <ChevronDown className="h-4 w-4" />}
               </Link>
+              {(item.label === "SERVICES" || item.label === "SOLUTIONS") && <div className="border-l border-border pl-4">{(item.label === "SERVICES" ? serviceLinks : solutionLinks).map((link) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-brand">{link.label}</Link>)}</div>}
+              </div>
             ))}
             <Link
               to="/contact"
