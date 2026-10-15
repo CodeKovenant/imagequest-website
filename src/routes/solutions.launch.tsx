@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import ContentPage from "@/components/content-pages/solutions.launch";
+export const Route = createFileRoute("/solutions/launch")({ head: () => ({ meta: [{ title: "Business Launch Package | Image Quest Graphics Ltd" }, { name: "description", content: "Launch your business with coordinated branding, signage, print and digital essentials." }, { property: "og:title", content: "Business Launch Package | Image Quest Graphics Ltd" }, { property: "og:description", content: "Launch your business with coordinated branding, signage, print and digital essentials." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: ContentPage });

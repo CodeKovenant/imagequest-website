@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import ContentPage from "@/components/content-pages/services.digital-marketing";
+export const Route = createFileRoute("/services/digital-marketing")({ head: () => ({ meta: [{ title: "Digital Marketing | Image Quest Graphics Ltd" }, { name: "description", content: "SEO, social media and digital campaigns to help your business grow." }, { property: "og:title", content: "Digital Marketing | Image Quest Graphics Ltd" }, { property: "og:description", content: "SEO, social media and digital campaigns to help your business grow." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: ContentPage });
