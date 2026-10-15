@@ -6,11 +6,11 @@ import React, { useState, useEffect } from 'react';
 
 export default function ContentPage() {
   const [activeTab, setActiveTab] = useState('websites');
-  const [openFaq, setOpenFaq] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [projectSlide, setProjectSlide] = useState(0);
   const [selectedPackage, setSelectedPackage] = useState('business');
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState(null);
+  const [modalMessage, setModalMessage] = useState<string | null>(null);
 
   const faqs = [
     {
@@ -93,7 +93,7 @@ export default function ContentPage() {
     { num: "07", title: "Support", desc: "We provide ongoing support and maintenance to keep it running." }
   ];
 
-  const showAlert = (msg) => {
+  const showAlert = (msg: string) => {
     setModalMessage(msg);
   };
 
@@ -106,7 +106,7 @@ export default function ContentPage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-topbar to-topbar pt-12 pb-20 px-4 lg:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-block bg-brand/10 border border-brand/30 text-brand text-xs font-bold uppercase tracking-normalst px-3 py-1 rounded">
+            <div className="inline-block bg-brand/10 border border-brand/30 text-brand text-xs font-bold uppercase tracking-normal px-3 py-1 rounded">
               Website Design & Development
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-none text-brand-foreground">
@@ -220,7 +220,7 @@ export default function ContentPage() {
       <section className="py-20 px-4 lg:px-12 bg-primary/60 border-t border-primary">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-brand font-bold tracking-normalst text-xs uppercase">Our Website Solutions</span>
+            <span className="text-brand font-bold tracking-normal text-xs uppercase">Our Website Solutions</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-normal">Everything You Need Online</h2>
             <div className="w-16 h-1 bg-brand mx-auto rounded-full"></div>
           </div>
@@ -231,7 +231,7 @@ export default function ContentPage() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-3xl p-3 rounded-xl bg-brand/10 text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-colors">{item.icon}</span>
-                    <span className="text-xs font-bold text-muted-foreground uppercase tracking-normalr">Solution 0{idx+1}</span>
+                    <span className="text-xs font-bold text-muted-foreground uppercase tracking-normal">Solution 0{idx+1}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-brand-foreground group-hover:text-brand transition-colors">{item.title}</h3>
                   <p className="text-muted-foreground text-sm mb-6">{item.desc}</p>
@@ -260,7 +260,7 @@ export default function ContentPage() {
       <section className="py-20 px-4 lg:px-12 bg-topbar border-t border-primary">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-brand font-bold tracking-normalst text-xs uppercase">Our Process</span>
+            <span className="text-brand font-bold tracking-normal text-xs uppercase">Our Process</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-normal">From Concept To A Powerful Website</h2>
             <div className="w-16 h-1 bg-brand mx-auto rounded-full"></div>
           </div>
@@ -283,7 +283,7 @@ export default function ContentPage() {
       <section className="py-20 px-4 lg:px-12 bg-topbar border-t border-primary">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-brand font-bold tracking-normalst text-xs uppercase">Website Packages</span>
+            <span className="text-brand font-bold tracking-normal text-xs uppercase">Website Packages</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-normal">Choose The Right Package For Your Business</h2>
             <div className="w-16 h-1 bg-brand mx-auto rounded-full"></div>
           </div>
@@ -319,7 +319,7 @@ export default function ContentPage() {
 
             {/* Business Package (Most Popular) */}
             <div className="bg-primary border-2 border-brand rounded-2xl p-8 flex flex-col justify-between relative shadow-2xl shadow-brand/10 transform lg:-translate-y-2">
-              <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-brand text-brand-foreground text-[10px] font-black uppercase tracking-normalst px-4 py-1.5 rounded-full shadow-md">
+              <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-brand text-brand-foreground text-[10px] font-black uppercase tracking-normal px-4 py-1.5 rounded-full shadow-md">
                 Most Popular
               </div>
               <div>
@@ -385,7 +385,7 @@ export default function ContentPage() {
       <section className="py-20 px-4 lg:px-12 bg-primary/40 border-t border-primary">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <span className="text-brand font-bold tracking-normalst text-xs uppercase">Why Choose Image Quest?</span>
+            <span className="text-brand font-bold tracking-normal text-xs uppercase">Why Choose Image Quest?</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-normal">Excellence In Every Line of Code & Design</h2>
             <p className="text-border text-sm leading-relaxed">
               We combine creative brilliance with cutting-edge technical execution to deliver exceptional digital assets that elevate your brand and drive continuous business growth.
@@ -445,12 +445,12 @@ export default function ContentPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
             <div>
-              <span className="text-brand font-bold tracking-normalst text-xs uppercase">Portfolio</span>
+              <span className="text-brand font-bold tracking-normal text-xs uppercase">Portfolio</span>
               <h2 className="text-3xl font-extrabold tracking-normal mt-1">Recent Website Projects</h2>
             </div>
             <Button variant="unstyled" 
               onClick={() => showAlert("Viewing full portfolio gallery.")}
-              className="bg-primary hover:bg-brand text-brand-foreground font-bold text-xs uppercase tracking-normalr px-6 py-3 rounded-lg border border-primary transition-all flex items-center gap-2"
+              className="bg-primary hover:bg-brand text-brand-foreground font-bold text-xs uppercase tracking-normal px-6 py-3 rounded-lg border border-primary transition-all flex items-center gap-2"
             >
               <span>VIEW ALL PROJECTS</span>
               <span>➔</span>
@@ -491,7 +491,7 @@ export default function ContentPage() {
       <section className="py-20 px-4 lg:px-12 bg-primary/50 border-t border-primary">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <span className="text-brand font-bold tracking-normalst text-xs uppercase">Why Go Digital</span>
+            <span className="text-brand font-bold tracking-normal text-xs uppercase">Why Go Digital</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-normal">Benefits of a Professional Website</h2>
             <div className="space-y-4 pt-2">
               <div className="flex items-center gap-3 bg-primary p-4 rounded-xl border border-primary">
@@ -536,7 +536,7 @@ export default function ContentPage() {
       <section className="py-20 px-4 lg:px-12 bg-topbar border-t border-primary">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-3">
-            <span className="text-brand font-bold tracking-normalst text-xs uppercase">Got Questions?</span>
+            <span className="text-brand font-bold tracking-normal text-xs uppercase">Got Questions?</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-normal">Frequently Asked Questions</h2>
             <div className="w-16 h-1 bg-brand mx-auto rounded-full"></div>
           </div>
@@ -598,7 +598,7 @@ export default function ContentPage() {
 
       {/* Consultation / Quote Modal */}
       {isConsultationModalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-primary border border-primary rounded-3xl max-w-lg w-full p-8 relative shadow-2xl">
             <Button variant="unstyled" 
               onClick={() => setIsConsultationModalOpen(false)}
@@ -607,7 +607,7 @@ export default function ContentPage() {
               ✕
             </Button>
             <div className="mb-6">
-              <span className="text-brand font-bold text-xs uppercase tracking-normalr">Get Started</span>
+              <span className="text-brand font-bold text-xs uppercase tracking-normal">Get Started</span>
               <h3 className="text-2xl font-black text-brand-foreground mt-1">Request a Free Consultation</h3>
               <p className="text-muted-foreground text-xs mt-1">Fill in your details and our team will contact you within 2 hours.</p>
             </div>
@@ -626,9 +626,9 @@ export default function ContentPage() {
               </div>
               <div>
                 <label className="block text-xs font-bold uppercase text-border mb-1">Selected Package / Service</label>
-                <select className="w-full bg-topbar border border-primary rounded-lg px-4 py-3 text-brand-foreground text-sm focus:border-brand focus:outline-none">
+                <select defaultValue={selectedPackage} className="w-full bg-topbar border border-primary rounded-lg px-4 py-3 text-brand-foreground text-sm focus:border-brand focus:outline-none">
                   <option value="starter">Starter Website (KES 29,999)</option>
-                  <option value="business" selected={selectedPackage === 'business'}>Business Website (KES 59,999)</option>
+                  <option value="business" >Business Website (KES 59,999)</option>
                   <option value="ecommerce">E-Commerce Website (KES 89,999)</option>
                   <option value="custom">Custom Web Application</option>
                 </select>
@@ -643,7 +643,7 @@ export default function ContentPage() {
 
       {/* Custom Alert Modal */}
       {modalMessage && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-primary border border-primary rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl">
             <div className="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center text-xl mx-auto font-bold">ℹ</div>
             <h4 className="text-xl font-bold text-brand-foreground">Image Quest Graphics</h4>

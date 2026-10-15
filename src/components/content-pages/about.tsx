@@ -30,7 +30,7 @@ export default function ContentPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-block bg-brand/10 text-brand px-3 py-1 rounded-full text-xs font-bold tracking-normalst uppercase border border-brand/20">
+              <div className="inline-block bg-brand/10 text-brand px-3 py-1 rounded-full text-xs font-bold tracking-normal uppercase border border-brand/20">
                 About Our Agency
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-tight">
@@ -45,13 +45,13 @@ export default function ContentPage() {
               <div className="pt-4 flex flex-wrap gap-4">
                 <Button variant="unstyled" 
                   onClick={() => setQuoteModalOpen(true)}
-                  className="bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-4 rounded shadow-xl shadow-brand/30 transition flex items-center gap-3 uppercase text-sm tracking-normalr"
+                  className="bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-4 rounded shadow-xl shadow-brand/30 transition flex items-center gap-3 uppercase text-sm tracking-normal"
                 >
                   Explore Solutions <ArrowRight className="w-4 h-4" />
                 </Button>
                 <a 
                   href="tel:+254720791677"
-                  className="bg-primary hover:bg-muted-foreground text-brand-foreground font-bold px-8 py-4 rounded border border-muted-foreground transition flex items-center gap-3 uppercase text-sm tracking-normalr"
+                  className="bg-primary hover:bg-muted-foreground text-brand-foreground font-bold px-8 py-4 rounded border border-muted-foreground transition flex items-center gap-3 uppercase text-sm tracking-normal"
                 >
                   <Phone className="w-4 h-4 text-brand" /> Speak To An Expert
                 </a>
@@ -88,7 +88,7 @@ export default function ContentPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
-              <div className="text-brand font-bold uppercase tracking-normalst text-xs flex items-center gap-2">
+              <div className="text-brand font-bold uppercase tracking-normal text-xs flex items-center gap-2">
                 <span className="w-8 h-0.5 bg-brand"></span> Our Story
               </div>
               <h2 className="text-3xl sm:text-4xl font-black tracking-normal leading-tight">
@@ -105,7 +105,7 @@ export default function ContentPage() {
               <div className="pt-4">
                 <a 
                   href="#milestones"
-                  className="inline-flex items-center gap-3 text-brand hover:text-brand font-bold uppercase text-sm tracking-normalr group"
+                  className="inline-flex items-center gap-3 text-brand hover:text-brand font-bold uppercase text-sm tracking-normal group"
                 >
                   Our Journey 
                   <span className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center group-hover:bg-brand group-hover:text-brand-foreground transition">
@@ -156,7 +156,7 @@ export default function ContentPage() {
       <section id="milestones" className="py-20 bg-topbar text-brand-foreground border-t border-b border-primary relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs">Our Journey</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs">Our Journey</span>
             <h2 className="text-3xl sm:text-4xl font-black tracking-normal">Milestones That Shaped Us</h2>
             <div className="w-16 h-1 bg-brand mx-auto mt-2"></div>
           </div>
@@ -198,7 +198,7 @@ export default function ContentPage() {
               <div className="w-14 h-14 rounded-xl bg-brand/10 text-brand flex items-center justify-center mb-6 border border-brand/20">
                 <Sparkles className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-black mb-3 uppercase tracking-normalr text-brand">Our Mission</h3>
+              <h3 className="text-xl font-black mb-3 uppercase tracking-normal text-brand">Our Mission</h3>
               <p className="text-border text-sm leading-relaxed">
                 To help businesses build brands that command trust through creative branding, signage, print and digital solutions.
               </p>
@@ -209,7 +209,7 @@ export default function ContentPage() {
               <div className="w-14 h-14 rounded-xl bg-brand/10 text-brand flex items-center justify-center mb-6 border border-brand/20">
                 <Globe className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-black mb-3 uppercase tracking-normalr text-brand">Our Vision</h3>
+              <h3 className="text-xl font-black mb-3 uppercase tracking-normal text-brand">Our Vision</h3>
               <p className="text-border text-sm leading-relaxed">
                 To become East Africa's most respected branding and business growth partner.
               </p>
@@ -220,7 +220,7 @@ export default function ContentPage() {
               <div className="w-14 h-14 rounded-xl bg-brand/10 text-brand flex items-center justify-center mb-6 border border-brand/20">
                 <Award className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-black mb-4 uppercase tracking-normalr text-brand">Our Values</h3>
+              <h3 className="text-xl font-black mb-4 uppercase tracking-normal text-brand">Our Values</h3>
               <ul className="space-y-2.5 text-sm text-border">
                 {[
                   "Professionalism", "Creativity", "Integrity", 
@@ -244,13 +244,13 @@ export default function ContentPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs">Why Choose Us</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs">Why Choose Us</span>
               <h2 className="text-3xl font-black text-brand-foreground mt-1">More Than A Supplier, We're Your Partner</h2>
             </div>
             <div className="mt-4 md:mt-0">
               <Button variant="unstyled" 
                 onClick={() => setQuoteModalOpen(true)}
-                className="bg-brand hover:bg-brand text-brand-foreground font-bold px-6 py-3 rounded text-sm uppercase tracking-normalr transition shadow-lg shadow-brand/20"
+                className="bg-brand hover:bg-brand text-brand-foreground font-bold px-6 py-3 rounded text-sm uppercase tracking-normal transition shadow-lg shadow-brand/20"
               >
                 Work With Us
               </Button>
@@ -284,7 +284,7 @@ export default function ContentPage() {
       <section className="py-20 bg-topbar text-brand-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs">Our Leadership Team</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs">Our Leadership Team</span>
             <h2 className="text-3xl sm:text-4xl font-black tracking-normal">The Minds Behind The Brand</h2>
             <div className="w-16 h-1 bg-brand mx-auto mt-2"></div>
           </div>
@@ -309,7 +309,7 @@ export default function ContentPage() {
                 <div className="p-5 text-center flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="font-bold text-brand-foreground text-base mb-1">{member.name}</h3>
-                    <p className="text-brand text-xs font-medium uppercase tracking-normalr">{member.role}</p>
+                    <p className="text-brand text-xs font-medium uppercase tracking-normal">{member.role}</p>
                   </div>
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default function ContentPage() {
           <div className="mt-12 text-center">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(true)}
-              className="inline-flex items-center gap-3 bg-primary hover:bg-muted-foreground text-brand-foreground font-bold px-8 py-4 rounded border border-muted-foreground transition uppercase text-sm tracking-normalr shadow-lg"
+              className="inline-flex items-center gap-3 bg-primary hover:bg-muted-foreground text-brand-foreground font-bold px-8 py-4 rounded border border-muted-foreground transition uppercase text-sm tracking-normal shadow-lg"
             >
               Join Our Team <ArrowRight className="w-4 h-4 text-brand" />
             </Button>
@@ -343,7 +343,7 @@ export default function ContentPage() {
           <div className="flex flex-wrap items-center gap-4 justify-center">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(true)}
-              className="bg-topbar text-brand-foreground hover:bg-primary font-bold px-8 py-4 rounded shadow-xl transition uppercase text-sm tracking-normalr"
+              className="bg-topbar text-brand-foreground hover:bg-primary font-bold px-8 py-4 rounded shadow-xl transition uppercase text-sm tracking-normal"
             >
               Book A Consultation
             </Button>
@@ -351,7 +351,7 @@ export default function ContentPage() {
               href="https://wa.me/254720791677" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-brand-foreground text-brand hover:bg-brand font-bold px-8 py-4 rounded shadow-xl transition uppercase text-sm tracking-normalr flex items-center gap-2"
+              className="bg-brand-foreground text-brand hover:bg-brand font-bold px-8 py-4 rounded shadow-xl transition uppercase text-sm tracking-normal flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4 text-success" /> Call / Whatsapp
             </a>
@@ -367,7 +367,7 @@ export default function ContentPage() {
 
       {/* Quote / Consultation Modal */}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-topbar border border-muted-foreground rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl text-brand-foreground">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}
@@ -405,9 +405,9 @@ export default function ContentPage() {
               </div>
               <div>
                 <label className="block text-xs font-semibold uppercase text-border mb-1">Project Details</label>
-                <textarea rows="3" className="w-full bg-topbar border border-muted-foreground rounded p-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" placeholder="Tell us about your project..."></textarea>
+                <textarea rows={3} className="w-full bg-topbar border border-muted-foreground rounded p-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" placeholder="Tell us about your project..."></textarea>
               </div>
-              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold py-3 rounded uppercase text-sm tracking-normalr shadow-lg transition">
+              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold py-3 rounded uppercase text-sm tracking-normal shadow-lg transition">
                 Submit Request
               </Button>
             </form>

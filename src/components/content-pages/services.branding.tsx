@@ -97,7 +97,7 @@ export default function ImageQuestBrandingPage() {
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center space-x-2 bg-brand/10 border border-brand/30 px-3.5 py-1.5 rounded-full">
                 <span className="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                <span className="text-xs sm:text-sm font-semibold uppercase tracking-normalr text-brand">Branding & Corporate Identity</span>
+                <span className="text-xs sm:text-sm font-semibold uppercase tracking-normal text-brand">Branding & Corporate Identity</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-tight">
@@ -114,14 +114,14 @@ export default function ImageQuestBrandingPage() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
                 <Button variant="unstyled" 
                   onClick={() => setConsultModalOpen(true)}
-                  className="bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-4 rounded-lg shadow-xl shadow-brand/30 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-3 uppercase tracking-normalr text-sm"
+                  className="bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-4 rounded-lg shadow-xl shadow-brand/30 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-3 uppercase tracking-normal text-sm"
                 >
                   <Award className="w-4 h-4" />
                   <span>Get A Free Brand Audit</span>
                 </Button>
                 <Link 
                   to="/solutions"
-                  className="bg-primary/80 hover:bg-primary text-brand-foreground border border-muted-foreground font-bold px-7 py-4 rounded-lg transition flex items-center justify-center space-x-3 uppercase tracking-normalr text-sm group"
+                  className="bg-primary/80 hover:bg-primary text-brand-foreground border border-muted-foreground font-bold px-7 py-4 rounded-lg transition flex items-center justify-center space-x-3 uppercase tracking-normal text-sm group"
                 >
                   <span>View Our Work</span>
                   <ArrowRight className="w-4 h-4 text-brand group-hover:translate-x-1 transition" />
@@ -211,7 +211,7 @@ export default function ImageQuestBrandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">What's Included</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">What's Included</span>
             <h2 className="text-3xl sm:text-4xl font-black text-primary mt-3">Complete Branding Solutions</h2>
             <p className="text-muted-foreground mt-2 text-sm sm:text-base">Everything you need to establish, launch, and scale a world-class brand.</p>
           </div>
@@ -390,7 +390,7 @@ export default function ImageQuestBrandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Our Process</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Our Process</span>
             <h2 className="text-3xl sm:text-4xl font-black mt-3">A Proven Branding Process</h2>
             <p className="text-muted-foreground mt-2 text-sm sm:text-base">A structured, collaborative approach to creating brands that leave lasting impressions.</p>
           </div>
@@ -461,7 +461,7 @@ export default function ImageQuestBrandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Our Work</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Our Work</span>
             <h2 className="text-3xl sm:text-4xl font-black text-primary mt-3">Brands We'Ve Built With Purpose</h2>
             
             {/* Filter Tabs */}
@@ -485,7 +485,7 @@ export default function ImageQuestBrandingPage() {
                   <img src={proj.image} alt={proj.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
                 </div>
                 <h3 className="font-bold text-sm text-primary text-center">{proj.name}</h3>
-                <p className="text-[10px] text-muted-foreground text-center uppercase tracking-normalr mt-0.5">{proj.category}</p>
+                <p className="text-[10px] text-muted-foreground text-center uppercase tracking-normal mt-0.5">{proj.category}</p>
               </div>
             ))}
           </div>
@@ -493,7 +493,7 @@ export default function ImageQuestBrandingPage() {
           <div className="text-center mt-12">
             <Button variant="unstyled" 
               onClick={() => setConsultModalOpen(true)}
-              className="inline-flex items-center space-x-2 text-brand font-bold hover:text-brand transition uppercase tracking-normalr text-sm"
+              className="inline-flex items-center space-x-2 text-brand font-bold hover:text-brand transition uppercase tracking-normal text-sm"
             >
               <span>View All Projects</span>
               <ArrowRight className="w-4 h-4" />
@@ -511,7 +511,7 @@ export default function ImageQuestBrandingPage() {
             
             {/* Why Branding Matters (Left) */}
             <div className="lg:col-span-5 bg-brand-foreground p-8 rounded-3xl border border-border shadow-sm">
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Why Branding Matters</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Why Branding Matters</span>
               <h3 className="text-2xl font-black text-primary mt-3 mb-6">A Strong Brand Helps You</h3>
               
               <ul className="space-y-4 text-sm text-muted-foreground">
@@ -548,7 +548,7 @@ export default function ImageQuestBrandingPage() {
 
             {/* FAQ Accordion (Right) */}
             <div className="lg:col-span-7 bg-brand-foreground p-8 rounded-3xl border border-border shadow-sm">
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Frequently Asked Questions</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Frequently Asked Questions</span>
               <h3 className="text-2xl font-black text-primary mt-3 mb-6">Everything You Need To Know</h3>
 
               <div className="space-y-4">
@@ -582,7 +582,7 @@ export default function ImageQuestBrandingPage() {
           <div className="bg-gradient-to-r from-primary to-topbar rounded-3xl p-8 lg:p-12 border border-primary shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             
             <div className="space-y-4 max-w-2xl text-center lg:text-left">
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Let's Talk</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Let's Talk</span>
               <h2 className="text-3xl sm:text-4xl font-black">
                 Ready To Build <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand">A Powerful Brand?</span>
@@ -593,7 +593,7 @@ export default function ImageQuestBrandingPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
                 <Button variant="unstyled" 
                   onClick={() => setConsultModalOpen(true)}
-                  className="w-full sm:w-auto bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normalr text-sm flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normal text-sm flex items-center justify-center space-x-2"
                 >
                   <Award className="w-4 h-4" />
                   <span>Book A Consultation</span>
@@ -602,7 +602,7 @@ export default function ImageQuestBrandingPage() {
                   href="https://wa.me/254720791677" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-primary hover:bg-muted-foreground text-brand-foreground border border-muted-foreground font-bold px-8 py-3.5 rounded-xl transition uppercase tracking-normalr text-sm flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto bg-primary hover:bg-muted-foreground text-brand-foreground border border-muted-foreground font-bold px-8 py-3.5 rounded-xl transition uppercase tracking-normal text-sm flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-4 h-4 text-success" />
                   <span>Call / WhatsApp</span>
@@ -633,7 +633,7 @@ export default function ImageQuestBrandingPage() {
 
       {/* Consultation Modal */}
       {consultModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm">
           <div className="bg-brand-foreground rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-muted">
             <Button variant="unstyled" 
               onClick={() => setConsultModalOpen(false)}
@@ -654,7 +654,7 @@ export default function ImageQuestBrandingPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div className="text-center mb-6">
-                  <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Get Started</span>
+                  <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Get Started</span>
                   <h3 className="text-2xl font-black text-primary mt-2">Request Brand Consultation</h3>
                   <p className="text-xs text-muted-foreground mt-1">Fill out the form and we'll contact you instantly.</p>
                 </div>
@@ -723,7 +723,7 @@ export default function ImageQuestBrandingPage() {
 
                 <Button variant="unstyled" 
                   type="submit" 
-                  className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normalr text-xs flex items-center justify-center space-x-2"
+                  className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normal text-xs flex items-center justify-center space-x-2"
                 >
                   <Send className="w-4 h-4" />
                   <span>Submit Request</span>

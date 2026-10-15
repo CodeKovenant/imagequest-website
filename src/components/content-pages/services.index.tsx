@@ -1,3 +1,4 @@
+import { serviceLinks } from "@/lib/site-navigation";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -171,7 +172,7 @@ export default function ContentPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs">OUR SERVICES</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs">OUR SERVICES</span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-none">
                 Creative Solutions. <br />
                 <span className="text-brand">Powerful Results.</span>
@@ -215,7 +216,7 @@ export default function ContentPage() {
       {}
       <section className="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-brand font-bold uppercase tracking-normalst text-xs">OUR SERVICES</span>
+          <span className="text-brand font-bold uppercase tracking-normal text-xs">OUR SERVICES</span>
           <h2 className="text-3xl sm:text-4xl font-black tracking-normal">Complete Solutions Under One Roof</h2>
           <p className="text-muted-foreground text-sm sm:text-base">
             We offer a full range of creative, digital and print solutions to build, grow and elevate your brand. Explore our core service areas below.
@@ -223,7 +224,7 @@ export default function ContentPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div 
               key={service.id}
               className="bg-topbar border border-primary rounded-xl overflow-hidden hover:border-brand/60 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1"
@@ -258,12 +259,12 @@ export default function ContentPage() {
               </div>
 
               <div className="p-6 pt-0">
-                <a 
-                  href={`#service-${service.id}`} 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-brand hover:text-brand tracking-normalr uppercase transition-colors group/link"
+                <Link 
+                  to={serviceLinks[index === 2 || index === 3 ? 1 : index > 3 ? index - 2 : index]?.to ?? "/services"} 
+                  className="inline-flex items-center gap-2 text-xs font-bold text-brand hover:text-brand tracking-normal uppercase transition-colors group/link"
                 >
                   LEARN MORE <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -296,7 +297,7 @@ export default function ContentPage() {
           </div>
 
           <div className="space-y-3 text-center lg:text-left z-10">
-            <div className="inline-block bg-topbar/20 backdrop-blur-md px-3 py-1 rounded text-xs font-bold uppercase tracking-normalr text-brand">
+            <div className="inline-block bg-topbar/20 backdrop-blur-md px-3 py-1 rounded text-xs font-bold uppercase tracking-normal text-brand">
               Expert Consultation
             </div>
             <h2 className="text-3xl sm:text-4xl font-black tracking-normal">Not Sure Which Service You Need?</h2>
@@ -306,11 +307,11 @@ export default function ContentPage() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 z-10">
-            <Button variant="unstyled" className="bg-topbar hover:bg-primary text-brand-foreground font-bold px-8 py-4 rounded-lg text-sm transition-all shadow-xl flex items-center gap-2 border border-primary">
-              <Phone className="w-4 h-4 text-brand" /> SCHEDULE A CALL
+            <Button variant="unstyled" asChild className="bg-topbar hover:bg-primary text-brand-foreground font-bold px-8 py-4 rounded-lg text-sm transition-all shadow-xl flex items-center gap-2 border border-primary">
+              <a href="tel:+254720791677"><Phone className="w-4 h-4 text-brand" /> SCHEDULE A CALL</a>
             </Button>
-            <Button variant="unstyled" className="bg-brand-foreground hover:bg-muted text-brand font-bold px-8 py-4 rounded-lg text-sm transition-all shadow-xl flex items-center gap-2">
-              REQUEST A QUOTE <ArrowRight className="w-4 h-4" />
+            <Button variant="unstyled" asChild className="bg-brand-foreground hover:bg-muted text-brand font-bold px-8 py-4 rounded-lg text-sm transition-all shadow-xl flex items-center gap-2">
+              <Link to="/contact">REQUEST A QUOTE <ArrowRight className="w-4 h-4" /></Link>
             </Button>
           </div>
         </div>

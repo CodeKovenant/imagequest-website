@@ -77,7 +77,7 @@ export default function ImageQuestMerchPage() {
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center space-x-2 bg-brand/10 border border-brand/30 px-3.5 py-1.5 rounded-full">
                 <span className="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                <span className="text-xs sm:text-sm font-semibold uppercase tracking-normalr text-brand">Promotional Merchandise</span>
+                <span className="text-xs sm:text-sm font-semibold uppercase tracking-normal text-brand">Promotional Merchandise</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-tight">
@@ -94,14 +94,14 @@ export default function ImageQuestMerchPage() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
                 <Button variant="unstyled" 
                   onClick={() => setQuoteModalOpen(true)}
-                  className="bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-4 rounded-lg shadow-xl shadow-brand/30 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-3 uppercase tracking-normalr text-sm"
+                  className="bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-4 rounded-lg shadow-xl shadow-brand/30 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-3 uppercase tracking-normal text-sm"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Get A Free Merch Quote</span>
                 </Button>
                 <a 
                   href="#range"
-                  className="bg-primary/80 hover:bg-primary text-brand-foreground border border-muted-foreground font-bold px-7 py-4 rounded-lg transition flex items-center justify-center space-x-3 uppercase tracking-normalr text-sm group"
+                  className="bg-primary/80 hover:bg-primary text-brand-foreground border border-muted-foreground font-bold px-7 py-4 rounded-lg transition flex items-center justify-center space-x-3 uppercase tracking-normal text-sm group"
                 >
                   <span>View Our Catalogue</span>
                   <ArrowRight className="w-4 h-4 text-brand group-hover:translate-x-1 transition" />
@@ -224,7 +224,7 @@ export default function ImageQuestMerchPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Our Merchandise Range</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Our Merchandise Range</span>
             <h2 className="text-3xl sm:text-4xl font-black text-primary mt-3">Quality Branded Items For Every Need</h2>
             <p className="text-muted-foreground mt-2 text-sm sm:text-base">Explore our extensive catalog of promotional products tailored to elevate your corporate identity.</p>
           </div>
@@ -240,7 +240,7 @@ export default function ImageQuestMerchPage() {
                     alt="Drinkware" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-brand text-brand-foreground text-xs font-bold px-3 py-1 rounded-md uppercase tracking-normalr">Popular</div>
+                  <div className="absolute top-3 left-3 bg-brand text-brand-foreground text-xs font-bold px-3 py-1 rounded-md uppercase tracking-normal">Popular</div>
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
@@ -428,7 +428,7 @@ export default function ImageQuestMerchPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Our Process</span>
+            <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Our Process</span>
             <h2 className="text-3xl sm:text-4xl font-black mt-3">From Concept To Delivery</h2>
             <p className="text-muted-foreground mt-2 text-sm sm:text-base">A seamless journey ensuring absolute perfection for your brand merchandise.</p>
           </div>
@@ -561,7 +561,7 @@ export default function ImageQuestMerchPage() {
             {/* Popular Merch Packages (Right Column) */}
             <div className="lg:col-span-8">
               <div className="text-center lg:text-left mb-10">
-                <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Popular Merch Packages</span>
+                <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Popular Merch Packages</span>
                 <h2 className="text-3xl font-black text-primary mt-3">Ready-To-Go Bundles For Your Campaign</h2>
               </div>
 
@@ -586,7 +586,7 @@ export default function ImageQuestMerchPage() {
                   </div>
                   <Button variant="unstyled" 
                     onClick={() => { setFormData({...formData, package: 'Starter Pack (KES 35,000)'}); setQuoteModalOpen(true); }}
-                    className="w-full bg-primary hover:bg-brand text-brand-foreground font-bold py-2.5 rounded-xl transition text-xs uppercase tracking-normalr"
+                    className="w-full bg-primary hover:bg-brand text-brand-foreground font-bold py-2.5 rounded-xl transition text-xs uppercase tracking-normal"
                   >
                     Get Started
                   </Button>
@@ -594,7 +594,7 @@ export default function ImageQuestMerchPage() {
 
                 {/* Business Pack (Most Popular) */}
                 <div className="bg-gradient-to-b from-brand to-brand text-brand-foreground rounded-2xl p-6 shadow-xl relative transform md:-translate-y-2 flex flex-col justify-between">
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-brand text-[10px] font-black uppercase tracking-normalst px-3 py-1 rounded-full shadow-md">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-brand text-[10px] font-black uppercase tracking-normal px-3 py-1 rounded-full shadow-md">
                     Most Popular
                   </div>
                   <div>
@@ -614,7 +614,7 @@ export default function ImageQuestMerchPage() {
                   </div>
                   <Button variant="unstyled" 
                     onClick={() => { setFormData({...formData, package: 'Business Pack (KES 75,000)'}); setQuoteModalOpen(true); }}
-                    className="w-full bg-brand-foreground hover:bg-primary text-brand hover:text-brand-foreground font-bold py-3 rounded-xl transition text-xs uppercase tracking-normalr shadow-md"
+                    className="w-full bg-brand-foreground hover:bg-primary text-brand hover:text-brand-foreground font-bold py-3 rounded-xl transition text-xs uppercase tracking-normal shadow-md"
                   >
                     Get Started
                   </Button>
@@ -639,7 +639,7 @@ export default function ImageQuestMerchPage() {
                   </div>
                   <Button variant="unstyled" 
                     onClick={() => { setFormData({...formData, package: 'Corporate Pack (KES 150,000)'}); setQuoteModalOpen(true); }}
-                    className="w-full bg-primary hover:bg-brand text-brand-foreground font-bold py-2.5 rounded-xl transition text-xs uppercase tracking-normalr"
+                    className="w-full bg-primary hover:bg-brand text-brand-foreground font-bold py-2.5 rounded-xl transition text-xs uppercase tracking-normal"
                   >
                     Get Started
                   </Button>
@@ -659,7 +659,7 @@ export default function ImageQuestMerchPage() {
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
             <div>
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Recent Merch Projects</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Recent Merch Projects</span>
               <h2 className="text-2xl sm:text-3xl font-black text-primary mt-2">Trusted By Leading Brands Across Kenya</h2>
             </div>
             <div className="flex items-center space-x-3 mt-4 md:mt-0">
@@ -703,7 +703,7 @@ export default function ImageQuestMerchPage() {
           <div className="bg-gradient-to-r from-primary to-topbar rounded-3xl p-8 lg:p-12 border border-primary shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             
             <div className="space-y-4 max-w-2xl text-center lg:text-left">
-              <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Elevate Your Corporate Identity</span>
+              <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand/10 px-3 py-1 rounded-full border border-brand/20">Elevate Your Corporate Identity</span>
               <h2 className="text-3xl sm:text-4xl font-black">
                 Let's Put Your Brand <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand">In Their Hands.</span>
@@ -714,7 +714,7 @@ export default function ImageQuestMerchPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
                 <Button variant="unstyled" 
                   onClick={() => setQuoteModalOpen(true)}
-                  className="w-full sm:w-auto bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normalr text-sm flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto bg-brand hover:bg-brand text-brand-foreground font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normal text-sm flex items-center justify-center space-x-2"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Get A Free Merch Quote</span>
@@ -723,7 +723,7 @@ export default function ImageQuestMerchPage() {
                   href="https://wa.me/254720791677" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-primary hover:bg-muted-foreground text-brand-foreground border border-muted-foreground font-bold px-8 py-3.5 rounded-xl transition uppercase tracking-normalr text-sm flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto bg-primary hover:bg-muted-foreground text-brand-foreground border border-muted-foreground font-bold px-8 py-3.5 rounded-xl transition uppercase tracking-normal text-sm flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-4 h-4 text-success" />
                   <span>Call / WhatsApp</span>
@@ -754,7 +754,7 @@ export default function ImageQuestMerchPage() {
 
       {/* Quote Modal */}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm">
           <div className="bg-brand-foreground rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-muted">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}
@@ -775,7 +775,7 @@ export default function ImageQuestMerchPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div className="text-center mb-6">
-                  <span className="text-brand font-bold uppercase tracking-normalst text-xs bg-brand px-3 py-1 rounded-full">Quick Inquiry</span>
+                  <span className="text-brand font-bold uppercase tracking-normal text-xs bg-brand px-3 py-1 rounded-full">Quick Inquiry</span>
                   <h3 className="text-2xl font-black text-primary mt-2">Request Merch Quote</h3>
                   <p className="text-xs text-muted-foreground mt-1">Fill out the form below and we'll contact you instantly.</p>
                 </div>
@@ -846,7 +846,7 @@ export default function ImageQuestMerchPage() {
 
                 <Button variant="unstyled" 
                   type="submit" 
-                  className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normalr text-xs flex items-center justify-center space-x-2"
+                  className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold py-3.5 rounded-xl shadow-lg shadow-brand/30 transition uppercase tracking-normal text-xs flex items-center justify-center space-x-2"
                 >
                   <Send className="w-4 h-4" />
                   <span>Submit Quote Request</span>

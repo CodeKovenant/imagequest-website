@@ -108,9 +108,9 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-5 space-y-3">
                 {serviceLinks.map((item) => (
-                  <li key={item}>
+                  <li key={item.to}>
                     <Link to={item.to} className={linkClass}>
-                      {item}
+                      {item.label}
                     </Link>
                   </li>
                 ))}

@@ -11,10 +11,10 @@ import {
 } from 'lucide-react';
 
 export default function ContentPage() {
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [selectedBilling, setSelectedBilling] = useState('monthly');
 
-  const toggleFaq = (index) => {
+  const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
@@ -53,7 +53,7 @@ export default function ContentPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-topbar via-topbar/90 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-          <div className="text-xs uppercase tracking-normalst text-muted-foreground mb-3 font-semibold">
+          <div className="text-xs uppercase tracking-normal text-muted-foreground mb-3 font-semibold">
             Home &gt; Solutions &gt; <span className="text-brand">Corporate Brand Partnership</span>
           </div>
 
@@ -88,27 +88,27 @@ export default function ContentPage() {
             <div className="flex flex-col items-center text-center pt-4 md:pt-0">
               <Users className="w-8 h-8 text-brand mb-2" />
               <div className="text-2xl sm:text-3xl font-black text-brand-foreground">500+</div>
-              <div className="text-xs uppercase tracking-normalr text-muted-foreground mt-1">Businesses Served</div>
+              <div className="text-xs uppercase tracking-normal text-muted-foreground mt-1">Businesses Served</div>
             </div>
             <div className="flex flex-col items-center text-center pt-4 md:pt-0">
               <Clock3 className="w-8 h-8 text-brand mb-2" />
               <div className="text-2xl sm:text-3xl font-black text-brand-foreground">15+</div>
-              <div className="text-xs uppercase tracking-normalr text-muted-foreground mt-1">Years Experience</div>
+              <div className="text-xs uppercase tracking-normal text-muted-foreground mt-1">Years Experience</div>
             </div>
             <div className="flex flex-col items-center text-center pt-4 md:pt-0">
               <Award className="w-8 h-8 text-brand mb-2" />
               <div className="text-2xl sm:text-3xl font-black text-brand-foreground">2,500+</div>
-              <div className="text-xs uppercase tracking-normalr text-muted-foreground mt-1">Projects Completed</div>
+              <div className="text-xs uppercase tracking-normal text-muted-foreground mt-1">Projects Completed</div>
             </div>
             <div className="flex flex-col items-center text-center pt-4 md:pt-0">
               <ShieldCheck className="w-8 h-8 text-brand mb-2" />
               <div className="text-2xl sm:text-3xl font-black text-brand-foreground">Dedicated</div>
-              <div className="text-xs uppercase tracking-normalr text-muted-foreground mt-1">Creative Team</div>
+              <div className="text-xs uppercase tracking-normal text-muted-foreground mt-1">Creative Team</div>
             </div>
             <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center pt-4 md:pt-0">
               <Zap className="w-8 h-8 text-brand mb-2" />
               <div className="text-2xl sm:text-3xl font-black text-brand-foreground">Ongoing</div>
-              <div className="text-xs uppercase tracking-normalr text-muted-foreground mt-1">Strategic Support</div>
+              <div className="text-xs uppercase tracking-normal text-muted-foreground mt-1">Strategic Support</div>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function ContentPage() {
       {}
       <section className="py-20 bg-topbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center mb-16">
-          <span className="text-brand uppercase tracking-normalst text-xs font-bold block mb-2">WHY PARTNER WITH IMAGE QUEST?</span>
+          <span className="text-brand uppercase tracking-normal text-xs font-bold block mb-2">WHY PARTNER WITH IMAGE QUEST?</span>
           <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal">
             More Than A Supplier, We're Your Growth Partner
           </h2>
@@ -170,7 +170,7 @@ export default function ContentPage() {
       {}
       <section className="py-20 bg-topbar border-y border-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center mb-16">
-          <span className="text-brand uppercase tracking-normalst text-xs font-bold block mb-2">WHAT'S INCLUDED</span>
+          <span className="text-brand uppercase tracking-normal text-xs font-bold block mb-2">WHAT'S INCLUDED</span>
           <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal">
             Comprehensive Branding & Marketing Support
           </h2>
@@ -204,11 +204,11 @@ export default function ContentPage() {
                 src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80" 
                 alt="Branding Mockup" 
                 className="rounded-lg shadow-2xl object-cover w-full h-64 border border-muted-foreground"
-                onError={(e) => { e.target.src = 'https://placehold.co/600x400/222/fff?text=IQ+Branding+Assets'; }}
+                onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/222/fff?text=IQ+Branding+Assets'; }}
               />
             </div>
             <div className="mt-6 text-center">
-              <span className="text-xs uppercase tracking-normalst font-bold text-brand">Premium Collaterals & Digital Assets</span>
+              <span className="text-xs uppercase tracking-normal font-bold text-brand">Premium Collaterals & Digital Assets</span>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ export default function ContentPage() {
       {}
       <section className="py-20 bg-topbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center mb-16">
-          <span className="text-brand uppercase tracking-normalst text-xs font-bold block mb-2">HOW IT WORKS</span>
+          <span className="text-brand uppercase tracking-normal text-xs font-bold block mb-2">HOW IT WORKS</span>
           <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal">
             A Simple Partnership Process
           </h2>
@@ -262,7 +262,7 @@ export default function ContentPage() {
       {}
       <section id="pricing" className="py-20 bg-topbar border-t border-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center mb-16">
-          <span className="text-brand uppercase tracking-normalst text-xs font-bold block mb-2">RETAINER PACKAGES</span>
+          <span className="text-brand uppercase tracking-normal text-xs font-bold block mb-2">RETAINER PACKAGES</span>
           <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal mb-4">
             Flexible Plans. Measurable Results.
           </h2>
@@ -273,7 +273,7 @@ export default function ContentPage() {
           <div className="bg-topbar border border-primary rounded-2xl p-8 flex flex-col justify-between hover:border-muted-foreground transition-all">
             <div>
               <div className="text-center mb-6">
-                <span className="text-xs uppercase tracking-normalst text-muted-foreground font-bold block mb-1">BRONZE</span>
+                <span className="text-xs uppercase tracking-normal text-muted-foreground font-bold block mb-1">BRONZE</span>
                 <h3 className="text-2xl font-black text-brand-foreground mb-4">Essentials</h3>
                 <div className="text-3xl sm:text-4xl font-black text-brand">
                   KES 39,999 <span className="text-xs text-muted-foreground font-normal">/month</span>
@@ -296,20 +296,20 @@ export default function ContentPage() {
               </div>
             </div>
 
-            <a href="#" className="w-full bg-primary hover:bg-muted-foreground text-brand-foreground font-bold text-center py-3 rounded text-sm uppercase tracking-normalr transition-colors">
+            <a href="#" className="w-full bg-primary hover:bg-muted-foreground text-brand-foreground font-bold text-center py-3 rounded text-sm uppercase tracking-normal transition-colors">
               GET STARTED
             </a>
           </div>
 
           {/* Silver Tier (Most Popular) */}
           <div className="bg-topbar border-2 border-brand rounded-2xl p-8 flex flex-col justify-between relative shadow-2xl shadow-brand/10">
-            <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-brand text-brand-foreground text-[10px] uppercase font-black px-4 py-1 rounded-full tracking-normalst">
+            <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-brand text-brand-foreground text-[10px] uppercase font-black px-4 py-1 rounded-full tracking-normal">
               MOST POPULAR
             </div>
 
             <div>
               <div className="text-center mb-6 pt-2">
-                <span className="text-xs uppercase tracking-normalst text-brand font-bold block mb-1">SILVER</span>
+                <span className="text-xs uppercase tracking-normal text-brand font-bold block mb-1">SILVER</span>
                 <h3 className="text-2xl font-black text-brand-foreground mb-4">Growth</h3>
                 <div className="text-3xl sm:text-4xl font-black text-brand">
                   KES 69,999 <span className="text-xs text-muted-foreground font-normal">/month</span>
@@ -334,7 +334,7 @@ export default function ContentPage() {
               </div>
             </div>
 
-            <a href="#" className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold text-center py-3 rounded text-sm uppercase tracking-normalr transition-colors shadow-lg shadow-brand/30">
+            <a href="#" className="w-full bg-brand hover:bg-brand text-brand-foreground font-bold text-center py-3 rounded text-sm uppercase tracking-normal transition-colors shadow-lg shadow-brand/30">
               GET STARTED
             </a>
           </div>
@@ -343,7 +343,7 @@ export default function ContentPage() {
           <div className="bg-topbar border border-primary rounded-2xl p-8 flex flex-col justify-between hover:border-muted-foreground transition-all">
             <div>
               <div className="text-center mb-6">
-                <span className="text-xs uppercase tracking-normalst text-muted-foreground font-bold block mb-1">GOLD</span>
+                <span className="text-xs uppercase tracking-normal text-muted-foreground font-bold block mb-1">GOLD</span>
                 <h3 className="text-2xl font-black text-brand-foreground mb-4">Enterprise</h3>
                 <div className="text-3xl sm:text-4xl font-black text-brand">
                   KES 129,999 <span className="text-xs text-muted-foreground font-normal">/month</span>
@@ -368,7 +368,7 @@ export default function ContentPage() {
               </div>
             </div>
 
-            <a href="#" className="w-full bg-primary hover:bg-muted-foreground text-brand-foreground font-bold text-center py-3 rounded text-sm uppercase tracking-normalr transition-colors">
+            <a href="#" className="w-full bg-primary hover:bg-muted-foreground text-brand-foreground font-bold text-center py-3 rounded text-sm uppercase tracking-normal transition-colors">
               GET STARTED
             </a>
           </div>
@@ -382,7 +382,7 @@ export default function ContentPage() {
       {}
       <section className="py-20 bg-topbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center mb-12">
-          <span className="text-brand uppercase tracking-normalst text-xs font-bold block mb-2">TRUSTED BY ORGANIZATIONS THAT LEAD</span>
+          <span className="text-brand uppercase tracking-normal text-xs font-bold block mb-2">TRUSTED BY ORGANIZATIONS THAT LEAD</span>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-2 md:grid-cols-6 gap-6 mb-16">
@@ -416,7 +416,7 @@ export default function ContentPage() {
       <section className="py-20 bg-topbar border-t border-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <div className="text-center mb-16">
-            <span className="text-brand uppercase tracking-normalst text-xs font-bold block mb-2">FREQUENTLY ASKED QUESTIONS</span>
+            <span className="text-brand uppercase tracking-normal text-xs font-bold block mb-2">FREQUENTLY ASKED QUESTIONS</span>
             <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground tracking-normal">
               Got Questions? We've Got Answers.
             </h2>
@@ -476,7 +476,7 @@ export default function ContentPage() {
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
                 alt="Professional Portrait" 
                 className="w-72 h-72 object-cover rounded-2xl shadow-2xl border-4 border-brand/30"
-                onError={(e) => { e.target.src = 'https://placehold.co/400x400/333/fff?text=Consultant'; }}
+                onError={(e) => { e.currentTarget.src = 'https://placehold.co/400x400/333/fff?text=Consultant'; }}
               />
             </div>
           </div>

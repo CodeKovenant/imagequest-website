@@ -11,17 +11,17 @@ import {
 } from 'lucide-react';
 
 export default function ContentPage() {
-  const [activeFaq, setActiveFaq] = useState(null);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [auditModalOpen, setAuditModalOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState(null);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  const showToast = (msg) => {
+  const showToast = (msg: string) => {
     setToastMessage(msg);
     setTimeout(() => setToastMessage(null), 3500);
   };
 
-  const toggleFaq = (index) => {
+  const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
@@ -124,7 +124,7 @@ export default function ContentPage() {
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-block bg-brand/20 border border-brand/40 text-brand text-xs font-bold px-3.5 py-1.5 rounded-full tracking-normalst uppercase">
+              <div className="inline-block bg-brand/20 border border-brand/40 text-brand text-xs font-bold px-3.5 py-1.5 rounded-full tracking-normal uppercase">
                 Signage
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-tight text-brand-foreground">
@@ -261,7 +261,7 @@ export default function ContentPage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-12">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-brand text-xs font-bold tracking-normalst uppercase">OUR SIGNAGE SOLUTIONS</span>
+            <span className="text-brand text-xs font-bold tracking-normal uppercase">OUR SIGNAGE SOLUTIONS</span>
             <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground mt-2">Custom Signage For Every Need</h2>
           </div>
 
@@ -312,7 +312,7 @@ export default function ContentPage() {
       {}
       <section className="bg-topbar border-y border-primary py-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-12 text-center">
-          <span className="text-brand text-xs font-bold tracking-normalst uppercase">QUALITY MATERIALS, SUPERIOR RESULTS.</span>
+          <span className="text-brand text-xs font-bold tracking-normal uppercase">QUALITY MATERIALS, SUPERIOR RESULTS.</span>
           <h3 className="text-2xl font-black text-brand-foreground mt-2 mb-10">Engineered with Industry-Standard Materials</h3>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
@@ -333,7 +333,7 @@ export default function ContentPage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-12">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-brand text-xs font-bold tracking-normalst uppercase">OUR PROCESS</span>
+            <span className="text-brand text-xs font-bold tracking-normal uppercase">OUR PROCESS</span>
             <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground mt-2">From Concept To Installation</h2>
           </div>
 
@@ -364,7 +364,7 @@ export default function ContentPage() {
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-brand text-xs font-bold tracking-normalst uppercase">RECENT SIGNAGE PROJECTS</span>
+              <span className="text-brand text-xs font-bold tracking-normal uppercase">RECENT SIGNAGE PROJECTS</span>
               <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground mt-2">Real Signs. Real Impact.</h2>
             </div>
             <Button variant="unstyled" 
@@ -386,7 +386,7 @@ export default function ContentPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-topbar via-topbar/40 to-transparent opacity-90"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-xs font-bold text-brand uppercase tracking-normalst">{proj.tag}</span>
+                  <span className="text-xs font-bold text-brand uppercase tracking-normal">{proj.tag}</span>
                   <h3 className="text-2xl font-black text-brand-foreground mt-1">{proj.name}</h3>
                 </div>
               </div>
@@ -433,7 +433,7 @@ export default function ContentPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-topbar opacity-70"></div>
                   <div className="absolute bottom-4 left-4">
-                    <span className="text-xs text-brand font-bold uppercase tracking-normalr">Client Spotlight</span>
+                    <span className="text-xs text-brand font-bold uppercase tracking-normal">Client Spotlight</span>
                     <h4 className="text-lg font-bold text-brand-foreground">Pearl Dental Clinic</h4>
                   </div>
                 </div>
@@ -474,7 +474,7 @@ export default function ContentPage() {
                 <div className="absolute top-0 right-0 w-48 h-48 bg-brand/10 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div>
-                  <span className="text-xs font-bold text-brand uppercase tracking-normalst">GET STARTED TODAY</span>
+                  <span className="text-xs font-bold text-brand uppercase tracking-normal">GET STARTED TODAY</span>
                   <h3 className="text-3xl font-black text-brand-foreground mt-2 mb-4">Ready To Get Noticed?</h3>
                   <p className="text-sm text-border leading-relaxed mb-6">
                     Let's create signage that puts your brand in the spotlight and drives continuous customer engagement.
@@ -496,7 +496,7 @@ export default function ContentPage() {
                 <div className="space-y-4">
                   <Button variant="unstyled" 
                     onClick={() => setQuoteModalOpen(true)}
-                    className="w-full bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-extrabold py-4 rounded-xl shadow-lg shadow-brand/30 uppercase tracking-normalr text-sm transition transform active:scale-95 flex items-center justify-center space-x-2"
+                    className="w-full bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-extrabold py-4 rounded-xl shadow-lg shadow-brand/30 uppercase tracking-normal text-sm transition transform active:scale-95 flex items-center justify-center space-x-2"
                   >
                     <span>REQUEST A QUOTE</span>
                     <ArrowRight className="w-4 h-4" />
@@ -509,7 +509,7 @@ export default function ContentPage() {
                     className="w-full border border-muted-foreground hover:border-brand bg-topbar hover:bg-topbar text-brand-foreground font-bold py-4 rounded-xl flex items-center justify-center space-x-3 transition"
                   >
                     <Phone className="w-5 h-5 text-brand" />
-                    <span className="uppercase text-sm tracking-normalr">CALL / WHATSAPP</span>
+                    <span className="uppercase text-sm tracking-normal">CALL / WHATSAPP</span>
                   </a>
                 </div>
 
@@ -536,7 +536,7 @@ export default function ContentPage() {
           <div className="flex flex-wrap items-center gap-4">
             <Button variant="unstyled" 
               onClick={() => setAuditModalOpen(true)}
-              className="bg-topbar hover:bg-primary text-brand-foreground font-extrabold px-6 py-3.5 rounded-xl shadow-xl uppercase tracking-normalr text-sm transition"
+              className="bg-topbar hover:bg-primary text-brand-foreground font-extrabold px-6 py-3.5 rounded-xl shadow-xl uppercase tracking-normal text-sm transition"
             >
               SCHEDULE A FREE SITE VISIT
             </Button>
@@ -544,7 +544,7 @@ export default function ContentPage() {
               href="https://wa.me/254720791677" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-brand-foreground hover:bg-muted text-brand font-extrabold px-6 py-3.5 rounded-xl shadow-xl uppercase tracking-normalr text-sm transition flex items-center space-x-2"
+              className="bg-brand-foreground hover:bg-muted text-brand font-extrabold px-6 py-3.5 rounded-xl shadow-xl uppercase tracking-normal text-sm transition flex items-center space-x-2"
             >
               <Phone className="w-4 h-4" />
               <span>CALL / WHATSAPP</span>
@@ -561,7 +561,7 @@ export default function ContentPage() {
 
       {}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-topbar border border-muted-foreground w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl animate-scaleUp">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}
@@ -595,9 +595,9 @@ export default function ContentPage() {
               </div>
               <div>
                 <label className="block text-xs font-bold text-border uppercase mb-1">Project Details / Message</label>
-                <textarea rows="3" placeholder="Tell us about dimensions, location, and timeframe..." className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand"></textarea>
+                <textarea rows={3} placeholder="Tell us about dimensions, location, and timeframe..." className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand"></textarea>
               </div>
-              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-extrabold py-3.5 rounded-xl shadow-lg uppercase tracking-normalr text-sm transition">
+              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-extrabold py-3.5 rounded-xl shadow-lg uppercase tracking-normal text-sm transition">
                 SUBMIT QUOTE REQUEST
               </Button>
             </form>
@@ -607,7 +607,7 @@ export default function ContentPage() {
 
       {}
       {auditModalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-topbar border border-muted-foreground w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl animate-scaleUp">
             <Button variant="unstyled" 
               onClick={() => setAuditModalOpen(false)}
@@ -636,7 +636,7 @@ export default function ContentPage() {
                 <label className="block text-xs font-bold text-border uppercase mb-1">Preferred Date</label>
                 <input required type="date" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
               </div>
-              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-extrabold py-3.5 rounded-xl shadow-lg uppercase tracking-normalr text-sm transition">
+              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-extrabold py-3.5 rounded-xl shadow-lg uppercase tracking-normal text-sm transition">
                 CONFIRM FREE VISIT
               </Button>
             </form>

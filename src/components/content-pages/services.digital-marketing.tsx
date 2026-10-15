@@ -11,12 +11,12 @@ import {
 } from 'lucide-react';
 
 export default function ContentPage() {
-  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [auditModalOpen, setAuditModalOpen] = useState(false);
   const [auditSubmitted, setAuditSubmitted] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
 
-  const handleAuditSubmit = (e) => {
+  const handleAuditSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setAuditSubmitted(true);
     setTimeout(() => {
@@ -44,7 +44,7 @@ export default function ContentPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-block bg-topbar/10 border border-topbar/30 px-3.5 py-1.5 rounded-md text-topbar text-xs font-bold uppercase tracking-normalst">
+              <div className="inline-block bg-topbar/10 border border-topbar/30 px-3.5 py-1.5 rounded-md text-topbar text-xs font-bold uppercase tracking-normal">
                 Digital Marketing
               </div>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-normal text-brand-foreground leading-[1.1]">
@@ -167,7 +167,7 @@ export default function ContentPage() {
       <section className="py-24 px-4 lg:px-12 bg-topbar">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-topbar text-xs font-bold uppercase tracking-normalst block mb-2">Our Digital Marketing Services</span>
+            <span className="text-topbar text-xs font-bold uppercase tracking-normal block mb-2">Our Digital Marketing Services</span>
             <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal">Complete Solutions For Online Growth</h2>
           </div>
 
@@ -223,7 +223,7 @@ export default function ContentPage() {
                 </div>
                 <Button variant="unstyled" 
                   onClick={() => setAuditModalOpen(true)}
-                  className="w-full bg-topbar hover:bg-topbar hover:text-brand-foreground text-border font-semibold py-3 rounded-lg text-xs uppercase tracking-normalr transition-all border border-primary"
+                  className="w-full bg-topbar hover:bg-topbar hover:text-brand-foreground text-border font-semibold py-3 rounded-lg text-xs uppercase tracking-normal transition-all border border-primary"
                 >
                   Learn More
                 </Button>
@@ -236,7 +236,7 @@ export default function ContentPage() {
       {}
       <section className="py-24 bg-topbar border-t border-b border-primary px-4 lg:px-12">
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <span className="text-topbar text-xs font-bold uppercase tracking-normalst block mb-2">Our Process</span>
+          <span className="text-topbar text-xs font-bold uppercase tracking-normal block mb-2">Our Process</span>
           <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal">A Proven Process. Predictable Growth.</h2>
         </div>
 
@@ -266,7 +266,7 @@ export default function ContentPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
             {/* Left: Why Choose Image Quest */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="text-topbar text-xs font-bold uppercase tracking-normalst">Why Choose Image Quest?</span>
+              <span className="text-topbar text-xs font-bold uppercase tracking-normal">Why Choose Image Quest?</span>
               <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground tracking-normal">Built For Maximum Online Impact</h2>
               <div className="space-y-4 pt-4">
                 {[
@@ -289,7 +289,7 @@ export default function ContentPage() {
             {/* Right: Digital Marketing Packages */}
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-8">
-                <span className="text-topbar text-xs font-bold uppercase tracking-normalst">Digital Marketing Packages</span>
+                <span className="text-topbar text-xs font-bold uppercase tracking-normal">Digital Marketing Packages</span>
                 <h3 className="text-2xl sm:text-3xl font-black text-brand-foreground mt-1">Transparent Pricing For Every Stage</h3>
               </div>
 
@@ -298,7 +298,7 @@ export default function ContentPage() {
                 <div className="bg-topbar border border-primary rounded-2xl p-6 flex flex-col justify-between hover:border-muted-foreground transition-all">
                   <div>
                     <div className="text-center mb-6">
-                      <span className="text-xs font-bold uppercase tracking-normalst text-muted-foreground block mb-1">Bronze</span>
+                      <span className="text-xs font-bold uppercase tracking-normal text-muted-foreground block mb-1">Bronze</span>
                       <h4 className="font-black text-lg text-brand-foreground">Essentials</h4>
                       <div className="mt-4">
                         <span className="text-xs text-muted-foreground">KES</span>
@@ -315,7 +315,7 @@ export default function ContentPage() {
                   </div>
                   <Button variant="unstyled" 
                     onClick={() => setAuditModalOpen(true)}
-                    className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3 rounded-xl text-xs uppercase tracking-normalr transition-all border border-primary"
+                    className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3 rounded-xl text-xs uppercase tracking-normal transition-all border border-primary"
                   >
                     Get Started
                   </Button>
@@ -323,12 +323,12 @@ export default function ContentPage() {
 
                 {/* Silver (Most Popular) */}
                 <div className="bg-gradient-to-b from-topbar to-topbar border-2 border-topbar rounded-2xl p-6 flex flex-col justify-between relative shadow-2xl shadow-[#FF5722]/10 transform lg:-translate-y-4">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-topbar text-brand-foreground text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-normalst shadow">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-topbar text-brand-foreground text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-normal shadow">
                     Most Popular
                   </div>
                   <div>
                     <div className="text-center mb-6 pt-2">
-                      <span className="text-xs font-bold uppercase tracking-normalst text-topbar block mb-1">Silver</span>
+                      <span className="text-xs font-bold uppercase tracking-normal text-topbar block mb-1">Silver</span>
                       <h4 className="font-black text-lg text-brand-foreground">Growth</h4>
                       <div className="mt-4">
                         <span className="text-xs text-muted-foreground">KES</span>
@@ -346,7 +346,7 @@ export default function ContentPage() {
                   </div>
                   <Button variant="unstyled" 
                     onClick={() => setAuditModalOpen(true)}
-                    className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3.5 rounded-xl text-xs uppercase tracking-normalr shadow-lg shadow-[#FF5722]/30 transition-all"
+                    className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3.5 rounded-xl text-xs uppercase tracking-normal shadow-lg shadow-[#FF5722]/30 transition-all"
                   >
                     Get Started
                   </Button>
@@ -356,7 +356,7 @@ export default function ContentPage() {
                 <div className="bg-topbar border border-primary rounded-2xl p-6 flex flex-col justify-between hover:border-muted-foreground transition-all">
                   <div>
                     <div className="text-center mb-6">
-                      <span className="text-xs font-bold uppercase tracking-normalst text-muted-foreground block mb-1">Gold</span>
+                      <span className="text-xs font-bold uppercase tracking-normal text-muted-foreground block mb-1">Gold</span>
                       <h4 className="font-black text-lg text-brand-foreground">Premium</h4>
                       <div className="mt-4">
                         <span className="text-xs text-muted-foreground">KES</span>
@@ -374,7 +374,7 @@ export default function ContentPage() {
                   </div>
                   <Button variant="unstyled" 
                     onClick={() => setAuditModalOpen(true)}
-                    className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3 rounded-xl text-xs uppercase tracking-normalr transition-all border border-primary"
+                    className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3 rounded-xl text-xs uppercase tracking-normal transition-all border border-primary"
                   >
                     Get Started
                   </Button>
@@ -386,7 +386,7 @@ export default function ContentPage() {
           {/* Tools We Use */}
           <div className="bg-topbar border border-primary rounded-2xl p-8 sm:p-12">
             <div className="text-center mb-10">
-              <span className="text-topbar text-xs font-bold uppercase tracking-normalst block mb-1">Tools & Platforms</span>
+              <span className="text-topbar text-xs font-bold uppercase tracking-normal block mb-1">Tools & Platforms</span>
               <h3 className="text-2xl font-black text-brand-foreground">Digital Marketing Tools We Use</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
@@ -414,7 +414,7 @@ export default function ContentPage() {
       <section id="success-stories" className="py-24 bg-topbar border-t border-b border-primary px-4 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-topbar text-xs font-bold uppercase tracking-normalst block mb-2">Success Stories</span>
+            <span className="text-topbar text-xs font-bold uppercase tracking-normal block mb-2">Success Stories</span>
             <h2 className="text-3xl sm:text-5xl font-black text-brand-foreground tracking-normal">Recent Digital Marketing Success Stories</h2>
           </div>
 
@@ -436,12 +436,12 @@ export default function ContentPage() {
                   </div>
                   <div className="my-8">
                     <span className="text-4xl sm:text-5xl font-black text-topbar tracking-normal block mb-2">{story.metric}</span>
-                    <span className="text-xs font-semibold text-border uppercase tracking-normalr">{story.label}</span>
+                    <span className="text-xs font-semibold text-border uppercase tracking-normal">{story.label}</span>
                   </div>
                 </div>
                 <Button variant="unstyled" 
                   onClick={() => setAuditModalOpen(true)}
-                  className="w-full bg-topbar hover:bg-topbar text-border hover:text-brand-foreground font-semibold py-3 rounded-xl text-xs uppercase tracking-normalr transition-all border border-primary flex items-center justify-center gap-2"
+                  className="w-full bg-topbar hover:bg-topbar text-border hover:text-brand-foreground font-semibold py-3 rounded-xl text-xs uppercase tracking-normal transition-all border border-primary flex items-center justify-center gap-2"
                 >
                   Read Case Study <ChevronRight className="w-3.5 h-3.5" />
                 </Button>
@@ -459,7 +459,7 @@ export default function ContentPage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8 space-y-4">
-              <span className="text-topbar text-xs font-bold uppercase tracking-normalst block">Let's Talk About Your Growth</span>
+              <span className="text-topbar text-xs font-bold uppercase tracking-normal block">Let's Talk About Your Growth</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-foreground tracking-normal">Ready To Grow Online?</h2>
               <p className="text-border text-sm sm:text-base max-w-2xl leading-relaxed">
                 Let's build a digital marketing strategy that drives real results for your business. Get in touch with our expert team today for a free consultation.
@@ -467,7 +467,7 @@ export default function ContentPage() {
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <Button variant="unstyled" 
                   onClick={() => setAuditModalOpen(true)}
-                  className="bg-topbar hover:bg-topbar text-brand-foreground font-bold px-7 py-4 rounded-xl shadow-lg shadow-[#FF5722]/30 flex items-center gap-3 text-xs uppercase tracking-normalr transition-all"
+                  className="bg-topbar hover:bg-topbar text-brand-foreground font-bold px-7 py-4 rounded-xl shadow-lg shadow-[#FF5722]/30 flex items-center gap-3 text-xs uppercase tracking-normal transition-all"
                 >
                   <FileText className="w-4 h-4" /> Get A Free Marketing Audit
                 </Button>
@@ -475,7 +475,7 @@ export default function ContentPage() {
                   href="https://wa.me/254720791677" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-topbar hover:bg-topbar text-brand-foreground border border-muted-foreground font-bold px-7 py-4 rounded-xl flex items-center gap-3 text-xs uppercase tracking-normalr transition-all"
+                  className="bg-topbar hover:bg-topbar text-brand-foreground border border-muted-foreground font-bold px-7 py-4 rounded-xl flex items-center gap-3 text-xs uppercase tracking-normal transition-all"
                 >
                   <MessageCircle className="w-4 h-4 text-success" /> Call / Whatsapp
                 </a>
@@ -505,8 +505,8 @@ export default function ContentPage() {
           <span>Let's Talk About Your Growth — Book a free consultation with our digital marketing team today.</span>
         </div>
         <div className="flex justify-center gap-4">
-          <Button variant="unstyled" onClick={() => setAuditModalOpen(true)} className="bg-topbar text-brand-foreground px-5 py-2 rounded-lg text-xs uppercase tracking-normalr hover:bg-primary transition-all">Schedule A Call</Button>
-          <a href="https://wa.me/254720791677" target="_blank" rel="noreferrer" className="bg-brand-foreground text-topbar px-5 py-2 rounded-lg text-xs uppercase tracking-normalr hover:bg-muted transition-all flex items-center gap-1.5">
+          <Button variant="unstyled" onClick={() => setAuditModalOpen(true)} className="bg-topbar text-brand-foreground px-5 py-2 rounded-lg text-xs uppercase tracking-normal hover:bg-primary transition-all">Schedule A Call</Button>
+          <a href="https://wa.me/254720791677" target="_blank" rel="noreferrer" className="bg-brand-foreground text-topbar px-5 py-2 rounded-lg text-xs uppercase tracking-normal hover:bg-muted transition-all flex items-center gap-1.5">
             <MessageCircle className="w-3.5 h-3.5 text-success" /> Chat On Whatsapp
           </a>
         </div>
@@ -517,7 +517,7 @@ export default function ContentPage() {
 
       {}
       {auditModalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-topbar border border-primary rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-in fade-in zoom-in duration-200">
             <Button variant="unstyled" 
               onClick={() => setAuditModalOpen(false)}
@@ -535,7 +535,7 @@ export default function ContentPage() {
             ) : (
               <form onSubmit={handleAuditSubmit} className="space-y-4">
                 <div>
-                  <span className="text-topbar text-[10px] font-bold uppercase tracking-normalst block mb-1">Free Consultation</span>
+                  <span className="text-topbar text-[10px] font-bold uppercase tracking-normal block mb-1">Free Consultation</span>
                   <h3 className="text-xl font-black text-brand-foreground">Request Your Free Marketing Audit</h3>
                   <p className="text-xs text-muted-foreground mt-1">Discover hidden growth opportunities and get a personalized strategy.</p>
                 </div>
@@ -561,7 +561,7 @@ export default function ContentPage() {
 
                 <Button variant="unstyled" 
                   type="submit"
-                  className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3.5 rounded-lg text-xs uppercase tracking-normalr shadow-lg shadow-[#FF5722]/30 transition-all mt-4"
+                  className="w-full bg-topbar hover:bg-topbar text-brand-foreground font-bold py-3.5 rounded-lg text-xs uppercase tracking-normal shadow-lg shadow-[#FF5722]/30 transition-all mt-4"
                 >
                   Submit Audit Request
                 </Button>

@@ -46,7 +46,7 @@ export default function ContentPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/25 text-brand text-xs font-semibold tracking-normalr uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/25 text-brand text-xs font-semibold tracking-normal uppercase">
                 <Sparkles className="w-3.5 h-3.5" /> All-in-One Startup Solution
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal text-brand-foreground uppercase leading-[1.1]">
@@ -62,7 +62,7 @@ export default function ContentPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
                 <Button variant="unstyled" 
                   onClick={() => openModal('Get Started Today - Launch Package')}
-                  className="w-full sm:w-auto bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-base uppercase tracking-normalr"
+                  className="w-full sm:w-auto bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-base uppercase tracking-normal"
                 >
                   Get Started Today <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -168,7 +168,7 @@ export default function ContentPage() {
               <Button variant="unstyled"
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-5 py-2.5 rounded-xl font-semibold text-xs tracking-normalr uppercase transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-semibold text-xs tracking-normal uppercase transition-all ${
                   activeTab === tab.id 
                     ? 'bg-brand text-brand-foreground shadow-lg shadow-brand/30' 
                     : 'bg-primary text-border hover:bg-muted-foreground'
@@ -280,7 +280,7 @@ export default function ContentPage() {
           
           {/* Left Side: Included in Detail Checklist */}
           <div className="lg:col-span-4 bg-primary border border-primary rounded-3xl p-8 shadow-xl">
-            <h3 className="text-lg font-bold text-brand-foreground mb-6 uppercase tracking-normalr border-b border-primary pb-4">Included in Detail</h3>
+            <h3 className="text-lg font-bold text-brand-foreground mb-6 uppercase tracking-normal border-b border-primary pb-4">Included in Detail</h3>
             <div className="space-y-4">
               {[
                 "Logo concepts (3 options)",
@@ -310,7 +310,7 @@ export default function ContentPage() {
 
           {/* Center: Investment Card */}
           <div className="lg:col-span-4 bg-gradient-to-b from-primary via-primary to-topbar border-2 border-brand/60 rounded-3xl p-8 shadow-2xl relative overflow-hidden text-center flex flex-col justify-between">
-            <div className="absolute top-0 right-0 bg-brand text-brand-foreground font-bold text-[10px] uppercase tracking-normalst px-4 py-1.5 rounded-bl-xl">
+            <div className="absolute top-0 right-0 bg-brand text-brand-foreground font-bold text-[10px] uppercase tracking-normal px-4 py-1.5 rounded-bl-xl">
               Most Popular
             </div>
             
@@ -322,7 +322,7 @@ export default function ContentPage() {
               <p className="text-xs text-muted-foreground font-medium mb-8">One-time Payment</p>
 
               <div className="bg-topbar/80 border border-primary rounded-2xl p-6 text-left mb-8 space-y-3">
-                <h4 className="text-xs font-bold text-brand uppercase tracking-normalr mb-2">Perfect For:</h4>
+                <h4 className="text-xs font-bold text-brand uppercase tracking-normal mb-2">Perfect For:</h4>
                 {["Startups", "New Businesses", "Entrepreneurs", "Small Enterprises"].map((target, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-border">
                     <Check className="w-4 h-4 text-brand" />
@@ -335,7 +335,7 @@ export default function ContentPage() {
             <div>
               <Button variant="unstyled" 
                 onClick={() => openModal('Get Started Now - KES 49,999 Package')}
-                className="w-full bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-bold py-4 rounded-xl shadow-lg shadow-brand/30 uppercase text-sm tracking-normalr transition-all transform hover:-translate-y-0.5"
+                className="w-full bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-bold py-4 rounded-xl shadow-lg shadow-brand/30 uppercase text-sm tracking-normal transition-all transform hover:-translate-y-0.5"
               >
                 Get Started Now
               </Button>
@@ -345,7 +345,7 @@ export default function ContentPage() {
 
           {/* Right Side: Frequently Asked Questions */}
           <div className="lg:col-span-4 bg-primary border border-primary rounded-3xl p-8 shadow-xl">
-            <h3 className="text-lg font-bold text-brand-foreground mb-6 uppercase tracking-normalr border-b border-primary pb-4">Frequently Asked Questions</h3>
+            <h3 className="text-lg font-bold text-brand-foreground mb-6 uppercase tracking-normal border-b border-primary pb-4">Frequently Asked Questions</h3>
             
             <div className="space-y-4">
               {[
@@ -415,13 +415,13 @@ export default function ContentPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
             <Button variant="unstyled" 
               onClick={() => openModal('Book a Free Consultation')}
-              className="bg-topbar hover:bg-primary text-brand-foreground font-bold px-7 py-4 rounded-xl shadow-xl transition-all uppercase text-sm tracking-normalr flex items-center gap-2.5"
+              className="bg-topbar hover:bg-primary text-brand-foreground font-bold px-7 py-4 rounded-xl shadow-xl transition-all uppercase text-sm tracking-normal flex items-center gap-2.5"
             >
               <Calendar className="w-4 h-4 text-brand" /> Book A Free Consultation
             </Button>
             <a 
               href="tel:+254720791677"
-              className="bg-brand-foreground hover:bg-brand text-topbar font-bold px-7 py-4 rounded-xl shadow-xl transition-all uppercase text-sm tracking-normalr flex items-center gap-2.5"
+              className="bg-brand-foreground hover:bg-brand text-topbar font-bold px-7 py-4 rounded-xl shadow-xl transition-all uppercase text-sm tracking-normal flex items-center gap-2.5"
             >
               <Phone className="w-4 h-4 text-brand" /> Call / WhatsApp
             </a>
@@ -437,7 +437,7 @@ export default function ContentPage() {
 
       {}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-primary border border-primary rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative animate-in fade-in zoom-in-95">
             <Button variant="unstyled" 
               onClick={() => setModalOpen(false)}
@@ -468,7 +468,7 @@ export default function ContentPage() {
               </div>
               <Button variant="unstyled" 
                 type="submit"
-                className="w-full mt-2 bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-bold py-3.5 rounded-xl shadow-lg shadow-brand/30 uppercase text-sm tracking-normalr flex items-center justify-center gap-2"
+                className="w-full mt-2 bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-bold py-3.5 rounded-xl shadow-lg shadow-brand/30 uppercase text-sm tracking-normal flex items-center justify-center gap-2"
               >
                 Submit Request <Send className="w-4 h-4" />
               </Button>

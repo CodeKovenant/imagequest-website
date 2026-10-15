@@ -126,7 +126,7 @@ export default function ContentPage() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Button variant="unstyled" 
                   onClick={() => openQuoteModal('Hero - Free Print Quote')}
-                  className="bg-topbar hover:bg-topbar text-brand-foreground px-7 py-3.5 rounded-xl font-bold text-sm tracking-normalr shadow-xl shadow-[#FF5722]/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2.5"
+                  className="bg-topbar hover:bg-topbar text-brand-foreground px-7 py-3.5 rounded-xl font-bold text-sm tracking-normal shadow-xl shadow-[#FF5722]/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2.5"
                 >
                   <Printer className="w-4 h-4" />
                   GET A FREE PRINT QUOTE
@@ -136,7 +136,7 @@ export default function ContentPage() {
                     const el = document.getElementById('recent-projects');
                     el?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="bg-primary hover:bg-muted-foreground text-brand-foreground px-7 py-3.5 rounded-xl font-bold text-sm tracking-normalr border border-muted-foreground transition-all flex items-center gap-2.5"
+                  className="bg-primary hover:bg-muted-foreground text-brand-foreground px-7 py-3.5 rounded-xl font-bold text-sm tracking-normal border border-muted-foreground transition-all flex items-center gap-2.5"
                 >
                   VIEW PRINT SAMPLES
                   <ArrowRight className="w-4 h-4" />
@@ -351,7 +351,7 @@ export default function ContentPage() {
               </div>
               <Button variant="unstyled" 
                 onClick={() => openQuoteModal('Expert Consultation')}
-                className="bg-topbar hover:bg-topbar text-brand-foreground py-3 rounded-xl font-bold text-xs tracking-normalr flex items-center justify-center gap-2 shadow-lg shadow-[#FF5722]/20 transition-all"
+                className="bg-topbar hover:bg-topbar text-brand-foreground py-3 rounded-xl font-bold text-xs tracking-normal flex items-center justify-center gap-2 shadow-lg shadow-[#FF5722]/20 transition-all"
               >
                 <span>TALK TO AN EXPERT</span>
                 <ArrowRight className="w-4 h-4" />
@@ -403,7 +403,7 @@ export default function ContentPage() {
 
               <Button variant="unstyled" 
                 onClick={() => openQuoteModal('Unique Custom Project')}
-                className="w-full bg-topbar hover:bg-topbar text-brand-foreground py-3.5 rounded-xl font-bold text-sm tracking-normalr flex items-center justify-center gap-2 shadow-xl shadow-[#FF5722]/20 transition-all transform hover:-translate-y-0.5"
+                className="w-full bg-topbar hover:bg-topbar text-brand-foreground py-3.5 rounded-xl font-bold text-sm tracking-normal flex items-center justify-center gap-2 shadow-xl shadow-[#FF5722]/20 transition-all transform hover:-translate-y-0.5"
               >
                 <span>REQUEST A CUSTOM QUOTE</span>
                 <ArrowRight className="w-4 h-4" />
@@ -430,13 +430,13 @@ export default function ContentPage() {
           <div className="flex flex-wrap items-center gap-4">
             <Button variant="unstyled" 
               onClick={() => openQuoteModal('CTA Banner Free Quote')}
-              className="bg-topbar hover:bg-topbar text-brand-foreground px-6 py-3.5 rounded-xl font-bold text-sm tracking-normalr shadow-lg transition-all"
+              className="bg-topbar hover:bg-topbar text-brand-foreground px-6 py-3.5 rounded-xl font-bold text-sm tracking-normal shadow-lg transition-all"
             >
               GET A FREE QUOTE
             </Button>
             <a 
               href="tel:+254720791677"
-              className="bg-brand-foreground/20 hover:bg-brand-foreground/30 text-brand-foreground px-6 py-3.5 rounded-xl font-bold text-sm tracking-normalr backdrop-blur-md transition-all flex items-center gap-2"
+              className="bg-brand-foreground/20 hover:bg-brand-foreground/30 text-brand-foreground px-6 py-3.5 rounded-xl font-bold text-sm tracking-normal backdrop-blur-md transition-all flex items-center gap-2"
             >
               <Phone className="w-4 h-4" />
               <span>CALL / WHATSAPP</span>
@@ -450,7 +450,7 @@ export default function ContentPage() {
 
       {/* Interactive Quote Modal */}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-50 bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-primary border border-primary rounded-2xl w-full max-w-lg p-6 relative shadow-2xl animate-scaleIn">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}
@@ -486,7 +486,7 @@ export default function ContentPage() {
                 <label className="block text-xs font-medium text-border mb-1">Project Details & Quantity</label>
                 <textarea rows={3} placeholder="Please specify size, quantities, paper finish..." className="w-full bg-topbar border border-primary rounded-xl px-4 py-2.5 text-sm text-brand-foreground focus:outline-none focus:border-topbar"></textarea>
               </div>
-              <Button variant="unstyled" type="submit" className="w-full bg-topbar hover:bg-topbar text-brand-foreground py-3 rounded-xl font-bold text-sm tracking-normalr flex items-center justify-center gap-2 mt-2 shadow-lg shadow-[#FF5722]/30 transition-all">
+              <Button variant="unstyled" type="submit" className="w-full bg-topbar hover:bg-topbar text-brand-foreground py-3 rounded-xl font-bold text-sm tracking-normal flex items-center justify-center gap-2 mt-2 shadow-lg shadow-[#FF5722]/30 transition-all">
                 <Send className="w-4 h-4" />
                 <span>SUBMIT QUOTE REQUEST</span>
               </Button>
