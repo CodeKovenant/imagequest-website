@@ -1,3 +1,13 @@
+import pageImage0 from "@/assets/imported-pages/image-b499fd452401afef.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-e45189d3aeb7ec29.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-7182e3cacd0210a8.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-44eeab7c185c2cb9.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-04e8b9aae869e92e.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-5254fb5201dac950.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-813a88bf794b624e.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-0f6fde4ac4d6b0c5.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-a50249459cb0242f.asset.json";
+import pageImage9 from "@/assets/imported-pages/image-ce2fbbc39aee402c.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -61,7 +71,7 @@ export default function ContentPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative mx-auto max-w-xl lg:max-w-none rounded-2xl overflow-hidden shadow-2xl border-4 border-primary bg-primary group">
                 <img 
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
+                  src={pageImage0.url} 
                   alt="Image Quest Graphics Reception" 
                   className="w-full h-[350px] sm:h-[420px] object-cover group-hover:scale-105 transition duration-700"
                 />
@@ -119,28 +129,28 @@ export default function ContentPage() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-12 sm:col-span-7 rounded-xl overflow-hidden shadow-lg border border-primary">
                   <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+                    src={pageImage4.url} 
                     alt="Team collaboration" 
                     className="w-full h-64 object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="col-span-12 sm:col-span-5 rounded-xl overflow-hidden shadow-lg border border-primary">
                   <img 
-                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" 
+                    src={pageImage5.url} 
                     alt="Branding Signage" 
                     className="w-full h-64 object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="col-span-12 sm:col-span-6 rounded-xl overflow-hidden shadow-lg border border-primary">
                   <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" 
+                    src={pageImage8.url} 
                     alt="Advanced Printing Press" 
                     className="w-full h-48 object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="col-span-12 sm:col-span-6 rounded-xl overflow-hidden shadow-lg border border-primary">
                   <img 
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" 
+                    src={pageImage9.url} 
                     alt="Corporate board room" 
                     className="w-full h-48 object-cover hover:scale-105 transition duration-500"
                   />
@@ -291,11 +301,11 @@ export default function ContentPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { name: "Benard Nzioka", role: "Marketing Director", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" },
-              { name: "Grace Ndegwa", role: "Accounts Manager", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" },
-              { name: "Wilfred Kariuki", role: "Head of Production", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" },
-              { name: "Lilian Mwangi", role: "Design & Creative Lead", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" },
-              { name: "Asif Rahman", role: "Digital Solutions Lead", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" },
+              { name: "Benard Nzioka", role: "Marketing Director", img: pageImage2.url },
+              { name: "Grace Ndegwa", role: "Accounts Manager", img: pageImage6.url },
+              { name: "Wilfred Kariuki", role: "Head of Production", img: pageImage1.url },
+              { name: "Lilian Mwangi", role: "Design & Creative Lead", img: pageImage7.url },
+              { name: "Asif Rahman", role: "Digital Solutions Lead", img: pageImage3.url },
             ].map((member, idx) => (
               <div key={idx} className="bg-topbar rounded-xl overflow-hidden border border-primary group hover:border-brand transition shadow-xl flex flex-col">
                 <div className="h-64 overflow-hidden relative bg-primary">
@@ -367,7 +377,7 @@ export default function ContentPage() {
 
       {/* Quote / Consultation Modal */}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-topbar border border-muted-foreground rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl text-brand-foreground">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}

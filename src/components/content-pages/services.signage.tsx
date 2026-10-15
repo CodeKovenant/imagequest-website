@@ -1,3 +1,18 @@
+import pageImage0 from "@/assets/imported-pages/image-c8196ef7632edd95.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-4243ddc8ab32fdf1.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-bdaab56c987d47e1.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-28efc381807730ce.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-4f3a6e337b6a652a.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-0b98988b3b644210.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-311deaf94316a068.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-b5399f1f123d885e.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-e1e90a9d2ee7ee98.asset.json";
+import pageImage9 from "@/assets/imported-pages/image-14b7eb1457221dce.asset.json";
+import pageImage10 from "@/assets/hero-reception.jpg";
+import pageImage11 from "@/assets/imported-pages/image-f302c30d39205711.asset.json";
+import pageImage12 from "@/assets/imported-pages/image-5254fb5201dac950.asset.json";
+import pageImage13 from "@/assets/imported-pages/image-202001489db10483.asset.json";
+import pageImage14 from "@/assets/imported-pages/image-45ae8be8dac14d2a.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -29,37 +44,37 @@ export default function ContentPage() {
     {
       title: "Exterior Signage",
       subtitle: "Shop Signs, Building Signs, Fascia Signs, Billboards",
-      image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+      image: pageImage5.url,
       items: ["Shop Signs", "Building Signs", "Fascia Signs", "Billboards"]
     },
     {
       title: "Interior Signage",
       subtitle: "Reception Signs, Wall Graphics, Directional Signs, Office Signs",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
+      image: pageImage3.url,
       items: ["Reception Signs", "Wall Graphics", "Directional Signs", "Office Signs"]
     },
     {
       title: "Lightbox Signs",
       subtitle: "Slim Lightboxes, Double-Sided Boxes, Acrylic Lightbases, LED Illuminated",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
+      image: pageImage12.url,
       items: ["Slim Lightboxes", "Double-Sided Boxes", "Acrylic Lightbases", "LED Illuminated Signs"]
     },
     {
       title: "Safety & Wayfinding",
       subtitle: "Exit Signs, Fire Assembly Signs, Safety Signs, Wayfinding Systems",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+      image: pageImage14.url,
       items: ["Exit Signs", "Fire Assembly Signs", "Safety Signs", "Wayfinding Systems"]
     },
     {
       title: "Pylon & Totem Signs",
       subtitle: "Pylon Signs, Totem Signs, Monument Signs, Directory Signs",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+      image: pageImage1.url,
       items: ["Pylon Signs", "Totem Signs", "Monument Signs", "Directory Signs"]
     },
     {
       title: "Vehicle Graphics",
       subtitle: "Vehicle Wrapping, Fleet Branding, Magnetic Signs, Reflective Markings",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80",
+      image: pageImage11.url,
       items: ["Vehicle Wrapping", "Fleet Branding", "Magnetic Signs", "Reflective Markings"]
     }
   ];
@@ -85,12 +100,12 @@ export default function ContentPage() {
   ];
 
   const projects = [
-    { name: "Britam", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80", tag: "Exterior Tower Signage" },
-    { name: "Pharmaplus", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80", tag: "Retail Pharmacy Branding" },
-    { name: "The Lake Restaurant", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=500&q=80", tag: "Custom 3D Acrylic Logo" },
-    { name: "Elite Gym", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80", tag: "Illuminated Wall Sign" },
-    { name: "Gakenya Advocates", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=80", tag: "Executive Office Signage" },
-    { name: "TRM Mall Directory", img: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=500&q=80", tag: "Pylon & Directory Signs" }
+    { name: "Britam", img: pageImage0.url, tag: "Exterior Tower Signage" },
+    { name: "Pharmaplus", img: pageImage13.url, tag: "Retail Pharmacy Branding" },
+    { name: "The Lake Restaurant", img: pageImage6.url, tag: "Custom 3D Acrylic Logo" },
+    { name: "Elite Gym", img: pageImage8.url, tag: "Illuminated Wall Sign" },
+    { name: "Gakenya Advocates", img: pageImage2.url, tag: "Executive Office Signage" },
+    { name: "TRM Mall Directory", img: pageImage7.url, tag: "Pylon & Directory Signs" }
   ];
 
   const faqs = [
@@ -162,7 +177,7 @@ export default function ContentPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-muted-foreground group">
                 <img 
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb18f76e2?auto=format&fit=crop&w=800&q=80" 
+                  src={pageImage10} 
                   alt="Kijani Farms Signage Showcase" 
                   className="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700"
                 />
@@ -427,7 +442,7 @@ export default function ContentPage() {
 
                 <div className="rounded-xl overflow-hidden h-48 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
+                    src={pageImage4.url} 
                     alt="Pearl Dental Signage" 
                     className="w-full h-full object-cover"
                   />
@@ -482,7 +497,7 @@ export default function ContentPage() {
 
                   <div className="flex items-center space-x-4 mb-8 bg-topbar/60 p-4 rounded-2xl border border-primary">
                     <img 
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                      src={pageImage9.url} 
                       alt="Signage Expert" 
                       className="w-16 h-16 rounded-full object-cover border-2 border-brand shrink-0"
                     />
@@ -561,7 +576,7 @@ export default function ContentPage() {
 
       {}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-topbar border border-muted-foreground w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl animate-scaleUp">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}
@@ -607,7 +622,7 @@ export default function ContentPage() {
 
       {}
       {auditModalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-topbar border border-muted-foreground w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl animate-scaleUp">
             <Button variant="unstyled" 
               onClick={() => setAuditModalOpen(false)}

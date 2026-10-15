@@ -1,3 +1,10 @@
+import pageImage0 from "@/assets/imported-pages/image-642162527eb6c2da.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-1fb498686cfe640e.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-06f83b4056af2491.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-1711882e44106753.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-344522b6c1704dca.asset.json";
+import pageImage5 from "@/assets/portfolio-website.jpg";
+import pageImage6 from "@/assets/imported-pages/image-950f24c4b92d8d0d.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -36,12 +43,12 @@ export default function ContentPage() {
   ];
 
   const projects = [
-    { title: "Kijoni Farms", category: "Agriculture", img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80" },
-    { title: "Apex Consultants", category: "Consulting", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" },
-    { title: "MedCore Clinic", category: "Healthcare", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" },
-    { title: "Elite Gym", category: "Fitness", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" },
-    { title: "Java Coffee House", category: "Hospitality", img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" },
-    { title: "BrightPath Academy", category: "Education", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" }
+    { title: "Kijoni Farms", category: "Agriculture", img: pageImage2.url },
+    { title: "Apex Consultants", category: "Consulting", img: pageImage0.url },
+    { title: "MedCore Clinic", category: "Healthcare", img: pageImage4.url },
+    { title: "Elite Gym", category: "Fitness", img: pageImage6.url },
+    { title: "Java Coffee House", category: "Hospitality", img: pageImage3.url },
+    { title: "BrightPath Academy", category: "Education", img: pageImage5 }
   ];
 
   const solutions = [
@@ -152,7 +159,7 @@ export default function ContentPage() {
                 <div className="grid grid-cols-12 gap-4">
                   <div className="col-span-12 sm:col-span-8 bg-topbar rounded-lg overflow-hidden border border-primary">
                     <img 
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                      src={pageImage1.url} 
                       alt="Website Preview" 
                       className="w-full h-48 sm:h-64 object-cover opacity-90 hover:scale-105 transition-transform duration-500"
                     />
@@ -183,32 +190,32 @@ export default function ContentPage() {
         <div className="max-w-7xl mx-auto mt-16">
           <div className="bg-brand-foreground text-primary rounded-2xl p-6 lg:p-8 shadow-2xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
             <div className="flex flex-col items-center p-4 rounded-xl hover:bg-card transition-colors">
-              <div className="w-12 h-12 rounded-full bg-brand text-brand flex items-center justify-center text-xl mb-3 shadow-sm">💻</div>
+              <div className="w-12 h-12 rounded-full bg-brand/10 text-brand flex items-center justify-center text-xl mb-3 shadow-sm">💻</div>
               <h4 className="font-bold text-sm mb-1">Modern Designs</h4>
               <p className="text-xs text-muted-foreground">Clean, professional and conversion-focused designs.</p>
             </div>
             <div className="flex flex-col items-center p-4 rounded-xl hover:bg-card transition-colors">
-              <div className="w-12 h-12 rounded-full bg-brand text-brand flex items-center justify-center text-xl mb-3 shadow-sm">📱</div>
+              <div className="w-12 h-12 rounded-full bg-brand/10 text-brand flex items-center justify-center text-xl mb-3 shadow-sm">📱</div>
               <h4 className="font-bold text-sm mb-1">Mobile Responsive</h4>
               <p className="text-xs text-muted-foreground">Fully responsive across all devices and screens.</p>
             </div>
             <div className="flex flex-col items-center p-4 rounded-xl hover:bg-card transition-colors">
-              <div className="w-12 h-12 rounded-full bg-brand text-brand flex items-center justify-center text-xl mb-3 shadow-sm">🔍</div>
+              <div className="w-12 h-12 rounded-full bg-brand/10 text-brand flex items-center justify-center text-xl mb-3 shadow-sm">🔍</div>
               <h4 className="font-bold text-sm mb-1">SEO Optimized</h4>
               <p className="text-xs text-muted-foreground">Built with SEO best practices to rank higher on Google.</p>
             </div>
             <div className="flex flex-col items-center p-4 rounded-xl hover:bg-card transition-colors">
-              <div className="w-12 h-12 rounded-full bg-brand text-brand flex items-center justify-center text-xl mb-3 shadow-sm">🔒</div>
+              <div className="w-12 h-12 rounded-full bg-brand/10 text-brand flex items-center justify-center text-xl mb-3 shadow-sm">🔒</div>
               <h4 className="font-bold text-sm mb-1">Fast & Secure</h4>
               <p className="text-xs text-muted-foreground">Lightning-fast loading and robust security for your site.</p>
             </div>
             <div className="flex flex-col items-center p-4 rounded-xl hover:bg-card transition-colors">
-              <div className="w-12 h-12 rounded-full bg-brand text-brand flex items-center justify-center text-xl mb-3 shadow-sm">⚙️</div>
+              <div className="w-12 h-12 rounded-full bg-brand/10 text-brand flex items-center justify-center text-xl mb-3 shadow-sm">⚙️</div>
               <h4 className="font-bold text-sm mb-1">Easy to Manage</h4>
               <p className="text-xs text-muted-foreground">User-friendly CMS so you can update content with ease.</p>
             </div>
             <div className="flex flex-col items-center p-4 rounded-xl hover:bg-card transition-colors">
-              <div className="w-12 h-12 rounded-full bg-brand text-brand flex items-center justify-center text-xl mb-3 shadow-sm">🎧</div>
+              <div className="w-12 h-12 rounded-full bg-brand/10 text-brand flex items-center justify-center text-xl mb-3 shadow-sm">🎧</div>
               <h4 className="font-bold text-sm mb-1">Ongoing Support</h4>
               <p className="text-xs text-muted-foreground">We provide support and maintenance when you need it.</p>
             </div>
@@ -598,7 +605,7 @@ export default function ContentPage() {
 
       {/* Consultation / Quote Modal */}
       {isConsultationModalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-primary border border-primary rounded-3xl max-w-lg w-full p-8 relative shadow-2xl">
             <Button variant="unstyled" 
               onClick={() => setIsConsultationModalOpen(false)}
@@ -643,7 +650,7 @@ export default function ContentPage() {
 
       {/* Custom Alert Modal */}
       {modalMessage && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-primary border border-primary rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl">
             <div className="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center text-xl mx-auto font-bold">ℹ</div>
             <h4 className="text-xl font-bold text-brand-foreground">Image Quest Graphics</h4>

@@ -1,3 +1,18 @@
+import pageImage0 from "@/assets/imported-pages/image-ce3970ab4d40d4bf.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-614f5bfc7a5dd630.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-c284abc817c5d828.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-d87e6ceb8c684af0.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-ae43207db4e46f15.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-f63c5ea721e8e36c.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-2296fcf47ae23ca0.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-77d96f86f7778aaa.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-90871ea65f44c790.asset.json";
+import pageImage9 from "@/assets/imported-pages/image-8a7899c415007c32.asset.json";
+import pageImage10 from "@/assets/portfolio-brochures.jpg";
+import pageImage11 from "@/assets/portfolio-brochures.jpg";
+import pageImage12 from "@/assets/portfolio-brochures.jpg";
+import pageImage13 from "@/assets/portfolio-brochures.jpg";
+import pageImage14 from "@/assets/imported-pages/image-5be9789778825e30.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -34,53 +49,53 @@ export default function ContentPage() {
   const solutions = [
     {
       title: "Business Stationery",
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80",
+      image: pageImage9.url,
       items: ["Business Cards", "Compliment Slips", "Letterheads", "Envelopes"]
     },
     {
       title: "Marketing Materials",
-      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
+      image: pageImage4.url,
       items: ["Flyers & Leaflets", "Catalogues", "Brochures", "Posters"]
     },
     {
       title: "Corporate Documents",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+      image: pageImage14.url,
       items: ["Annual Reports", "Presentation Folders", "Company Profiles", "Proposals"]
     },
     {
       title: "Large Format Printing",
-      image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=600&q=80",
+      image: pageImage7.url,
       items: ["Banners", "Pull-up Banners", "Roll-up Banners", "Backdrops"]
     },
     {
       title: "Packaging & Labels",
-      image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=600&q=80",
+      image: pageImage13,
       items: ["Product Labels", "Packaging Boxes", "Stickers", "Tag & Hang Tags"]
     },
     {
       title: "Books & Booklets",
-      image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80",
+      image: pageImage1.url,
       items: ["Booklets", "Notebooks", "Magazines", "Perfect Binding"]
     },
     {
       title: "Branded Materials",
-      image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80",
+      image: pageImage2.url,
       items: ["Presentation Folders", "ID Cards", "Branded Envelopes", "Stamps"]
     },
     {
       title: "Special Finishing",
-      image: "https://images.unsplash.com/photo-1603575448768-4528d2586629?auto=format&fit=crop&w=600&q=80",
+      image: pageImage11,
       items: ["Spot UV", "Foil Stamping", "Embossing / Debossing", "Lamination"]
     }
   ];
 
   const recentProjects = [
-    { title: "Company Profile", image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" },
-    { title: "Roll-up Banners", image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=500&q=80" },
-    { title: "Brochures", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80" },
-    { title: "Business Cards", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80" },
-    { title: "Packaging Boxes", image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=500&q=80" },
-    { title: "Stickers", image: "https://images.unsplash.com/photo-1603575448768-4528d2586629?auto=format&fit=crop&w=500&q=80" }
+    { title: "Company Profile", image: pageImage3.url },
+    { title: "Roll-up Banners", image: pageImage6.url },
+    { title: "Brochures", image: pageImage0.url },
+    { title: "Business Cards", image: pageImage8.url },
+    { title: "Packaging Boxes", image: pageImage12 },
+    { title: "Stickers", image: pageImage10 }
   ];
 
   const faqs = [
@@ -147,7 +162,7 @@ export default function ContentPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary bg-topbar group">
                 <img 
-                  src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1200&q=80" 
+                  src={pageImage5.url} 
                   alt="Professional Printing showcase" 
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
@@ -212,7 +227,7 @@ export default function ContentPage() {
                     alt={sol.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90"
                     onError={(e)=>{
-                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=600&q=80";
+                      (e.target as HTMLImageElement).src = pageImage7.url;
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-topbar via-transparent to-transparent"></div>
@@ -450,7 +465,7 @@ export default function ContentPage() {
 
       {/* Interactive Quote Modal */}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-primary border border-primary rounded-2xl w-full max-w-lg p-6 relative shadow-2xl animate-scaleIn">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}

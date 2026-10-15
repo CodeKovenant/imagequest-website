@@ -1,3 +1,4 @@
+
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -517,7 +518,7 @@ export default function ContentPage() {
 
       {}
       {auditModalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-topbar border border-primary rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-in fade-in zoom-in duration-200">
             <Button variant="unstyled" 
               onClick={() => setAuditModalOpen(false)}

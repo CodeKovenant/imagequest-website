@@ -1,3 +1,4 @@
+
 import { serviceLinks } from "@/lib/site-navigation";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
@@ -181,11 +182,11 @@ export default function ContentPage() {
                 From brand identity to digital presence and beyond, we provide end-to-end solutions that help businesses grow, connect and stand out.
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-4">
-                <Button variant="unstyled" className="bg-brand hover:bg-brand text-brand-foreground font-bold px-6 py-4 rounded text-sm transition-all shadow-lg hover:shadow-brand/30 flex items-center gap-3">
-                  EXPLORE OUR SERVICES <ArrowRight className="w-4 h-4" />
+                <Button variant="unstyled" asChild className="bg-brand hover:bg-brand text-brand-foreground font-bold px-6 py-4 rounded text-sm transition-all shadow-lg hover:shadow-brand/30 flex items-center gap-3">
+                  <a href="#service-directory">EXPLORE OUR SERVICES <ArrowRight className="w-4 h-4" /></a>
                 </Button>
-                <Button variant="unstyled" className="bg-primary hover:bg-muted-foreground text-brand-foreground font-bold px-6 py-4 rounded text-sm transition-all border border-muted-foreground flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4 text-brand" /> TALK TO AN EXPERT
+                <Button variant="unstyled" asChild className="bg-primary hover:bg-muted-foreground text-brand-foreground font-bold px-6 py-4 rounded text-sm transition-all border border-muted-foreground flex items-center gap-2">
+                  <a href="https://wa.me/254720791677" target="_blank" rel="noreferrer"><MessageCircle className="w-4 h-4 text-brand" /> TALK TO AN EXPERT</a>
                 </Button>
               </div>
             </div>
@@ -214,7 +215,7 @@ export default function ContentPage() {
       </section>
 
       {}
-      <section className="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+      <section id="service-directory" className="scroll-mt-32 py-20 px-4 sm:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-brand font-bold uppercase tracking-normal text-xs">OUR SERVICES</span>
           <h2 className="text-3xl sm:text-4xl font-black tracking-normal">Complete Solutions Under One Roof</h2>

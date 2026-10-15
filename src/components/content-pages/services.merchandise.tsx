@@ -1,3 +1,19 @@
+import pageImage0 from "@/assets/imported-pages/image-86815432716fd4d1.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-29d37a83e0336cef.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-394e6ff04bda4a9b.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-8fb17539905e3b0d.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-07f6eac812e9c40c.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-cc623fc045f39d2b.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-502f7f49023cccaa.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-b927d9275d11dc9c.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-1e86b04048f53417.asset.json";
+import pageImage9 from "@/assets/imported-pages/image-01175931f7c903b0.asset.json";
+import pageImage10 from "@/assets/imported-pages/image-4a42c72d03247943.asset.json";
+import pageImage11 from "@/assets/imported-pages/image-797c0039f8ace03c.asset.json";
+import pageImage12 from "@/assets/imported-pages/image-e1f3b1aee3fc0ddb.asset.json";
+import pageImage13 from "@/assets/imported-pages/image-8d8f8896cc5b476c.asset.json";
+import pageImage14 from "@/assets/imported-pages/image-985108e2409c957b.asset.json";
+import pageImage15 from "@/assets/imported-pages/image-1c9ea7259b17ce3e.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -25,11 +41,11 @@ export default function ImageQuestMerchPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', package: 'Business Pack (KES 75,000)', notes: '' });
 
   const projects = [
-    { name: "Kijani Farms", image: "https://placehold.co/300x200/1e293b/ffffff?text=Kijani+Farms" },
-    { name: "Apex Consultants", image: "https://placehold.co/300x200/1e293b/ffffff?text=Apex+Consultants" },
-    { name: "MedCare Clinic", image: "https://placehold.co/300x200/1e293b/ffffff?text=MedCare+Clinic" },
-    { name: "Java Coffee House", image: "https://placehold.co/300x200/1e293b/ffffff?text=Java+Coffee+House" },
-    { name: "BrightPath Academy", image: "https://placehold.co/300x200/1e293b/ffffff?text=BrightPath+Academy" },
+    { name: "Kijani Farms", image: pageImage4.url },
+    { name: "Apex Consultants", image: pageImage1.url },
+    { name: "MedCare Clinic", image: pageImage5.url },
+    { name: "Java Coffee House", image: pageImage3.url },
+    { name: "BrightPath Academy", image: pageImage2.url },
   ];
 
   const nextProject = () => {
@@ -116,7 +132,7 @@ export default function ImageQuestMerchPage() {
                   <div className="space-y-4">
                     <div className="bg-gradient-to-br from-primary to-primary p-4 rounded-2xl border border-muted-foreground/80 shadow-2xl transform hover:scale-[1.02] transition">
                       <img 
-                        src="https://placehold.co/400x300/1e293b/orange?text=Branded+Thermos+%26+Flask" 
+                        src={pageImage13.url} 
                         alt="Branded Flask & Thermos" 
                         className="w-full h-40 object-cover rounded-xl mb-3 shadow"
                         onError={(e)=>{(e.target as HTMLElement).style.display='none'}}
@@ -126,7 +142,7 @@ export default function ImageQuestMerchPage() {
                     </div>
                     <div className="bg-gradient-to-br from-primary to-primary p-4 rounded-2xl border border-muted-foreground/80 shadow-2xl transform hover:scale-[1.02] transition">
                       <img 
-                        src="https://placehold.co/400x300/1e293b/orange?text=Branded+Notebook" 
+                        src={pageImage12.url} 
                         alt="Branded Notebook" 
                         className="w-full h-32 object-cover rounded-xl mb-3 shadow"
                       />
@@ -137,7 +153,7 @@ export default function ImageQuestMerchPage() {
                   <div className="space-y-4 pt-6">
                     <div className="bg-gradient-to-br from-primary to-primary p-4 rounded-2xl border border-muted-foreground/80 shadow-2xl transform hover:scale-[1.02] transition">
                       <img 
-                        src="https://placehold.co/400x300/1e293b/orange?text=Travel+Backpack" 
+                        src={pageImage15.url} 
                         alt="Travel Backpack" 
                         className="w-full h-32 object-cover rounded-xl mb-3 shadow"
                       />
@@ -146,7 +162,7 @@ export default function ImageQuestMerchPage() {
                     </div>
                     <div className="bg-gradient-to-br from-primary to-primary p-4 rounded-2xl border border-muted-foreground/80 shadow-2xl transform hover:scale-[1.02] transition">
                       <img 
-                        src="https://placehold.co/400x300/1e293b/orange?text=Caps+%26+Apparel" 
+                        src={pageImage14.url} 
                         alt="Caps and Apparel" 
                         className="w-full h-40 object-cover rounded-xl mb-3 shadow"
                       />
@@ -168,7 +184,7 @@ export default function ImageQuestMerchPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Search className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Build Brand Awareness</h3>
@@ -176,7 +192,7 @@ export default function ImageQuestMerchPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Users className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Strengthen Relationships</h3>
@@ -184,7 +200,7 @@ export default function ImageQuestMerchPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Award className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">High Quality Products</h3>
@@ -192,7 +208,7 @@ export default function ImageQuestMerchPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Shield className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Custom Branding</h3>
@@ -200,7 +216,7 @@ export default function ImageQuestMerchPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Box className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Bulk & Cost Effective</h3>
@@ -208,7 +224,7 @@ export default function ImageQuestMerchPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Zap className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Fast Turnaround</h3>
@@ -236,14 +252,14 @@ export default function ImageQuestMerchPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Drinkware+Collection" 
+                    src={pageImage8.url} 
                     alt="Drinkware" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                   <div className="absolute top-3 left-3 bg-brand text-brand-foreground text-xs font-bold px-3 py-1 rounded-md uppercase tracking-normal">Popular</div>
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center font-bold">
                     ☕
                   </div>
                   <h3 className="text-xl font-bold text-primary">Drinkware</h3>
@@ -268,13 +284,13 @@ export default function ImageQuestMerchPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Apparel+Collection" 
+                    src={pageImage6.url} 
                     alt="Apparel" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center font-bold">
                     👕
                   </div>
                   <h3 className="text-xl font-bold text-primary">Apparel</h3>
@@ -299,13 +315,13 @@ export default function ImageQuestMerchPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Office+%26+Stationery" 
+                    src={pageImage10.url} 
                     alt="Office & Stationery" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center font-bold">
                     📓
                   </div>
                   <h3 className="text-xl font-bold text-primary">Office & Stationery</h3>
@@ -330,13 +346,13 @@ export default function ImageQuestMerchPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Bags+%26+Travel" 
+                    src={pageImage7.url} 
                     alt="Bags & Travel" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center font-bold">
                     🎒
                   </div>
                   <h3 className="text-xl font-bold text-primary">Bags & Travel</h3>
@@ -361,13 +377,13 @@ export default function ImageQuestMerchPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Tech+Gadgets" 
+                    src={pageImage11.url} 
                     alt="Technology" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center font-bold">
                     ⚡
                   </div>
                   <h3 className="text-xl font-bold text-primary">Technology</h3>
@@ -392,13 +408,13 @@ export default function ImageQuestMerchPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Events+%26+Giveaways" 
+                    src={pageImage9.url} 
                     alt="Events & Giveaways" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand text-brand flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center font-bold">
                     🎉
                   </div>
                   <h3 className="text-xl font-bold text-primary">Events & Giveaways</h3>
@@ -733,7 +749,7 @@ export default function ImageQuestMerchPage() {
 
             <div className="flex items-center space-x-4 bg-primary/90 p-4 rounded-2xl border border-primary">
               <div className="w-16 h-16 rounded-full overflow-hidden bg-brand flex-shrink-0 border-2 border-brand">
-                <img src="https://placehold.co/100x100/f97316/ffffff?text=IQ" alt="Expert" className="w-full h-full object-cover" />
+                <img src={pageImage0.url} alt="Expert" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h4 className="font-bold text-brand-foreground text-sm">Dedicated Support</h4>
@@ -754,7 +770,7 @@ export default function ImageQuestMerchPage() {
 
       {/* Quote Modal */}
       {quoteModalOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[60] flex items-start sm:items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm overflow-y-auto">
           <div className="bg-brand-foreground rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-muted">
             <Button variant="unstyled" 
               onClick={() => setQuoteModalOpen(false)}

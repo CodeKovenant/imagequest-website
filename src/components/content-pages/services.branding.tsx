@@ -1,3 +1,18 @@
+import pageImage0 from "@/assets/imported-pages/image-86815432716fd4d1.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-3cabe2eace2b2e66.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-d4bf1f6832370ebd.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-e364e1d4c44a7372.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-d35eb9beaa1493ac.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-9de4b29d967e931d.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-173c196b75bf4b8e.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-b3beada162c0843e.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-6079def1ad31ed4d.asset.json";
+import pageImage9 from "@/assets/imported-pages/image-22d0f56497cd2e6e.asset.json";
+import pageImage10 from "@/assets/imported-pages/image-6b8904b735ab1ce6.asset.json";
+import pageImage11 from "@/assets/imported-pages/image-4faf6b0675f09fac.asset.json";
+import pageImage12 from "@/assets/imported-pages/image-9903d786e26611fd.asset.json";
+import pageImage13 from "@/assets/imported-pages/image-65b44edbaf2971bd.asset.json";
+import pageImage14 from "@/assets/imported-pages/image-9eb7db8392073953.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -26,12 +41,12 @@ export default function ImageQuestBrandingPage() {
   });
 
   const portfolioProjects = [
-    { name: "Velora Homes", category: "Real Estate", image: "https://placehold.co/300x200/111827/d4af37?text=Velora+Homes" },
-    { name: "AfyaPlus", category: "Healthcare", image: "https://placehold.co/300x200/0f766e/ffffff?text=AfyaPlus+Medical" },
-    { name: "EduQuest", category: "Education", image: "https://placehold.co/300x200/1e40af/ffffff?text=EduQuest+Academy" },
-    { name: "AfriLogix", category: "Corporate", image: "https://placehold.co/300x200/9a3412/ffffff?text=AfriLogix" },
-    { name: "Kijani Farms", category: "Retail", image: "https://placehold.co/300x200/166534/ffffff?text=Kijani+Farms" },
-    { name: "Cafe One", category: "Hospitality", image: "https://placehold.co/300x200/78350f/ffffff?text=Cafe+One" },
+    { name: "Velora Homes", category: "Real Estate", image: pageImage2.url },
+    { name: "AfyaPlus", category: "Healthcare", image: pageImage1.url },
+    { name: "EduQuest", category: "Education", image: pageImage4.url },
+    { name: "AfriLogix", category: "Corporate", image: pageImage6.url },
+    { name: "Kijani Farms", category: "Retail", image: pageImage3.url },
+    { name: "Cafe One", category: "Hospitality", image: pageImage5.url },
   ];
 
   const filteredProjects = activeTab === 'All' 
@@ -133,7 +148,7 @@ export default function ImageQuestBrandingPage() {
               <div className="relative mx-auto max-w-lg lg:max-w-none">
                 <div className="bg-gradient-to-br from-primary to-primary p-6 rounded-2xl border border-muted-foreground/80 shadow-2xl relative overflow-hidden">
                   <img 
-                    src="https://placehold.co/600x400/1e293b/d4af37?text=Velora+Homes+Brand+Identity" 
+                    src={pageImage14.url} 
                     alt="Brand Identity Showcase" 
                     className="w-full h-72 object-cover rounded-xl shadow-md mb-4"
                   />
@@ -155,7 +170,7 @@ export default function ImageQuestBrandingPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Search className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Strategic Approach</h3>
@@ -163,7 +178,7 @@ export default function ImageQuestBrandingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Award className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Creative Excellence</h3>
@@ -171,7 +186,7 @@ export default function ImageQuestBrandingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Shield className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Consistent Identity</h3>
@@ -179,7 +194,7 @@ export default function ImageQuestBrandingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Users className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Audience Connection</h3>
@@ -187,7 +202,7 @@ export default function ImageQuestBrandingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <Zap className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Fast Turnaround</h3>
@@ -195,7 +210,7 @@ export default function ImageQuestBrandingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-brand/50 transition group">
-              <div className="w-14 h-14 rounded-2xl bg-brand text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-sm">
                 <RefreshCw className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-primary text-sm mb-1">Ongoing Support</h3>
@@ -223,7 +238,7 @@ export default function ImageQuestBrandingPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Brand+Strategy" 
+                    src={pageImage11.url} 
                     alt="Brand Strategy" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
@@ -250,7 +265,7 @@ export default function ImageQuestBrandingPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Logo+Design" 
+                    src={pageImage13.url} 
                     alt="Logo Design" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
@@ -277,7 +292,7 @@ export default function ImageQuestBrandingPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Brand+Identity" 
+                    src={pageImage10.url} 
                     alt="Brand Identity" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
@@ -304,7 +319,7 @@ export default function ImageQuestBrandingPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Brand+Collateral" 
+                    src={pageImage8.url} 
                     alt="Brand Collateral" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
@@ -331,7 +346,7 @@ export default function ImageQuestBrandingPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Brand+Guidelines" 
+                    src={pageImage9.url} 
                     alt="Brand Guidelines" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
@@ -358,7 +373,7 @@ export default function ImageQuestBrandingPage() {
               <div>
                 <div className="h-48 rounded-xl overflow-hidden mb-6 bg-muted relative">
                   <img 
-                    src="https://placehold.co/400x250/f1f5f9/f97316?text=Digital+Branding" 
+                    src={pageImage12.url} 
                     alt="Digital Branding" 
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
@@ -539,7 +554,7 @@ export default function ImageQuestBrandingPage() {
 
               <div className="mt-8 pt-8 border-t border-muted">
                 <img 
-                  src="https://placehold.co/400x200/f1f5f9/f97316?text=Branding+Strategy+Laptop" 
+                  src={pageImage7.url} 
                   alt="Strategy Setup" 
                   className="w-full h-36 object-cover rounded-xl shadow"
                 />
@@ -612,7 +627,7 @@ export default function ImageQuestBrandingPage() {
 
             <div className="flex items-center space-x-4 bg-primary/90 p-4 rounded-2xl border border-primary">
               <div className="w-16 h-16 rounded-full overflow-hidden bg-brand flex-shrink-0 border-2 border-brand">
-                <img src="https://placehold.co/100x100/f97316/ffffff?text=IQ" alt="Expert" className="w-full h-full object-cover" />
+                <img src={pageImage0.url} alt="Expert" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h4 className="font-bold text-brand-foreground text-sm">Dedicated Expert</h4>
@@ -633,7 +648,7 @@ export default function ImageQuestBrandingPage() {
 
       {/* Consultation Modal */}
       {consultModalOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[60] flex items-start sm:items-center justify-center bg-topbar/80 p-4 backdrop-blur-sm overflow-y-auto">
           <div className="bg-brand-foreground rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-muted">
             <Button variant="unstyled" 
               onClick={() => setConsultModalOpen(false)}

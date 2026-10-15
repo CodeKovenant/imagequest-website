@@ -1,3 +1,8 @@
+import pageImage0 from "@/assets/imported-pages/image-b950d2742795ecf0.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-6fed896437d7d1ee.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-220cd06495dd6a9c.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-320f059a74eba19e.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-6e57123d2bf53878.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -49,7 +54,7 @@ export default function ContentPage() {
       {}
       <header className="relative bg-topbar overflow-hidden pt-12 pb-24 border-b border-primary">
         {/* Background Overlay image mockup simulation */}
-        <div className="absolute inset-0 z-0 opacity-20 bg-cover bg-center pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80')` }}></div>
+        <div className="absolute inset-0 z-0 opacity-20 bg-cover bg-center pointer-events-none" style={{ backgroundImage: `url(pageImage0.url)` }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-topbar via-topbar/90 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
@@ -201,10 +206,10 @@ export default function ContentPage() {
             <div className="absolute inset-0 bg-brand/5 blur-3xl pointer-events-none"></div>
             <div className="relative z-10 w-full max-w-md">
               <img 
-                src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80" 
+                src={pageImage1.url} 
                 alt="Branding Mockup" 
                 className="rounded-lg shadow-2xl object-cover w-full h-64 border border-muted-foreground"
-                onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/222/fff?text=IQ+Branding+Assets'; }}
+                onError={(e) => { e.currentTarget.src = pageImage4.url; }}
               />
             </div>
             <div className="mt-6 text-center">
@@ -473,10 +478,10 @@ export default function ContentPage() {
 
             <div className="z-10 hidden lg:block">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
+                src={pageImage2.url} 
                 alt="Professional Portrait" 
                 className="w-72 h-72 object-cover rounded-2xl shadow-2xl border-4 border-brand/30"
-                onError={(e) => { e.currentTarget.src = 'https://placehold.co/400x400/333/fff?text=Consultant'; }}
+                onError={(e) => { e.currentTarget.src = pageImage3.url; }}
               />
             </div>
           </div>

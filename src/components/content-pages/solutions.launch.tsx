@@ -1,3 +1,12 @@
+import pageImage0 from "@/assets/imported-pages/image-39e00a56714562d7.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-28efc381807730ce.asset.json";
+import pageImage2 from "@/assets/hero-reception.jpg";
+import pageImage3 from "@/assets/imported-pages/image-4ef0712a90eac187.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-5254fb5201dac950.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-0ac6832c6e061521.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-a3aa3cb58725c62c.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-6ee61cca73549f6d.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-a73ececb152eeb35.asset.json";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -79,10 +88,10 @@ export default function ContentPage() {
               <div className="absolute -inset-1 bg-gradient-to-r from-brand to-brand rounded-3xl blur-xl opacity-30 animate-pulse"></div>
               <div className="relative bg-primary border border-primary rounded-3xl p-4 shadow-2xl overflow-hidden group">
                 <img 
-                  src="https://images.unsplash.com/photo-1542744094-3a31243364d0?auto=format&fit=crop&w=1200&q=80" 
+                  src={pageImage2} 
                   alt="Business Launch Package Branding Mockup" 
                   className="w-full h-[380px] sm:h-[450px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-lg"
-                  onError={(e)=>{(e.target as HTMLImageElement).src='https://placehold.co/800x500/1e293b/f97316?text=Business+Launch+Mockup'}}
+                  onError={(e)=>{(e.target as HTMLImageElement).src={pageImage8.url}}}
                 />
                 <div className="absolute bottom-6 left-6 right-6 bg-topbar/80 backdrop-blur-md border border-primary p-4 rounded-2xl flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -185,37 +194,37 @@ export default function ContentPage() {
             {
               category: 'brand',
               title: "Brand Identity",
-              img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80",
+              img: pageImage6.url,
               items: ["Logo Design", "Brand Guidelines", "Color Palette", "Typography"]
             },
             {
               category: 'brand',
               title: "Stationery Essentials",
-              img: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80",
+              img: pageImage5.url,
               items: ["Business Cards", "Letterheads", "Compliment Slips", "Envelope Design"]
             },
             {
               category: 'digital',
               title: "Digital Presence",
-              img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+              img: pageImage0.url,
               items: ["5-Page Website", "Domain Registration", "Business Email Setup", "Social Media Setup"]
             },
             {
               category: 'digital',
               title: "Business Visibility",
-              img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80",
+              img: pageImage3.url,
               items: ["Google Business Profile", "Basic On-page SEO", "Online Directory Setup", "QR Code Integration"]
             },
             {
               category: 'print',
               title: "Office Branding",
-              img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
+              img: pageImage1.url,
               items: ["Reception Signage Design", "Office Signage", "Branded Wall Graphics", "Door & Room Signs"]
             },
             {
               category: 'print',
               title: "Marketing Materials",
-              img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
+              img: pageImage4.url,
               items: ["Company Profile (8 Pages)", "Brochure Design", "Flyer / Leaflet Design", "Presentation Template"]
             }
           ]
@@ -227,7 +236,7 @@ export default function ContentPage() {
                   src={card.img} 
                   alt={card.title} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e)=>{(e.target as HTMLImageElement).src='https://placehold.co/600x400/1e293b/f97316?text='+card.title}}
+                  onError={(e)=>{(e.target as HTMLImageElement).src={pageImage7.url}+card.title}}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-topbar via-transparent to-transparent"></div>
                 <h3 className="absolute bottom-4 left-6 text-xl font-bold text-brand-foreground tracking-normal">{card.title}</h3>
@@ -437,7 +446,7 @@ export default function ContentPage() {
 
       {}
       {modalOpen && (
-        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
           <div className="bg-primary border border-primary rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative animate-in fade-in zoom-in-95">
             <Button variant="unstyled" 
               onClick={() => setModalOpen(false)}
