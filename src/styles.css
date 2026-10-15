@@ -64,6 +64,8 @@
   --color-topbar: var(--topbar);
   --color-topbar-foreground: var(--topbar-foreground);
   --color-nav-foreground: var(--nav-foreground);
+  --color-success: var(--success);
+  --color-info: var(--info);
 }
 
 :root {
@@ -107,6 +109,8 @@
   --topbar: oklch(0.18 0.005 60);
   --topbar-foreground: oklch(0.93 0.005 60);
   --nav-foreground: oklch(0.23 0.01 60);
+  --success: oklch(0.62 0.17 155);
+  --info: oklch(0.62 0.18 250);
 }
 
 

@@ -17,6 +17,15 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesBrandingRouteImport } from './routes/services.branding'
+import { Route as ServicesDigitalMarketingRouteImport } from './routes/services.digital-marketing'
+import { Route as ServicesMerchandiseRouteImport } from './routes/services.merchandise'
+import { Route as ServicesPrintingRouteImport } from './routes/services.printing'
+import { Route as ServicesSignageRouteImport } from './routes/services.signage'
+import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
+import { Route as SolutionsCorporateRouteImport } from './routes/solutions.corporate'
+import { Route as SolutionsLaunchRouteImport } from './routes/solutions.launch'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +67,52 @@ const SolutionsRoute = SolutionsRouteImport.update({
   path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesBrandingRoute = ServicesBrandingRouteImport.update({
+  id: '/branding',
+  path: '/branding',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesDigitalMarketingRoute =
+  ServicesDigitalMarketingRouteImport.update({
+    id: '/digital-marketing',
+    path: '/digital-marketing',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesMerchandiseRoute = ServicesMerchandiseRouteImport.update({
+  id: '/merchandise',
+  path: '/merchandise',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesPrintingRoute = ServicesPrintingRouteImport.update({
+  id: '/printing',
+  path: '/printing',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSignageRoute = ServicesSignageRouteImport.update({
+  id: '/signage',
+  path: '/signage',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
+  id: '/websites',
+  path: '/websites',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const SolutionsCorporateRoute = SolutionsCorporateRouteImport.update({
+  id: '/corporate',
+  path: '/corporate',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsLaunchRoute = SolutionsLaunchRouteImport.update({
+  id: '/launch',
+  path: '/launch',
+  getParentRoute: () => SolutionsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -66,8 +121,17 @@ export interface FileRoutesByFullPath {
   '/industries': typeof IndustriesRoute
   '/portfolio': typeof PortfolioRoute
   '/resources': typeof ResourcesRoute
-  '/services': typeof ServicesRoute
-  '/solutions': typeof SolutionsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/solutions': typeof SolutionsRouteWithChildren
+  '/services/branding': typeof ServicesBrandingRoute
+  '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
+  '/services/merchandise': typeof ServicesMerchandiseRoute
+  '/services/printing': typeof ServicesPrintingRoute
+  '/services/signage': typeof ServicesSignageRoute
+  '/services/websites': typeof ServicesWebsitesRoute
+  '/solutions/corporate': typeof SolutionsCorporateRoute
+  '/solutions/launch': typeof SolutionsLaunchRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -76,8 +140,16 @@ export interface FileRoutesByTo {
   '/industries': typeof IndustriesRoute
   '/portfolio': typeof PortfolioRoute
   '/resources': typeof ResourcesRoute
-  '/services': typeof ServicesRoute
-  '/solutions': typeof SolutionsRoute
+  '/solutions': typeof SolutionsRouteWithChildren
+  '/services/branding': typeof ServicesBrandingRoute
+  '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
+  '/services/merchandise': typeof ServicesMerchandiseRoute
+  '/services/printing': typeof ServicesPrintingRoute
+  '/services/signage': typeof ServicesSignageRoute
+  '/services/websites': typeof ServicesWebsitesRoute
+  '/solutions/corporate': typeof SolutionsCorporateRoute
+  '/solutions/launch': typeof SolutionsLaunchRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -87,8 +159,17 @@ export interface FileRoutesById {
   '/industries': typeof IndustriesRoute
   '/portfolio': typeof PortfolioRoute
   '/resources': typeof ResourcesRoute
-  '/services': typeof ServicesRoute
-  '/solutions': typeof SolutionsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/solutions': typeof SolutionsRouteWithChildren
+  '/services/branding': typeof ServicesBrandingRoute
+  '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
+  '/services/merchandise': typeof ServicesMerchandiseRoute
+  '/services/printing': typeof ServicesPrintingRoute
+  '/services/signage': typeof ServicesSignageRoute
+  '/services/websites': typeof ServicesWebsitesRoute
+  '/solutions/corporate': typeof SolutionsCorporateRoute
+  '/solutions/launch': typeof SolutionsLaunchRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +182,15 @@ export interface FileRouteTypes {
     | '/resources'
     | '/services'
     | '/solutions'
+    | '/services/branding'
+    | '/services/digital-marketing'
+    | '/services/merchandise'
+    | '/services/printing'
+    | '/services/signage'
+    | '/services/websites'
+    | '/solutions/corporate'
+    | '/solutions/launch'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -109,8 +199,16 @@ export interface FileRouteTypes {
     | '/industries'
     | '/portfolio'
     | '/resources'
-    | '/services'
     | '/solutions'
+    | '/services/branding'
+    | '/services/digital-marketing'
+    | '/services/merchandise'
+    | '/services/printing'
+    | '/services/signage'
+    | '/services/websites'
+    | '/solutions/corporate'
+    | '/solutions/launch'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -121,6 +219,15 @@ export interface FileRouteTypes {
     | '/resources'
     | '/services'
     | '/solutions'
+    | '/services/branding'
+    | '/services/digital-marketing'
+    | '/services/merchandise'
+    | '/services/printing'
+    | '/services/signage'
+    | '/services/websites'
+    | '/solutions/corporate'
+    | '/solutions/launch'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -130,8 +237,8 @@ export interface RootRouteChildren {
   IndustriesRoute: typeof IndustriesRoute
   PortfolioRoute: typeof PortfolioRoute
   ResourcesRoute: typeof ResourcesRoute
-  ServicesRoute: typeof ServicesRoute
-  SolutionsRoute: typeof SolutionsRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
+  SolutionsRoute: typeof SolutionsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -192,8 +299,109 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/branding': {
+      id: '/services/branding'
+      path: '/branding'
+      fullPath: '/services/branding'
+      preLoaderRoute: typeof ServicesBrandingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/digital-marketing': {
+      id: '/services/digital-marketing'
+      path: '/digital-marketing'
+      fullPath: '/services/digital-marketing'
+      preLoaderRoute: typeof ServicesDigitalMarketingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/merchandise': {
+      id: '/services/merchandise'
+      path: '/merchandise'
+      fullPath: '/services/merchandise'
+      preLoaderRoute: typeof ServicesMerchandiseRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/printing': {
+      id: '/services/printing'
+      path: '/printing'
+      fullPath: '/services/printing'
+      preLoaderRoute: typeof ServicesPrintingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/signage': {
+      id: '/services/signage'
+      path: '/signage'
+      fullPath: '/services/signage'
+      preLoaderRoute: typeof ServicesSignageRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/websites': {
+      id: '/services/websites'
+      path: '/websites'
+      fullPath: '/services/websites'
+      preLoaderRoute: typeof ServicesWebsitesRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/solutions/corporate': {
+      id: '/solutions/corporate'
+      path: '/corporate'
+      fullPath: '/solutions/corporate'
+      preLoaderRoute: typeof SolutionsCorporateRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/launch': {
+      id: '/solutions/launch'
+      path: '/launch'
+      fullPath: '/solutions/launch'
+      preLoaderRoute: typeof SolutionsLaunchRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
   }
 }
+
+interface ServicesRouteChildren {
+  ServicesBrandingRoute: typeof ServicesBrandingRoute
+  ServicesDigitalMarketingRoute: typeof ServicesDigitalMarketingRoute
+  ServicesMerchandiseRoute: typeof ServicesMerchandiseRoute
+  ServicesPrintingRoute: typeof ServicesPrintingRoute
+  ServicesSignageRoute: typeof ServicesSignageRoute
+  ServicesWebsitesRoute: typeof ServicesWebsitesRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesBrandingRoute: ServicesBrandingRoute,
+  ServicesDigitalMarketingRoute: ServicesDigitalMarketingRoute,
+  ServicesMerchandiseRoute: ServicesMerchandiseRoute,
+  ServicesPrintingRoute: ServicesPrintingRoute,
+  ServicesSignageRoute: ServicesSignageRoute,
+  ServicesWebsitesRoute: ServicesWebsitesRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
+interface SolutionsRouteChildren {
+  SolutionsCorporateRoute: typeof SolutionsCorporateRoute
+  SolutionsLaunchRoute: typeof SolutionsLaunchRoute
+}
+
+const SolutionsRouteChildren: SolutionsRouteChildren = {
+  SolutionsCorporateRoute: SolutionsCorporateRoute,
+  SolutionsLaunchRoute: SolutionsLaunchRoute,
+}
+
+const SolutionsRouteWithChildren = SolutionsRoute._addFileChildren(
+  SolutionsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -202,8 +410,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndustriesRoute: IndustriesRoute,
   PortfolioRoute: PortfolioRoute,
   ResourcesRoute: ResourcesRoute,
-  ServicesRoute: ServicesRoute,
-  SolutionsRoute: SolutionsRoute,
+  ServicesRoute: ServicesRouteWithChildren,
+  SolutionsRoute: SolutionsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
