@@ -1,0 +1,664 @@
+import pageImage0 from "@/assets/imported-pages/image-c8196ef7632edd95.asset.json";
+import pageImage1 from "@/assets/imported-pages/image-4243ddc8ab32fdf1.asset.json";
+import pageImage2 from "@/assets/imported-pages/image-bdaab56c987d47e1.asset.json";
+import pageImage3 from "@/assets/imported-pages/image-28efc381807730ce.asset.json";
+import pageImage4 from "@/assets/imported-pages/image-4f3a6e337b6a652a.asset.json";
+import pageImage5 from "@/assets/imported-pages/image-0b98988b3b644210.asset.json";
+import pageImage6 from "@/assets/imported-pages/image-311deaf94316a068.asset.json";
+import pageImage7 from "@/assets/imported-pages/image-b5399f1f123d885e.asset.json";
+import pageImage8 from "@/assets/imported-pages/image-e1e90a9d2ee7ee98.asset.json";
+import pageImage9 from "@/assets/imported-pages/image-14b7eb1457221dce.asset.json";
+import pageImage10 from "@/assets/hero-reception.jpg";
+import pageImage11 from "@/assets/imported-pages/image-f302c30d39205711.asset.json";
+import pageImage12 from "@/assets/imported-pages/image-5254fb5201dac950.asset.json";
+import pageImage13 from "@/assets/imported-pages/image-202001489db10483.asset.json";
+import pageImage14 from "@/assets/imported-pages/image-45ae8be8dac14d2a.asset.json";
+import { Link } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { Button } from "@/components/ui/button";
+import React, { useState } from 'react';
+import { 
+  Phone, Mail, Clock, MapPin, Facebook, Instagram, Linkedin, Youtube, 
+  ChevronDown, ArrowRight, CheckCircle2, ShieldCheck, Wrench, PenTool, 
+  Zap, Headphones, Building2, Store, Lightbulb, Compass, Car, 
+  FileText, HelpCircle, Calendar, MessageSquare, ExternalLink, Menu, X, Check, Eye
+} from 'lucide-react';
+
+export default function ContentPage() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [auditModalOpen, setAuditModalOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const showToast = (msg: string) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 3500);
+  };
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
+
+  const servicesList = [
+    {
+      title: "Exterior Signage",
+      subtitle: "Shop Signs, Building Signs, Fascia Signs, Billboards",
+      image: pageImage5.url,
+      items: ["Shop Signs", "Building Signs", "Fascia Signs", "Billboards"]
+    },
+    {
+      title: "Interior Signage",
+      subtitle: "Reception Signs, Wall Graphics, Directional Signs, Office Signs",
+      image: pageImage3.url,
+      items: ["Reception Signs", "Wall Graphics", "Directional Signs", "Office Signs"]
+    },
+    {
+      title: "Lightbox Signs",
+      subtitle: "Slim Lightboxes, Double-Sided Boxes, Acrylic Lightbases, LED Illuminated",
+      image: pageImage12.url,
+      items: ["Slim Lightboxes", "Double-Sided Boxes", "Acrylic Lightbases", "LED Illuminated Signs"]
+    },
+    {
+      title: "Safety & Wayfinding",
+      subtitle: "Exit Signs, Fire Assembly Signs, Safety Signs, Wayfinding Systems",
+      image: pageImage14.url,
+      items: ["Exit Signs", "Fire Assembly Signs", "Safety Signs", "Wayfinding Systems"]
+    },
+    {
+      title: "Pylon & Totem Signs",
+      subtitle: "Pylon Signs, Totem Signs, Monument Signs, Directory Signs",
+      image: pageImage1.url,
+      items: ["Pylon Signs", "Totem Signs", "Monument Signs", "Directory Signs"]
+    },
+    {
+      title: "Vehicle Graphics",
+      subtitle: "Vehicle Wrapping, Fleet Branding, Magnetic Signs, Reflective Markings",
+      image: pageImage11.url,
+      items: ["Vehicle Wrapping", "Fleet Branding", "Magnetic Signs", "Reflective Markings"]
+    }
+  ];
+
+  const materials = [
+    { name: "Acrylic", icon: <PenTool className="w-6 h-6 text-brand" /> },
+    { name: "Aluminium Composite Panel", icon: <Building2 className="w-6 h-6 text-brand" /> },
+    { name: "Stainless Steel", icon: <ShieldCheck className="w-6 h-6 text-brand" /> },
+    { name: "LED Illumination", icon: <Lightbulb className="w-6 h-6 text-brand" /> },
+    { name: "Vinyl Graphics", icon: <Compass className="w-6 h-6 text-brand" /> },
+    { name: "3D Letters", icon: <FileText className="w-6 h-6 text-brand" /> },
+    { name: "Neon Flex", icon: <Zap className="w-6 h-6 text-brand" /> },
+    { name: "Wood & Timber", icon: <Store className="w-6 h-6 text-brand" /> }
+  ];
+
+  const processSteps = [
+    { num: "01", title: "Consult", desc: "We understand your needs, location and branding goals." },
+    { num: "02", title: "Design", desc: "Our team creates custom concepts for your approval." },
+    { num: "03", title: "Produce", desc: "We use quality materials and precision fabrication techniques." },
+    { num: "04", title: "Install", desc: "Our experts install safely, neatly and on schedule." },
+    { num: "05", title: "Inspect", desc: "We ensure everything meets our quality standards." },
+    { num: "06", title: "Support", desc: "We provide maintenance and support for long lasting results." }
+  ];
+
+  const projects = [
+    { name: "Britam", img: pageImage0.url, tag: "Exterior Tower Signage" },
+    { name: "Pharmaplus", img: pageImage13.url, tag: "Retail Pharmacy Branding" },
+    { name: "The Lake Restaurant", img: pageImage6.url, tag: "Custom 3D Acrylic Logo" },
+    { name: "Elite Gym", img: pageImage8.url, tag: "Illuminated Wall Sign" },
+    { name: "Gakenya Advocates", img: pageImage2.url, tag: "Executive Office Signage" },
+    { name: "TRM Mall Directory", img: pageImage7.url, tag: "Pylon & Directory Signs" }
+  ];
+
+  const faqs = [
+    { q: "How long does it take to complete a signage project?", a: "Most signage projects take between 3-10 working days depending on the type, size and complexity of the sign." },
+    { q: "What materials do you use?", a: "We use premium weather-resistant materials including aluminium composite panels, acrylic, stainless steel, high-grade vinyl, and energy-efficient LED modules." },
+    { q: "Do you handle installation?", a: "Yes! Our certified installation team handles the complete mounting, electrical connections, and safety compliance checks." },
+    { q: "Do you offer maintenance services?", a: "We offer comprehensive maintenance and repair contracts to keep your signage shining bright year-round." },
+    { q: "Can you work at night or weekends?", a: "Yes, we accommodate flexible scheduling including night shifts and weekends to avoid business disruption." }
+  ];
+
+  return (
+    <div className="min-h-screen bg-topbar text-muted font-sans selection:bg-brand selection:text-brand-foreground relative">
+      <SiteHeader />
+
+
+      {}
+      <section className="relative overflow-hidden bg-gradient-to-b from-topbar to-topbar pt-8 pb-20 border-b border-primary">
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ff5722_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-4 lg:px-12 relative z-10">
+          
+          {/* Breadcrumb */}
+          <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-8">
+            <a href="#" className="hover:text-brand transition">Home</a>
+            <span>&gt;</span>
+            <a href="#" className="hover:text-brand transition">Services</a>
+            <span>&gt;</span>
+            <span className="text-brand font-medium">Signage</span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-block bg-brand/20 border border-brand/40 text-brand text-xs font-bold px-3.5 py-1.5 rounded-full tracking-normal uppercase">
+                Signage
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-normal leading-tight text-brand-foreground">
+                Signs That Get Noticed. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand">
+                  Brands That Grow.
+                </span>
+              </h1>
+              <p className="text-lg text-border max-w-2xl leading-relaxed">
+                We design, manufacture and install high-impact signage that increases visibility, strengthens brand presence and attracts more customers to your business.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button variant="unstyled" 
+                  onClick={() => setAuditModalOpen(true)}
+                  className="bg-brand hover:bg-brand text-brand-foreground font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-brand/30 flex items-center justify-center space-x-3 transition transform hover:-translate-y-0.5"
+                >
+                  <span>GET A FREE SIGNAGE AUDIT</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+                <Button variant="unstyled" 
+                  onClick={() => {
+                    const el = document.getElementById('projects-section');
+                    el?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="border-2 border-muted-foreground hover:border-brand hover:text-brand text-border font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-3 transition"
+                >
+                  <span>VIEW OUR WORK</span>
+                  <ExternalLink className="w-5 h-5" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Featured Banner / Image */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-muted-foreground group">
+                <img 
+                  src={pageImage10} 
+                  alt="Kijani Farms Signage Showcase" 
+                  className="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-topbar via-transparent to-transparent opacity-80"></div>
+                
+                {/* Floating Tags inside Hero image */}
+                <div className="absolute top-4 right-4 flex flex-col space-y-2">
+                  <div className="bg-topbar/90 backdrop-blur border border-muted-foreground text-brand-foreground text-xs font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-brand" />
+                    <span>FRESH PRODUCE</span>
+                  </div>
+                  <div className="bg-topbar/90 backdrop-blur border border-muted-foreground text-brand-foreground text-xs font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-brand" />
+                    <span>ORGANIC FOODS</span>
+                  </div>
+                  <div className="bg-topbar/90 backdrop-blur border border-muted-foreground text-brand-foreground text-xs font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-brand" />
+                    <span>DAIRY PRODUCTS</span>
+                  </div>
+                  <div className="bg-topbar/90 backdrop-blur border border-muted-foreground text-brand-foreground text-xs font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-brand" />
+                    <span>GARDEN SUPPLIES</span>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-4 left-4 right-4 bg-topbar/90 backdrop-blur border border-muted-foreground p-4 rounded-xl">
+                  <div className="text-sm font-bold text-brand-foreground">KIJANI FARMS SIGNAGE PROJECT</div>
+                  <div className="text-xs text-brand mt-0.5">High-impact exterior LED facade & directional boards</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {}
+      <section className="bg-topbar border-b border-primary py-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            
+            <div className="bg-topbar border border-primary p-5 rounded-xl text-center hover:border-brand/50 transition">
+              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3 text-brand">
+                <Eye className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-sm text-brand-foreground mb-1">High Visibility</h3>
+              <p className="text-xs text-muted-foreground">Designed to stand out and grab attention.</p>
+            </div>
+
+            <div className="bg-topbar border border-primary p-5 rounded-xl text-center hover:border-brand/50 transition">
+              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3 text-brand">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-sm text-brand-foreground mb-1">Premium Quality</h3>
+              <p className="text-xs text-muted-foreground">Durable materials & expert craftsmanship.</p>
+            </div>
+
+            <div className="bg-topbar border border-primary p-5 rounded-xl text-center hover:border-brand/50 transition">
+              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3 text-brand">
+                <Wrench className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-sm text-brand-foreground mb-1">Professional Installation</h3>
+              <p className="text-xs text-muted-foreground">Safe, precise and on-time installation.</p>
+            </div>
+
+            <div className="bg-topbar border border-primary p-5 rounded-xl text-center hover:border-brand/50 transition">
+              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3 text-brand">
+                <PenTool className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-sm text-brand-foreground mb-1">Custom Designs</h3>
+              <p className="text-xs text-muted-foreground">Tailored to your brand and environment.</p>
+            </div>
+
+            <div className="bg-topbar border border-primary p-5 rounded-xl text-center hover:border-brand/50 transition">
+              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3 text-brand">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-sm text-brand-foreground mb-1">Fast Turnaround</h3>
+              <p className="text-xs text-muted-foreground">Efficient production and quick delivery.</p>
+            </div>
+
+            <div className="bg-topbar border border-primary p-5 rounded-xl text-center hover:border-brand/50 transition">
+              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3 text-brand">
+                <Headphones className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-sm text-brand-foreground mb-1">After-Sales Support</h3>
+              <p className="text-xs text-muted-foreground">Maintenance and support when you need it.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {}
+      <section className="py-20 bg-topbar">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-brand text-xs font-bold tracking-normal uppercase">OUR SIGNAGE SOLUTIONS</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground mt-2">Custom Signage For Every Need</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicesList.map((service, index) => (
+              <div key={index} className="bg-topbar border border-primary rounded-2xl overflow-hidden group hover:border-brand/50 transition duration-300 flex flex-col shadow-xl">
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-topbar via-transparent to-transparent"></div>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-brand-foreground mb-4 flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+                      {service.title}
+                    </h3>
+
+                    <ul className="space-y-2.5 mb-6">
+                      {service.items.map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-border">
+                          <Check className="w-4 h-4 text-brand mr-2.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Button variant="unstyled" 
+                    onClick={() => setQuoteModalOpen(true)}
+                    className="w-full bg-topbar hover:bg-brand text-border hover:text-brand-foreground font-semibold py-2.5 rounded-lg text-sm transition flex items-center justify-center space-x-2"
+                  >
+                    <span>Enquire Now</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {}
+      <section className="bg-topbar border-y border-primary py-16">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12 text-center">
+          <span className="text-brand text-xs font-bold tracking-normal uppercase">QUALITY MATERIALS, SUPERIOR RESULTS.</span>
+          <h3 className="text-2xl font-black text-brand-foreground mt-2 mb-10">Engineered with Industry-Standard Materials</h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+            {materials.map((mat, i) => (
+              <div key={i} className="bg-topbar border border-primary p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand transition group">
+                <div className="mb-3 p-3 rounded-lg bg-brand/10 group-hover:bg-brand/20 transition">
+                  {mat.icon}
+                </div>
+                <span className="text-xs font-bold text-border">{mat.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {}
+      <section className="py-20 bg-topbar">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-brand text-xs font-bold tracking-normal uppercase">OUR PROCESS</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground mt-2">From Concept To Installation</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative">
+            {processSteps.map((step, index) => (
+              <div key={index} className="bg-topbar border border-primary p-6 rounded-2xl relative hover:border-brand/60 transition group flex flex-col justify-between">
+                <div>
+                  <div className="text-3xl font-black text-brand/40 group-hover:text-brand transition mb-3">
+                    {step.num}
+                  </div>
+                  <h3 className="text-lg font-bold text-brand-foreground mb-2">{step.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-primary flex items-center justify-between text-[11px] text-brand font-semibold">
+                  <span>Step {step.num} of 06</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {}
+      <section id="projects-section" className="py-20 bg-topbar border-t border-primary">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <span className="text-brand text-xs font-bold tracking-normal uppercase">RECENT SIGNAGE PROJECTS</span>
+              <h2 className="text-3xl sm:text-4xl font-black text-brand-foreground mt-2">Real Signs. Real Impact.</h2>
+            </div>
+            <Button variant="unstyled" 
+              onClick={() => showToast("Loading all projects gallery...")}
+              className="mt-4 md:mt-0 border border-muted-foreground hover:border-brand text-border hover:text-brand px-6 py-3 rounded-lg text-sm font-bold flex items-center space-x-2 transition self-start"
+            >
+              <span>VIEW ALL PROJECTS</span>
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((proj, idx) => (
+              <div key={idx} className="group relative rounded-2xl overflow-hidden shadow-2xl border border-primary bg-topbar h-72">
+                <img 
+                  src={proj.img} 
+                  alt={proj.name} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-topbar via-topbar/40 to-transparent opacity-90"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="text-xs font-bold text-brand uppercase tracking-normal">{proj.tag}</span>
+                  <h3 className="text-2xl font-black text-brand-foreground mt-1">{proj.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {}
+      <section className="py-20 bg-topbar border-t border-primary">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            {/* Left Column: Why Invest + FAQs */}
+            <div className="lg:col-span-7 space-y-12">
+              
+              {/* Why Invest */}
+              <div className="bg-topbar border border-primary p-8 rounded-2xl shadow-xl">
+                <h3 className="text-2xl font-black text-brand-foreground mb-6">Why Invest In Quality Signage?</h3>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  {[
+                    "Increase brand visibility",
+                    "Attract more customers",
+                    "Improve brand recognition",
+                    "Create a professional image",
+                    "Communicate 24/7",
+                    "Higher return on investment"
+                  ].map((benefit, i) => (
+                    <div key={i} className="flex items-center space-x-3">
+                      <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
+                      <span className="text-sm font-semibold text-border">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="rounded-xl overflow-hidden h-48 relative">
+                  <img 
+                    src={pageImage4.url} 
+                    alt="Pearl Dental Signage" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-topbar opacity-70"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <span className="text-xs text-brand font-bold uppercase tracking-normal">Client Spotlight</span>
+                    <h4 className="text-lg font-bold text-brand-foreground">Pearl Dental Clinic</h4>
+                  </div>
+                </div>
+              </div>
+
+              {/* FAQs */}
+              <div className="bg-topbar border border-primary p-8 rounded-2xl shadow-xl">
+                <h3 className="text-2xl font-black text-brand-foreground mb-6 flex items-center gap-3">
+                  <HelpCircle className="w-7 h-7 text-brand" />
+                  Frequently Asked Questions
+                </h3>
+
+                <div className="space-y-4">
+                  {faqs.map((faq, idx) => (
+                    <div key={idx} className="border border-primary rounded-xl overflow-hidden bg-topbar">
+                      <Button variant="unstyled" 
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full p-4 text-left font-bold text-sm sm:text-base text-brand-foreground flex justify-between items-center hover:text-brand transition"
+                      >
+                        <span>{faq.q}</span>
+                        <ChevronDown className={`w-5 h-5 transition-transform ${activeFaq === idx ? 'rotate-180 text-brand' : 'text-muted-foreground'}`} />
+                      </Button>
+                      {activeFaq === idx && (
+                        <div className="px-4 pb-4 text-sm text-border border-t border-primary pt-3">
+                          {faq.a}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right Column: Ready To Get Noticed Card */}
+            <div className="lg:col-span-5">
+              <div className="bg-gradient-to-br from-topbar to-topbar border border-brand/40 p-8 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col justify-between h-full">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-brand/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div>
+                  <span className="text-xs font-bold text-brand uppercase tracking-normal">GET STARTED TODAY</span>
+                  <h3 className="text-3xl font-black text-brand-foreground mt-2 mb-4">Ready To Get Noticed?</h3>
+                  <p className="text-sm text-border leading-relaxed mb-6">
+                    Let's create signage that puts your brand in the spotlight and drives continuous customer engagement.
+                  </p>
+
+                  <div className="flex items-center space-x-4 mb-8 bg-topbar/60 p-4 rounded-2xl border border-primary">
+                    <img 
+                      src={pageImage9.url} 
+                      alt="Signage Expert" 
+                      className="w-16 h-16 rounded-full object-cover border-2 border-brand shrink-0"
+                    />
+                    <div>
+                      <h4 className="font-bold text-brand-foreground text-base">Expert Consultant</h4>
+                      <p className="text-xs text-brand">Dedicated Project Manager</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <Button variant="unstyled" 
+                    onClick={() => setQuoteModalOpen(true)}
+                    className="w-full bg-gradient-to-r from-brand to-brand hover:from-brand hover:to-brand text-brand-foreground font-extrabold py-4 rounded-xl shadow-lg shadow-brand/30 uppercase tracking-normal text-sm transition transform active:scale-95 flex items-center justify-center space-x-2"
+                  >
+                    <span>REQUEST A QUOTE</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+
+                  <a 
+                    href="https://wa.me/254720791677" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-full border border-muted-foreground hover:border-brand bg-topbar hover:bg-topbar text-brand-foreground font-bold py-4 rounded-xl flex items-center justify-center space-x-3 transition"
+                  >
+                    <Phone className="w-5 h-5 text-brand" />
+                    <span className="uppercase text-sm tracking-normal">CALL / WHATSAPP</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {}
+      <section className="bg-gradient-to-r from-brand via-brand to-brand py-12 px-4 lg:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center space-x-4 text-brand-foreground">
+            <div className="w-14 h-14 rounded-2xl bg-topbar/20 backdrop-blur flex items-center justify-center shrink-0">
+              <Calendar className="w-8 h-8 text-brand-foreground" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-black">Need A Site Survey Or Signage Audit?</h3>
+              <p className="text-sm font-medium text-brand">Our team will visit your location and recommend the best signage solution.</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button variant="unstyled" 
+              onClick={() => setAuditModalOpen(true)}
+              className="bg-topbar hover:bg-primary text-brand-foreground font-extrabold px-6 py-3.5 rounded-xl shadow-xl uppercase tracking-normal text-sm transition"
+            >
+              SCHEDULE A FREE SITE VISIT
+            </Button>
+            <a 
+              href="https://wa.me/254720791677" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-brand-foreground hover:bg-muted text-brand font-extrabold px-6 py-3.5 rounded-xl shadow-xl uppercase tracking-normal text-sm transition flex items-center space-x-2"
+            >
+              <Phone className="w-4 h-4" />
+              <span>CALL / WHATSAPP</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {}
+      <SiteFooter />
+
+      {}
+      
+
+      {}
+      {quoteModalOpen && (
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-topbar border border-muted-foreground w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl animate-scaleUp">
+            <Button variant="unstyled" 
+              onClick={() => setQuoteModalOpen(false)}
+              className="absolute top-6 right-6 text-muted-foreground hover:text-brand-foreground"
+            >
+              <X className="w-6 h-6" />
+            </Button>
+            
+            <h3 className="text-2xl font-black text-brand-foreground mb-2">Request A Signage Quote</h3>
+            <p className="text-xs text-muted-foreground mb-6">Fill in your details and our team will get back to you with a custom estimate within 2 hours.</p>
+
+            <form onSubmit={(e) => { e.preventDefault(); setQuoteModalOpen(false); showToast("Quote request submitted successfully!"); }} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Your Full Name</label>
+                <input required type="text" placeholder="John Doe" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Phone Number</label>
+                <input required type="tel" placeholder="+254 700 000000" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Signage Type</label>
+                <select className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand">
+                  <option>Exterior Signage</option>
+                  <option>Interior Signage</option>
+                  <option>Lightbox Signs</option>
+                  <option>Safety & Wayfinding</option>
+                  <option>Pylon & Totem Signs</option>
+                  <option>Vehicle Graphics</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Project Details / Message</label>
+                <textarea rows={3} placeholder="Tell us about dimensions, location, and timeframe..." className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand"></textarea>
+              </div>
+              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-extrabold py-3.5 rounded-xl shadow-lg uppercase tracking-normal text-sm transition">
+                SUBMIT QUOTE REQUEST
+              </Button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {}
+      {auditModalOpen && (
+        <div className="fixed inset-0 z-[60] bg-topbar/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-topbar border border-muted-foreground w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl animate-scaleUp">
+            <Button variant="unstyled" 
+              onClick={() => setAuditModalOpen(false)}
+              className="absolute top-6 right-6 text-muted-foreground hover:text-brand-foreground"
+            >
+              <X className="w-6 h-6" />
+            </Button>
+            
+            <h3 className="text-2xl font-black text-brand-foreground mb-2">Schedule Free Site Audit</h3>
+            <p className="text-xs text-muted-foreground mb-6">Our signage experts will visit your premises in Nairobi and surrounding areas for a professional evaluation.</p>
+
+            <form onSubmit={(e) => { e.preventDefault(); setAuditModalOpen(false); showToast("Site visit scheduled successfully! We will call you to confirm."); }} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Company / Business Name</label>
+                <input required type="text" placeholder="Your Business Ltd" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Contact Person & Phone</label>
+                <input required type="text" placeholder="Jane Doe (+254...)" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Premises Location / Address</label>
+                <input required type="text" placeholder="Building name, Street, Nairobi" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-border uppercase mb-1">Preferred Date</label>
+                <input required type="date" className="w-full bg-topbar border border-muted-foreground rounded-xl px-4 py-3 text-sm text-brand-foreground focus:outline-none focus:border-brand" />
+              </div>
+              <Button variant="unstyled" type="submit" className="w-full bg-brand hover:bg-brand text-brand-foreground font-extrabold py-3.5 rounded-xl shadow-lg uppercase tracking-normal text-sm transition">
+                CONFIRM FREE VISIT
+              </Button>
+            </form>
+          </div>
+        </div>
+      )}
+
+    </div>
+  );
+}

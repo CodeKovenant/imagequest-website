@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import ContentPage from "@/components/content-pages/services.signage";
+export const Route = createFileRoute("/services/signage")({ head: () => ({ meta: [{ title: "Signage Services | Image Quest Graphics Ltd" }, { name: "description", content: "Indoor, outdoor, illuminated and wayfinding signage for businesses across Kenya." }, { property: "og:title", content: "Signage Services | Image Quest Graphics Ltd" }, { property: "og:description", content: "Indoor, outdoor, illuminated and wayfinding signage for businesses across Kenya." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: ContentPage });

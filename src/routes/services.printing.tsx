@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import ContentPage from "@/components/content-pages/services.printing";
+export const Route = createFileRoute("/services/printing")({ head: () => ({ meta: [{ title: "Printing Services | Image Quest Graphics Ltd" }, { name: "description", content: "Professional corporate stationery, brochures and large format printing in Nairobi." }, { property: "og:title", content: "Printing Services | Image Quest Graphics Ltd" }, { property: "og:description", content: "Professional corporate stationery, brochures and large format printing in Nairobi." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: ContentPage });

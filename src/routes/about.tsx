@@ -1,18 +1,3 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/site-header";
-
-export const Route = createFileRoute("/about")({
-  component: Page,
-});
-
-function Page() {
-  return (
-    <div className="min-h-screen bg-background">
-      <SiteHeader />
-      <div className="mx-auto max-w-7xl px-4 py-20">
-        <h1 className="text-3xl font-extrabold capitalize text-foreground">about</h1>
-        <p className="mt-3 text-muted-foreground">This page is coming soon.</p>
-      </div>
-    </div>
-  );
-}
+import ContentPage from "@/components/content-pages/about";
+export const Route = createFileRoute("/about")({ head: () => ({ meta: [{ title: "About Image Quest | Image Quest Graphics Ltd" }, { name: "description", content: "Learn about Image Quest Graphics Ltd and our branding, signage, print and digital expertise in Kenya." }, { property: "og:title", content: "About Image Quest | Image Quest Graphics Ltd" }, { property: "og:description", content: "Learn about Image Quest Graphics Ltd and our branding, signage, print and digital expertise in Kenya." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: ContentPage });

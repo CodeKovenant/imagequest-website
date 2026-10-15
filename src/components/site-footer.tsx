@@ -10,6 +10,7 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
+import { serviceLinks, solutionLinks } from "@/lib/site-navigation";
 import logoLight from "@/assets/logo-light.png";
 
 const solutions = [
@@ -90,10 +91,10 @@ export function SiteFooter() {
                 Solutions
               </h3>
               <ul className="mt-5 space-y-3">
-                {solutions.map((item) => (
-                  <li key={item}>
-                    <Link to="/solutions" className={linkClass}>
-                      {item}
+                {solutionLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className={linkClass}>
+                      {item.label}
                     </Link>
                   </li>
                 ))}
@@ -106,10 +107,10 @@ export function SiteFooter() {
                 Services
               </h3>
               <ul className="mt-5 space-y-3">
-                {services.map((item) => (
-                  <li key={item}>
-                    <Link to="/services" className={linkClass}>
-                      {item}
+                {serviceLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className={linkClass}>
+                      {item.label}
                     </Link>
                   </li>
                 ))}

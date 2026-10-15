@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 
 export const Route = createFileRoute("/contact")({
+  head: () => ({ meta: [{ title: "Contact | Image Quest Graphics Ltd" }, { name: "description", content: "Contact information from Image Quest Graphics Ltd, Nairobi, Kenya." }, { property: "og:title", content: "Contact | Image Quest Graphics Ltd" }, { property: "og:description", content: "Contact information from Image Quest Graphics Ltd, Nairobi, Kenya." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   component: Page,
 });
 

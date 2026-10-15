@@ -117,6 +117,7 @@ const solutions = [
   {
     icon: Rocket,
     title: "Business Launch Package",
+    to: "/solutions/launch" as const,
     description: "Everything you need to launch your business professionally.",
     image: serviceLaunch,
     alt: "A laptop open on a clean desk showing design files alongside office desk items",
@@ -124,6 +125,7 @@ const solutions = [
   {
     icon: TrendingUp,
     title: "Business Growth Package",
+    to: "/services/digital-marketing" as const,
     description: "Marketing and branding solutions that help you attract more customers.",
     image: serviceGrowth,
     alt: "Printed marketing materials, brochures, and flyers laid out neatly on a table",
@@ -131,6 +133,7 @@ const solutions = [
   {
     icon: Users,
     title: "Corporate Brand Partnership",
+    to: "/solutions/corporate" as const,
     description: "Your outsourced branding department for consistent, scalable growth.",
     image: servicePartnership,
     alt: "Corporate professionals sitting around a meeting room table collaborating",
@@ -138,16 +141,16 @@ const solutions = [
 ];
 
 const coreServices = [
-  { icon: Target, title: "Branding", subtitle: "Logo, Identity & Guidelines" },
-  { icon: Signpost, title: "Signage", subtitle: "Indoor, Outdoor & Wayfinding" },
-  { icon: Printer, title: "Printing", subtitle: "All Your Print Needs" },
-  { icon: Monitor, title: "Websites", subtitle: "Custom, Responsive & Fast" },
-  { icon: TrendingUp, title: "Digital Marketing", subtitle: "SEO, Social Media & Ads" },
-  { icon: Car, title: "Vehicle Branding", subtitle: "Design & Full Branding" },
-  { icon: Gift, title: "Corporate Gifts", subtitle: "Branded Gifts & Merchandise" },
-  { icon: Briefcase, title: "Company Profiles", subtitle: "Profiles, Reports & Presentations" },
-  { icon: ImageIcon, title: "Large Format Printing", subtitle: "Banners, Posters & More" },
-  { icon: Heart, title: "Office Branding", subtitle: "Transform Your Workspaces" },
+  { icon: Target, title: "Branding", to: "/services/branding" as const, subtitle: "Logo, Identity & Guidelines" },
+  { icon: Signpost, title: "Signage", to: "/services/signage" as const, subtitle: "Indoor, Outdoor & Wayfinding" },
+  { icon: Printer, title: "Printing", to: "/services/printing" as const, subtitle: "All Your Print Needs" },
+  { icon: Monitor, title: "Websites", to: "/services/websites" as const, subtitle: "Custom, Responsive & Fast" },
+  { icon: TrendingUp, title: "Digital Marketing", to: "/services/digital-marketing" as const, subtitle: "SEO, Social Media & Ads" },
+  { icon: Car, title: "Vehicle Branding", to: "/services/signage" as const, subtitle: "Design & Full Branding" },
+  { icon: Gift, title: "Corporate Gifts", to: "/services/merchandise" as const, subtitle: "Branded Gifts & Merchandise" },
+  { icon: Briefcase, title: "Company Profiles", to: "/services/branding" as const, subtitle: "Profiles, Reports & Presentations" },
+  { icon: ImageIcon, title: "Large Format Printing", to: "/services/printing" as const, subtitle: "Banners, Posters & More" },
+  { icon: Heart, title: "Office Branding", to: "/services/signage" as const, subtitle: "Transform Your Workspaces" },
 ];
 
 const portfolioFilters = [
@@ -471,7 +474,7 @@ function Index() {
 
           {/* Cards */}
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {solutions.map(({ icon: Icon, title, description, image, alt }) => (
+            {solutions.map(({ icon: Icon, title, description, image, alt, to }) => (
               <div
                 key={title}
                 className="overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-shadow hover:shadow-lg"
@@ -503,7 +506,7 @@ function Index() {
                     {description}
                   </p>
                   <Link
-                    to="/solutions"
+                    to={to}
                     className="self-end text-sm font-bold uppercase tracking-wide text-brand transition-opacity hover:opacity-80"
                   >
                     Learn More →
@@ -530,8 +533,8 @@ function Index() {
 
           {/* Cards — horizontal row on desktop, grid on mobile/tablet */}
           <div className="mt-14 flex snap-x flex-wrap justify-start gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-5 lg:flex-nowrap lg:overflow-x-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
-            {coreServices.map(({ icon: Icon, title, subtitle }) => (
-              <div
+            {coreServices.map(({ icon: Icon, title, subtitle, to }) => (
+              <Link to={to}
                 key={title}
                 className="flex aspect-square w-[calc(50%-0.5rem)] snap-start flex-col items-center justify-center rounded-xl border border-border/60 bg-card p-4 text-center shadow-sm transition-shadow hover:shadow-md sm:w-auto lg:w-full"
               >
@@ -542,7 +545,7 @@ function Index() {
                 <p className="mt-1 text-xs leading-snug text-muted-foreground">
                   {subtitle}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
 
