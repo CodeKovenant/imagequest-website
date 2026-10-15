@@ -24,6 +24,7 @@ import { Route as ServicesMerchandiseRouteImport } from './routes/services.merch
 import { Route as ServicesPrintingRouteImport } from './routes/services.printing'
 import { Route as ServicesSignageRouteImport } from './routes/services.signage'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
+import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as SolutionsCorporateRouteImport } from './routes/solutions.corporate'
 import { Route as SolutionsLaunchRouteImport } from './routes/solutions.launch'
 
@@ -103,6 +104,11 @@ const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
   path: '/websites',
   getParentRoute: () => ServicesRoute,
 } as any)
+const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SolutionsRoute,
+} as any)
 const SolutionsCorporateRoute = SolutionsCorporateRouteImport.update({
   id: '/corporate',
   path: '/corporate',
@@ -132,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/solutions/corporate': typeof SolutionsCorporateRoute
   '/solutions/launch': typeof SolutionsLaunchRoute
   '/services/': typeof ServicesIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -140,7 +147,6 @@ export interface FileRoutesByTo {
   '/industries': typeof IndustriesRoute
   '/portfolio': typeof PortfolioRoute
   '/resources': typeof ResourcesRoute
-  '/solutions': typeof SolutionsRouteWithChildren
   '/services/branding': typeof ServicesBrandingRoute
   '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
   '/services/merchandise': typeof ServicesMerchandiseRoute
@@ -150,6 +156,7 @@ export interface FileRoutesByTo {
   '/solutions/corporate': typeof SolutionsCorporateRoute
   '/solutions/launch': typeof SolutionsLaunchRoute
   '/services': typeof ServicesIndexRoute
+  '/solutions': typeof SolutionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,6 +177,7 @@ export interface FileRoutesById {
   '/solutions/corporate': typeof SolutionsCorporateRoute
   '/solutions/launch': typeof SolutionsLaunchRoute
   '/services/': typeof ServicesIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,6 +199,7 @@ export interface FileRouteTypes {
     | '/solutions/corporate'
     | '/solutions/launch'
     | '/services/'
+    | '/solutions/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -199,7 +208,6 @@ export interface FileRouteTypes {
     | '/industries'
     | '/portfolio'
     | '/resources'
-    | '/solutions'
     | '/services/branding'
     | '/services/digital-marketing'
     | '/services/merchandise'
@@ -209,6 +217,7 @@ export interface FileRouteTypes {
     | '/solutions/corporate'
     | '/solutions/launch'
     | '/services'
+    | '/solutions'
   id:
     | '__root__'
     | '/'
@@ -228,6 +237,7 @@ export interface FileRouteTypes {
     | '/solutions/corporate'
     | '/solutions/launch'
     | '/services/'
+    | '/solutions/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -348,6 +358,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesWebsitesRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/solutions/': {
+      id: '/solutions/'
+      path: '/'
+      fullPath: '/solutions/'
+      preLoaderRoute: typeof SolutionsIndexRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
     '/solutions/corporate': {
       id: '/solutions/corporate'
       path: '/corporate'
@@ -392,11 +409,13 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 interface SolutionsRouteChildren {
   SolutionsCorporateRoute: typeof SolutionsCorporateRoute
   SolutionsLaunchRoute: typeof SolutionsLaunchRoute
+  SolutionsIndexRoute: typeof SolutionsIndexRoute
 }
 
 const SolutionsRouteChildren: SolutionsRouteChildren = {
   SolutionsCorporateRoute: SolutionsCorporateRoute,
   SolutionsLaunchRoute: SolutionsLaunchRoute,
+  SolutionsIndexRoute: SolutionsIndexRoute,
 }
 
 const SolutionsRouteWithChildren = SolutionsRoute._addFileChildren(
