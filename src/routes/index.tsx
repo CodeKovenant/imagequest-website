@@ -60,11 +60,13 @@ export const Route = createFileRoute("/")({
         content:
           "Image Quest Graphics Ltd delivers large format printing, signage, branding and display solutions in Nairobi, Kenya. Request a quote today.",
       },
-      { property: "og:title", content: "Image Quest Graphics Ltd — Large Format Printing & Signage" },
+      {
+        property: "og:title",
+        content: "Image Quest Graphics Ltd — Large Format Printing & Signage",
+      },
       {
         property: "og:description",
-        content:
-          "Large format printing, signage and branding solutions in Nairobi, Kenya.",
+        content: "Large format printing, signage and branding solutions in Nairobi, Kenya.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -125,7 +127,7 @@ const solutions = [
   {
     icon: TrendingUp,
     title: "Business Growth Package",
-    to: "/services/digital-marketing" as const,
+    to: "/solutions/growth" as const,
     description: "Marketing and branding solutions that help you attract more customers.",
     image: serviceGrowth,
     alt: "Printed marketing materials, brochures, and flyers laid out neatly on a table",
@@ -141,16 +143,66 @@ const solutions = [
 ];
 
 const coreServices = [
-  { icon: Target, title: "Branding", to: "/services/branding" as const, subtitle: "Logo, Identity & Guidelines" },
-  { icon: Signpost, title: "Signage", to: "/services/signage" as const, subtitle: "Indoor, Outdoor & Wayfinding" },
-  { icon: Printer, title: "Printing", to: "/services/printing" as const, subtitle: "All Your Print Needs" },
-  { icon: Monitor, title: "Websites", to: "/services/websites" as const, subtitle: "Custom, Responsive & Fast" },
-  { icon: TrendingUp, title: "Digital Marketing", to: "/services/digital-marketing" as const, subtitle: "SEO, Social Media & Ads" },
-  { icon: Car, title: "Vehicle Branding", to: "/services/signage" as const, subtitle: "Design & Full Branding" },
-  { icon: Gift, title: "Corporate Gifts", to: "/services/merchandise" as const, subtitle: "Branded Gifts & Merchandise" },
-  { icon: Briefcase, title: "Company Profiles", to: "/services/branding" as const, subtitle: "Profiles, Reports & Presentations" },
-  { icon: ImageIcon, title: "Large Format Printing", to: "/services/printing" as const, subtitle: "Banners, Posters & More" },
-  { icon: Heart, title: "Office Branding", to: "/services/signage" as const, subtitle: "Transform Your Workspaces" },
+  {
+    icon: Target,
+    title: "Branding",
+    to: "/services/branding" as const,
+    subtitle: "Logo, Identity & Guidelines",
+  },
+  {
+    icon: Signpost,
+    title: "Signage",
+    to: "/services/signage" as const,
+    subtitle: "Indoor, Outdoor & Wayfinding",
+  },
+  {
+    icon: Printer,
+    title: "Printing",
+    to: "/services/printing" as const,
+    subtitle: "All Your Print Needs",
+  },
+  {
+    icon: Monitor,
+    title: "Websites",
+    to: "/services/websites" as const,
+    subtitle: "Custom, Responsive & Fast",
+  },
+  {
+    icon: TrendingUp,
+    title: "Digital Marketing",
+    to: "/services/digital-marketing" as const,
+    subtitle: "SEO, Social Media & Ads",
+  },
+  {
+    icon: Car,
+    title: "Vehicle Branding",
+    to: "/services/signage" as const,
+    subtitle: "Design & Full Branding",
+  },
+  {
+    icon: Gift,
+    title: "Corporate Gifts",
+    to: "/services/merchandise" as const,
+    subtitle: "Branded Gifts & Merchandise",
+  },
+  {
+    icon: Briefcase,
+    title: "Company Profiles",
+    to: "/services/branding" as const,
+    subtitle: "Profiles, Reports & Presentations",
+  },
+  {
+    icon: ImageIcon,
+    title: "Large Format Printing",
+    to: "/services/printing" as const,
+    subtitle: "Banners, Posters & More",
+  },
+  {
+    icon: Heart,
+    title: "Office Branding",
+    to: "/services/signage" as const,
+    subtitle: "Transform Your Workspaces",
+  },
 ];
 
 const portfolioFilters = [
@@ -298,13 +350,11 @@ function Index() {
       ? portfolioProjects
       : portfolioProjects.filter((p) => p.category === activeFilter);
 
-  const nextTestimonial = () =>
-    setActiveTestimonial((i) => (i + 1) % testimonials.length);
+  const nextTestimonial = () => setActiveTestimonial((i) => (i + 1) % testimonials.length);
   const prevTestimonial = () =>
     setActiveTestimonial((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   const testimonial = testimonials[activeTestimonial]!;
-
 
   return (
     <div className="min-h-screen bg-background">
@@ -335,12 +385,11 @@ function Index() {
                 </span>
               </div>
               <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Building Brands That{" "}
-                <span className="text-brand italic">Command</span> Trust
+                Building Brands That <span className="text-brand italic">Command</span> Trust
               </h1>
               <p className="mt-6 max-w-md text-base leading-relaxed text-white/80 sm:text-lg">
-                Strategic branding, signage, print and digital solutions that
-                help businesses launch, grow and lead.
+                Strategic branding, signage, print and digital solutions that help businesses
+                launch, grow and lead.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <Link
@@ -442,16 +491,17 @@ function Index() {
                     </div>
                   </div>
                   {/* Title */}
-                  <h3 className="mb-2 text-center text-lg font-bold text-foreground">
-                    {title}
-                  </h3>
+                  <h3 className="mb-2 text-center text-lg font-bold text-foreground">{title}</h3>
                   {/* Description */}
                   <p className="text-center text-sm leading-relaxed text-muted-foreground">
                     {description}
                   </p>
                 </div>
                 {index < steps.length - 1 && (
-                  <ChevronRight className="mx-1 hidden size-6 shrink-0 text-brand lg:block" strokeWidth={2.5} />
+                  <ChevronRight
+                    className="mx-1 hidden size-6 shrink-0 text-brand lg:block"
+                    strokeWidth={2.5}
+                  />
                 )}
               </div>
             ))}
@@ -499,9 +549,7 @@ function Index() {
 
                 {/* Bottom half: content */}
                 <div className="flex flex-col px-6 pb-6 pt-10">
-                  <h3 className="mb-2 text-lg font-bold text-foreground">
-                    {title}
-                  </h3>
+                  <h3 className="mb-2 text-lg font-bold text-foreground">{title}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                     {description}
                   </p>
@@ -534,7 +582,8 @@ function Index() {
           {/* Cards — horizontal row on desktop, grid on mobile/tablet */}
           <div className="mt-14 flex snap-x flex-wrap justify-start gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-5 lg:flex-nowrap lg:overflow-x-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
             {coreServices.map(({ icon: Icon, title, subtitle, to }) => (
-              <Link to={to}
+              <Link
+                to={to}
                 key={title}
                 className="flex aspect-square w-[calc(50%-0.5rem)] snap-start flex-col items-center justify-center rounded-xl border border-border/60 bg-card p-4 text-center shadow-sm transition-shadow hover:shadow-md sm:w-auto lg:w-full"
               >
@@ -542,9 +591,7 @@ function Index() {
                   <Icon className="size-6 text-brand" strokeWidth={1.75} />
                 </div>
                 <h3 className="text-sm font-bold text-foreground">{title}</h3>
-                <p className="mt-1 text-xs leading-snug text-muted-foreground">
-                  {subtitle}
-                </p>
+                <p className="mt-1 text-xs leading-snug text-muted-foreground">{subtitle}</p>
               </Link>
             ))}
           </div>
@@ -654,12 +701,8 @@ function Index() {
                 className="flex flex-col items-center rounded-2xl border border-border/60 bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
               >
                 <Icon className="size-10 text-brand" strokeWidth={1.75} />
-                <h3 className="mt-4 text-base font-bold text-foreground">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {description}
-                </p>
+                <h3 className="mt-4 text-base font-bold text-foreground">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
               </div>
             ))}
           </div>
@@ -701,9 +744,7 @@ function Index() {
               </div>
             </div>
 
-            <p className="mt-6 text-lg leading-relaxed text-foreground">
-              {testimonial.quote}
-            </p>
+            <p className="mt-6 text-lg leading-relaxed text-foreground">{testimonial.quote}</p>
 
             {/* Reviewer info */}
             <div className="mt-8 flex items-center gap-4">
@@ -717,12 +758,8 @@ function Index() {
               />
               <div className="flex flex-col gap-1">
                 <div className="flex flex-col">
-                  <span className="text-base font-bold text-foreground">
-                    {testimonial.name}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </span>
+                  <span className="text-base font-bold text-foreground">{testimonial.name}</span>
+                  <span className="text-sm text-muted-foreground">{testimonial.role}</span>
                 </div>
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -768,12 +805,8 @@ function Index() {
                     index !== 0 ? "lg:border-l lg:border-border" : ""
                   }`}
                 >
-                  <span className="text-4xl font-extrabold text-brand">
-                    {stat.figure}
-                  </span>
-                  <span className="mt-2 text-sm leading-snug text-foreground">
-                    {stat.label}
-                  </span>
+                  <span className="text-4xl font-extrabold text-brand">{stat.figure}</span>
+                  <span className="mt-2 text-sm leading-snug text-foreground">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -814,9 +847,7 @@ function Index() {
                     {category}
                     <span className="text-muted-foreground"> • {date}</span>
                   </p>
-                  <h3 className="mt-3 text-lg font-bold leading-snug text-foreground">
-                    {title}
-                  </h3>
+                  <h3 className="mt-3 text-lg font-bold leading-snug text-foreground">{title}</h3>
                   <Link
                     to="/resources"
                     className="mt-auto pt-5 text-sm font-bold uppercase tracking-wide text-brand transition-opacity hover:opacity-80"
@@ -833,13 +864,9 @@ function Index() {
                 Stay Updated
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Subscribe to our newsletter for the latest tips, trends and
-                offers.
+                Subscribe to our newsletter for the latest tips, trends and offers.
               </p>
-              <form
-                className="mt-6 flex items-center gap-2"
-                onSubmit={(e) => e.preventDefault()}
-              >
+              <form className="mt-6 flex items-center gap-2" onSubmit={(e) => e.preventDefault()}>
                 <label htmlFor="newsletter-email" className="sr-only">
                   Email address
                 </label>
@@ -877,8 +904,8 @@ function Index() {
             Ready To Give Your Brand The Presence It Deserves?
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-topbar-foreground/70 sm:text-lg">
-            Talk to our team for a free consultation and a clear, no-obligation
-            quote — usually within 24 hours.
+            Talk to our team for a free consultation and a clear, no-obligation quote — usually
+            within 24 hours.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <Link

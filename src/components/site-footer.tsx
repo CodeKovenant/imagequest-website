@@ -51,8 +51,7 @@ const socials = [
   { icon: Youtube, label: "YouTube" },
 ];
 
-const linkClass =
-  "text-sm text-topbar-foreground/70 transition-colors hover:text-brand";
+const linkClass = "text-sm text-topbar-foreground/70 transition-colors hover:text-brand";
 
 export function SiteFooter() {
   return (
@@ -62,25 +61,20 @@ export function SiteFooter() {
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
             {/* Company */}
             <div>
-              <img
-                src={logoLight}
-                alt="Image Quest Graphics Ltd"
-                className="h-12 w-auto"
-              />
+              <img src={logoLight} alt="Image Quest Graphics Ltd" className="h-12 w-auto" />
               <p className="mt-5 max-w-xs text-sm leading-relaxed text-topbar-foreground/70">
-                We help businesses launch, grow and lead through strategic
-                branding, signage, print and digital solutions.
+                We help businesses launch, grow and lead through strategic branding, signage, print
+                and digital solutions.
               </p>
               <div className="mt-6 flex gap-3">
                 {socials.map(({ icon: Icon, label }) => (
-                  <a
+                  <span
                     key={label}
-                    href="#"
                     aria-label={label}
-                    className="grid size-9 place-items-center rounded-full border border-card/30 text-topbar-foreground/70 transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground"
+                    className="grid size-9 place-items-center rounded-full border border-card/30 text-topbar-foreground/70"
                   >
                     <Icon className="size-4" />
-                  </a>
+                  </span>
                 ))}
               </div>
             </div>
@@ -103,9 +97,7 @@ export function SiteFooter() {
 
             {/* Services */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-brand">
-                Services
-              </h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-brand">Services</h3>
               <ul className="mt-5 space-y-3">
                 {serviceLinks.map((item) => (
                   <li key={item.to}>
@@ -164,10 +156,7 @@ export function SiteFooter() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="mt-0.5 size-4 shrink-0 text-brand" />
-                  <a
-                    href="mailto:info@imagequest.co.ke"
-                    className="hover:text-brand"
-                  >
+                  <a href="mailto:info@imagequest.co.ke" className="hover:text-brand">
                     info@imagequest.co.ke
                   </a>
                 </li>
@@ -181,18 +170,11 @@ export function SiteFooter() {
 
           {/* Bottom bar */}
           <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-card/10 pt-6 text-xs text-topbar-foreground/50 sm:flex-row">
-            <p>
-              © {new Date().getFullYear()} Image Quest Graphics Ltd. All Rights
-              Reserved.
-            </p>
+            <p>© {new Date().getFullYear()} Image Quest Graphics Ltd. All Rights Reserved.</p>
             <p className="flex items-center gap-2">
-              <a href="#" className="transition-colors hover:text-brand">
-                Privacy Policy
-              </a>
+              <span>Privacy Policy</span>
               <span className="text-card/20">|</span>
-              <a href="#" className="transition-colors hover:text-brand">
-                Terms &amp; Conditions
-              </a>
+              <span>Terms &amp; Conditions</span>
             </p>
           </div>
         </div>

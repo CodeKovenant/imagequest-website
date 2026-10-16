@@ -8,6 +8,6 @@ export const serviceLinks = [
 ] as const;
 export const solutionLinks = [
   { label: "Business Launch Package", to: "/solutions/launch" },
-  { label: "Business Growth Package", to: "/services/digital-marketing" },
+  { label: "Business Growth Package", to: "/solutions/growth" },
   { label: "Corporate Brand Partnership", to: "/solutions/corporate" },
 ] as const;

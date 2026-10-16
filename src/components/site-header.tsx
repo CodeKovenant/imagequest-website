@@ -30,12 +30,12 @@ const NAV_ITEMS = [
 
 function Logo() {
   return (
-    <Link to="/" className="flex items-center shrink-0" aria-label="Image Quest Graphics Ltd — home">
-      <img
-        src={logo}
-        alt="Image Quest Graphics Ltd"
-        className="h-10 w-auto shrink-0 sm:h-11"
-      />
+    <Link
+      to="/"
+      className="flex items-center shrink-0"
+      aria-label="Image Quest Graphics Ltd — home"
+    >
+      <img src={logo} alt="Image Quest Graphics Ltd" className="h-10 w-auto shrink-0 sm:h-11" />
     </Link>
   );
 }
@@ -74,18 +74,18 @@ export function SiteHeader() {
               Mon - Fri: 8:00AM - 5:30PM
             </span>
             <div className="flex items-center gap-3">
-              <a href="#" aria-label="Facebook" className="transition-colors hover:text-brand">
+              <span aria-label="Facebook">
                 <Facebook className="h-3.5 w-3.5" />
-              </a>
-              <a href="#" aria-label="Instagram" className="transition-colors hover:text-brand">
+              </span>
+              <span aria-label="Instagram">
                 <Instagram className="h-3.5 w-3.5" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="transition-colors hover:text-brand">
+              </span>
+              <span aria-label="LinkedIn">
                 <Linkedin className="h-3.5 w-3.5" />
-              </a>
-              <a href="#" aria-label="YouTube" className="transition-colors hover:text-brand">
+              </span>
+              <span aria-label="YouTube">
                 <Youtube className="h-3.5 w-3.5" />
-              </a>
+              </span>
             </div>
           </div>
         </div>
@@ -99,25 +99,29 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
             {NAV_ITEMS.map((item) => (
               <div key={item.label} className="group relative">
-              <Link
-                key={item.label}
-                to={item.href}
-                className="flex items-center gap-1 text-[13px] font-semibold tracking-wide text-nav-foreground transition-colors hover:text-brand"
-                activeProps={{ className: "text-brand" }}
-                activeOptions={{ exact: item.href === "/" }}
-              >
-                {item.label}
-                {item.dropdown && (
-                  <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="flex items-center gap-1 text-[13px] font-semibold tracking-wide text-nav-foreground transition-colors hover:text-brand"
+                  activeProps={{ className: "text-brand" }}
+                  activeOptions={{ exact: item.href === "/" }}
+                >
+                  {item.label}
+                  {item.dropdown && <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />}
+                </Link>
+                {(item.label === "SERVICES" || item.label === "SOLUTIONS") && (
+                  <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    {(item.label === "SERVICES" ? serviceLinks : solutionLinks).map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        className="block rounded-sm px-3 py-2.5 text-sm text-nav-foreground hover:bg-muted hover:text-brand"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-              </Link>
-              {(item.label === "SERVICES" || item.label === "SOLUTIONS") && (
-                <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                  {(item.label === "SERVICES" ? serviceLinks : solutionLinks).map((link) => (
-                    <Link key={link.to} to={link.to} className="block rounded-sm px-3 py-2.5 text-sm text-nav-foreground hover:bg-muted hover:text-brand">{link.label}</Link>
-                  ))}
-                </div>
-              )}
               </div>
             ))}
           </nav>
@@ -129,7 +133,8 @@ export function SiteHeader() {
             >
               REQUEST A QUOTE
             </Link>
-            <Button variant="unstyled"
+            <Button
+              variant="unstyled"
               className="rounded-md p-2 text-nav-foreground lg:hidden"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
@@ -142,21 +147,37 @@ export function SiteHeader() {
 
         {/* Mobile menu */}
         {open && (
-          <nav className="max-h-[calc(100dvh-120px)] overflow-y-auto border-t border-border px-4 pb-4 lg:hidden" aria-label="Mobile">
+          <nav
+            className="max-h-[calc(100dvh-120px)] overflow-y-auto border-t border-border px-4 pb-4 lg:hidden"
+            aria-label="Mobile"
+          >
             {NAV_ITEMS.map((item) => (
               <div key={item.label}>
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={() => setOpen(false)}
-                className="flex items-center justify-between border-b border-border/50 py-3 text-sm font-semibold text-nav-foreground transition-colors hover:text-brand"
-                activeProps={{ className: "text-brand" }}
-                activeOptions={{ exact: item.href === "/" }}
-              >
-                {item.label}
-                {item.dropdown && <ChevronDown className="h-4 w-4" />}
-              </Link>
-              {(item.label === "SERVICES" || item.label === "SOLUTIONS") && <div className="border-l border-border pl-4">{(item.label === "SERVICES" ? serviceLinks : solutionLinks).map((link) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-brand">{link.label}</Link>)}</div>}
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-between border-b border-border/50 py-3 text-sm font-semibold text-nav-foreground transition-colors hover:text-brand"
+                  activeProps={{ className: "text-brand" }}
+                  activeOptions={{ exact: item.href === "/" }}
+                >
+                  {item.label}
+                  {item.dropdown && <ChevronDown className="h-4 w-4" />}
+                </Link>
+                {(item.label === "SERVICES" || item.label === "SOLUTIONS") && (
+                  <div className="border-l border-border pl-4">
+                    {(item.label === "SERVICES" ? serviceLinks : solutionLinks).map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        onClick={() => setOpen(false)}
+                        className="block py-2 text-sm text-muted-foreground hover:text-brand"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             <Link

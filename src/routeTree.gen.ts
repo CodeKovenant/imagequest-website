@@ -26,6 +26,7 @@ import { Route as ServicesSignageRouteImport } from './routes/services.signage'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as SolutionsCorporateRouteImport } from './routes/solutions.corporate'
+import { Route as SolutionsGrowthRouteImport } from './routes/solutions.growth'
 import { Route as SolutionsLaunchRouteImport } from './routes/solutions.launch'
 
 const IndexRoute = IndexRouteImport.update({
@@ -114,6 +115,11 @@ const SolutionsCorporateRoute = SolutionsCorporateRouteImport.update({
   path: '/corporate',
   getParentRoute: () => SolutionsRoute,
 } as any)
+const SolutionsGrowthRoute = SolutionsGrowthRouteImport.update({
+  id: '/growth',
+  path: '/growth',
+  getParentRoute: () => SolutionsRoute,
+} as any)
 const SolutionsLaunchRoute = SolutionsLaunchRouteImport.update({
   id: '/launch',
   path: '/launch',
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/services/signage': typeof ServicesSignageRoute
   '/services/websites': typeof ServicesWebsitesRoute
   '/solutions/corporate': typeof SolutionsCorporateRoute
+  '/solutions/growth': typeof SolutionsGrowthRoute
   '/solutions/launch': typeof SolutionsLaunchRoute
   '/services/': typeof ServicesIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
@@ -154,6 +161,7 @@ export interface FileRoutesByTo {
   '/services/signage': typeof ServicesSignageRoute
   '/services/websites': typeof ServicesWebsitesRoute
   '/solutions/corporate': typeof SolutionsCorporateRoute
+  '/solutions/growth': typeof SolutionsGrowthRoute
   '/solutions/launch': typeof SolutionsLaunchRoute
   '/services': typeof ServicesIndexRoute
   '/solutions': typeof SolutionsIndexRoute
@@ -175,6 +183,7 @@ export interface FileRoutesById {
   '/services/signage': typeof ServicesSignageRoute
   '/services/websites': typeof ServicesWebsitesRoute
   '/solutions/corporate': typeof SolutionsCorporateRoute
+  '/solutions/growth': typeof SolutionsGrowthRoute
   '/solutions/launch': typeof SolutionsLaunchRoute
   '/services/': typeof ServicesIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
@@ -197,6 +206,7 @@ export interface FileRouteTypes {
     | '/services/signage'
     | '/services/websites'
     | '/solutions/corporate'
+    | '/solutions/growth'
     | '/solutions/launch'
     | '/services/'
     | '/solutions/'
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
     | '/services/signage'
     | '/services/websites'
     | '/solutions/corporate'
+    | '/solutions/growth'
     | '/solutions/launch'
     | '/services'
     | '/solutions'
@@ -235,6 +246,7 @@ export interface FileRouteTypes {
     | '/services/signage'
     | '/services/websites'
     | '/solutions/corporate'
+    | '/solutions/growth'
     | '/solutions/launch'
     | '/services/'
     | '/solutions/'
@@ -372,6 +384,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsCorporateRouteImport
       parentRoute: typeof SolutionsRoute
     }
+    '/solutions/growth': {
+      id: '/solutions/growth'
+      path: '/growth'
+      fullPath: '/solutions/growth'
+      preLoaderRoute: typeof SolutionsGrowthRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
     '/solutions/launch': {
       id: '/solutions/launch'
       path: '/launch'
@@ -408,12 +427,14 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 interface SolutionsRouteChildren {
   SolutionsCorporateRoute: typeof SolutionsCorporateRoute
+  SolutionsGrowthRoute: typeof SolutionsGrowthRoute
   SolutionsLaunchRoute: typeof SolutionsLaunchRoute
   SolutionsIndexRoute: typeof SolutionsIndexRoute
 }
 
 const SolutionsRouteChildren: SolutionsRouteChildren = {
   SolutionsCorporateRoute: SolutionsCorporateRoute,
+  SolutionsGrowthRoute: SolutionsGrowthRoute,
   SolutionsLaunchRoute: SolutionsLaunchRoute,
   SolutionsIndexRoute: SolutionsIndexRoute,
 }
