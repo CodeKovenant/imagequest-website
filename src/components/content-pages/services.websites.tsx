@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
+import { sendContactRequest } from "@/lib/contact-mailto";
 
 export default function ContentPage() {
   const [activeTab, setActiveTab] = useState("websites");
@@ -856,10 +857,10 @@ export default function ContentPage() {
             </div>
             <form
               onSubmit={(e) => {
-                e.preventDefault();
+                sendContactRequest(e, "Website project inquiry");
                 setIsConsultationModalOpen(false);
                 showAlert(
-                  "Thank you! Your request has been received. Our team will contact you shortly.",
+                  "Your email app should open with a prepared project inquiry. Send the email to submit.",
                 );
               }}
               className="space-y-4"

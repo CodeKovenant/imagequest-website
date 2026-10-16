@@ -33,6 +33,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
+import { sendContactRequest } from "@/lib/contact-mailto";
 
 export default function ContentPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -602,10 +603,7 @@ export default function ContentPage() {
 
             <form
               onSubmit={(e) => {
-                e.preventDefault();
-                alert(
-                  "Thank you! Your request has been submitted successfully. Our team will contact you shortly.",
-                );
+                sendContactRequest(e, modalTitle);
                 setModalOpen(false);
               }}
               className="space-y-4"

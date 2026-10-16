@@ -29,7 +29,6 @@ import {
   ShieldCheck,
   Signpost,
   Sparkles,
-  Send,
   Star,
   Target,
   TrendingUp,
@@ -864,29 +863,16 @@ function Index() {
                 Stay Updated
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Subscribe to our newsletter for the latest tips, trends and offers.
+                Contact us to hear about the latest tips, trends and offers.
               </p>
-              <form className="mt-6 flex items-center gap-2" onSubmit={(e) => e.preventDefault()}>
-                <label htmlFor="newsletter-email" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="newsletter-email"
-                  type="email"
-                  required
-                  placeholder="Enter your email address"
-                  className="min-w-0 flex-1 rounded-full border border-border bg-card px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand"
-                />
-                <button
-                  type="submit"
-                  aria-label="Subscribe to newsletter"
-                  className="grid size-11 shrink-0 place-items-center rounded-full bg-brand text-brand-foreground transition-colors hover:bg-brand/90"
-                >
-                  <Send className="size-4" />
-                </button>
-              </form>
+              <a
+                href="mailto:info@imagequest.co.ke?subject=Company%20updates"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-bold text-brand-foreground transition-colors hover:bg-brand/90"
+              >
+                Email us about updates <ArrowRight className="size-4" />
+              </a>
               <p className="mt-3 text-xs text-muted-foreground">
-                We respect your privacy. Unsubscribe anytime.
+                This opens your email app; no subscription list is maintained on this site.
               </p>
             </div>
           </div>

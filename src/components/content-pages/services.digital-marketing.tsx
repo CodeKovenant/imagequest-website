@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   Phone,
   Mail,
@@ -44,7 +45,7 @@ export default function ContentPage() {
   const [activeTab, setActiveTab] = useState("all");
 
   const handleAuditSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    sendContactRequest(e, "Digital marketing audit request");
     setAuditSubmitted(true);
     setTimeout(() => {
       setAuditSubmitted(false);
@@ -793,10 +794,10 @@ export default function ContentPage() {
                 <div className="w-16 h-16 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mx-auto text-2xl font-black">
                   ✓
                 </div>
-                <h3 className="text-2xl font-black text-white">Audit Request Received!</h3>
+                <h3 className="text-2xl font-black text-white">Open Your Email App</h3>
                 <p className="text-xs text-gray-300">
-                  Our digital marketing team will analyze your online presence and contact you
-                  within 24 hours.
+                  An audit request is ready in your email app. Send the email to complete your
+                  inquiry.
                 </p>
               </div>
             ) : (

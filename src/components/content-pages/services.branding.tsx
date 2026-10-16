@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   Phone,
   Mail,
@@ -112,8 +113,8 @@ export default function ContentPage() {
     },
   ];
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    sendContactRequest(e, "Branding consultation request");
     setConsultSubmitted(true);
     setTimeout(() => {
       setConsultSubmitted(false);
@@ -886,10 +887,10 @@ export default function ContentPage() {
                 <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
                   ✓
                 </div>
-                <h3 className="text-2xl font-black text-slate-900">Consultation Booked!</h3>
+                <h3 className="text-2xl font-black text-slate-900">Open Your Email App</h3>
                 <p className="text-sm text-slate-600">
-                  Thank you. Our brand strategy team will reach out to you shortly to schedule your
-                  session.
+                  A consultation request is ready in your email app. Send the email to complete your
+                  inquiry.
                 </p>
               </div>
             ) : (

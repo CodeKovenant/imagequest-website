@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   Phone,
   Mail,
@@ -724,9 +725,11 @@ export default function ContentPage() {
 
             <form
               onSubmit={(e) => {
-                e.preventDefault();
+                sendContactRequest(e, "Signage quote request");
                 setQuoteModalOpen(false);
-                showToast("Quote request submitted successfully!");
+                showToast(
+                  "Your email app should open with a prepared quote request. Send it to submit.",
+                );
               }}
               className="space-y-4"
             >
@@ -807,9 +810,11 @@ export default function ContentPage() {
 
             <form
               onSubmit={(e) => {
-                e.preventDefault();
+                sendContactRequest(e, "Signage site visit request");
                 setAuditModalOpen(false);
-                showToast("Site visit scheduled successfully! We will call you to confirm.");
+                showToast(
+                  "Your email app should open with a prepared site visit request. Send it to submit.",
+                );
               }}
               className="space-y-4"
             >

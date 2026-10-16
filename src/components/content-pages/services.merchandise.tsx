@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   Phone,
   Mail,
@@ -83,8 +84,8 @@ export default function ContentPage() {
     setActiveProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    sendContactRequest(e, "Merchandise quote request");
     setQuoteSubmitted(true);
     setTimeout(() => {
       setQuoteSubmitted(false);
@@ -1017,10 +1018,10 @@ export default function ContentPage() {
                 <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
                   ✓
                 </div>
-                <h3 className="text-2xl font-black text-slate-900">Quote Request Received!</h3>
+                <h3 className="text-2xl font-black text-slate-900">Open Your Email App</h3>
                 <p className="text-sm text-slate-600">
-                  Thank you for reaching out. Our branding team will get back to you shortly with a
-                  tailored proposal.
+                  A quote request is ready in your email app. Send the email to complete your
+                  inquiry.
                 </p>
               </div>
             ) : (
@@ -1031,7 +1032,7 @@ export default function ContentPage() {
                   </span>
                   <h3 className="text-2xl font-black text-slate-900 mt-2">Request Merch Quote</h3>
                   <p className="text-xs text-slate-500 mt-1">
-                    Fill out the form below and we'll contact you instantly.
+                    Fill out the form below to prepare an email request.
                   </p>
                 </div>
 

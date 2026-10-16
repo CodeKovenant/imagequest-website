@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   Phone,
   Mail,
@@ -513,8 +514,7 @@ export default function ContentPage() {
 
             <form
               onSubmit={(e) => {
-                e.preventDefault();
-                alert("Thank you! Your request has been submitted successfully.");
+                sendContactRequest(e, "Request a consultation");
                 setQuoteModalOpen(false);
               }}
               className="space-y-4"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   Phone,
   Mail,
@@ -772,7 +773,13 @@ export default function ContentPage() {
       {/* INTERACTIVE MODAL POPUP */}
       {activeModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-8 space-y-6 relative shadow-2xl animate-in fade-in zoom-in duration-200">
+          <form
+            onSubmit={(event) => {
+              sendContactRequest(event, `Growth package inquiry: ${activeModal}`);
+              setActiveModal(null);
+            }}
+            className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-8 space-y-6 relative shadow-2xl animate-in fade-in zoom-in duration-200"
+          >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-500">
@@ -801,6 +808,7 @@ export default function ContentPage() {
               </div>
               <Button
                 variant="unstyled"
+                type="button"
                 onClick={() => setActiveModal(null)}
                 className="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 font-bold"
               >
@@ -810,8 +818,8 @@ export default function ContentPage() {
 
             <div className="space-y-4 text-sm text-slate-300">
               <p className="leading-relaxed">
-                Thank you for your interest in our business growth solutions. Our expert strategy
-                consultants in Nairobi are ready to assist you in scaling your brand.
+                Share your contact details to prepare an email request about this business growth
+                solution. Your email app will open so you can send it.
               </p>
               <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
                 <div className="flex items-center gap-2 text-xs font-bold text-orange-500 uppercase">
@@ -828,6 +836,8 @@ export default function ContentPage() {
                   Your Phone / Email
                 </label>
                 <input
+                  required
+                  name="Phone or email"
                   type="text"
                   placeholder="Enter your phone or email..."
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500"
@@ -838,25 +848,21 @@ export default function ContentPage() {
             <div className="flex items-center gap-3 pt-4">
               <Button
                 variant="unstyled"
-                onClick={() => {
-                  alert(
-                    "Thank you! Your request has been received. Our team will contact you shortly.",
-                  );
-                  setActiveModal(null);
-                }}
+                type="submit"
                 className="flex-1 bg-orange-600 hover:bg-orange-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-orange-600/30"
               >
                 Submit Request
               </Button>
               <Button
                 variant="unstyled"
+                type="button"
                 onClick={() => setActiveModal(null)}
                 className="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 font-bold text-white rounded-xl transition-all"
               >
                 Close
               </Button>
             </div>
-          </div>
+          </form>
         </div>
       )}
 

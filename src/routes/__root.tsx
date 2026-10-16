@@ -33,7 +33,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
 
@@ -74,10 +74,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Image Quest Graphics Ltd" },
-      { name: "description", content: "Large format printing, signage and branding solutions in Nairobi, Kenya." },
+      {
+        name: "description",
+        content: "Large format printing, signage and branding solutions in Nairobi, Kenya.",
+      },
       { name: "author", content: "Image Quest Graphics Ltd" },
       { property: "og:title", content: "Image Quest Graphics Ltd" },
-      { property: "og:description", content: "Large format printing, signage and branding solutions in Nairobi, Kenya." },
+      {
+        property: "og:description",
+        content: "Large format printing, signage and branding solutions in Nairobi, Kenya.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

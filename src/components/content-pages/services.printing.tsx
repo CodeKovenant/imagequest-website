@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendContactRequest } from "@/lib/contact-mailto";
 import {
   MapPin,
   Phone,
@@ -662,9 +663,11 @@ export default function ContentPage() {
             </div>
             <form
               onSubmit={(e) => {
-                e.preventDefault();
+                sendContactRequest(e, "Printing quote request");
                 setQuoteModalOpen(false);
-                showToast("Quote request submitted successfully! We will contact you soon.");
+                showToast(
+                  "Your email app should open with a prepared quote request. Send it to submit.",
+                );
               }}
               className="flex flex-col gap-4"
             >
