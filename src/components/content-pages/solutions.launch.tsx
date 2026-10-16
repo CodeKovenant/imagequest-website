@@ -91,7 +91,7 @@ export default function ContentPage() {
                   src={pageImage2} 
                   alt="Business Launch Package Branding Mockup" 
                   className="w-full h-[380px] sm:h-[450px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-lg"
-                  onError={(e)=>{(e.target as HTMLImageElement).src={pageImage8.url}}}
+                  onError={(e)=>{(e.target as HTMLImageElement).src=pageImage8.url}}
                 />
                 <div className="absolute bottom-6 left-6 right-6 bg-topbar/80 backdrop-blur-md border border-primary p-4 rounded-2xl flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -236,7 +236,7 @@ export default function ContentPage() {
                   src={card.img} 
                   alt={card.title} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e)=>{(e.target as HTMLImageElement).src={pageImage7.url}+card.title}}
+                  onError={(e)=>{(e.target as HTMLImageElement).src=pageImage7.url}}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-topbar via-transparent to-transparent"></div>
                 <h3 className="absolute bottom-4 left-6 text-xl font-bold text-brand-foreground tracking-normal">{card.title}</h3>
